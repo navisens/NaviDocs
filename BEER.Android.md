@@ -155,7 +155,7 @@ What? You still have more beer left? Okay then...
 
 Here are some other cool things you can try.
 
-* Remove the call to `useLocalOnly()`, and see what happens. You should notice that now (if you have internet connection), your phone will put you on a map and attempt to synchronize your location. You'll need to talk around a block before we figure out where exactly you are.
+* Remove the call to `useLocalOnly()`, and see what happens. You should notice that now (if you have internet connection), your phone will put you on a map and attempt to synchronize your location. You'll need to walk around a block before we figure out where exactly you are.
 * You don't feel like walking around to get a location lock? No fear! Just call `addControls()` method call to your initialization. Now you can set your current location instead of waiting for it to lock! Click the gear icon and tap where you are. There are a LOT of interesting notes on this behavior, and we recommend you check out other tutorials to get a more in-depth feel for how initializing your location works.
 * You're curious how you walk over time? Just remove the `hideMarkers()` call, and we'll also display a bunch of cool colored dots that display stats on how we think you've been walking around. Tap on any of the dots to get more stats!
 
