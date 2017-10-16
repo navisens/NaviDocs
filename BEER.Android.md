@@ -14,4 +14,4 @@ You pull out all the tools you need:
 
 Then you start a new Android Studio project.
 
-[]
+![Create new android project](https://github.com/navisens/NaviDocs/blob/resources/Images/1.1.png)
