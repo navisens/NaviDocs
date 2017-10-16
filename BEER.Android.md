@@ -1,9 +1,17 @@
 # The Beer Test
 
-Don't read `Android`? Try `iOS`(link pending) instead!
+<sub>(Don't speak `Android`? Try `iOS`(link pending) instead!)</sub>
 
-So you're cracking open a cold one with the boys. And you think to yourself "Why doesn't GPS work indoors?" Then you come across `Navisens MotionDnaSDK`, and you're thinking "Wow! I wonder how this works. If only there were a quick demo for this..."
+So you cracked a cold one with the boys...
 
-Good news! You get to make the demo! And we're gonna help you through it before you finish that beer of yours. :P
+Let's set the scene. You've been working on a project desperately in need of a robust and accurate positioning system, yet you haven't been able to find a reliable one. Lucky for you, a friend of yours tipped you off a while back on an excellent library, and in you're half-inebriated state, your outstanding judgement dictates that now's the time to give that library a shot. With half a mind ready to start, you pull out your computer and set aside your now (mysteriously) half-empty beer.
 
-Let's start from the beginning.
+You pull out all the tools you need:
+* [Android Studio](https://developer.android.com/studio/index.html)
+* An Android mobile device
+* An internet connection
+* The magic Key of Development (which can be obtained from *here(link pending)*)
+
+Then you start a new Android Studio project.
+
+[]
