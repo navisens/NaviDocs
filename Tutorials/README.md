@@ -1,3 +1,0 @@
-# Tutorials
-
-Just some tutorials
