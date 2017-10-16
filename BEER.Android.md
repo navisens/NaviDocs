@@ -14,7 +14,7 @@ You pull out all the tools you need:
 
 ## 1. The Start
 
-Then you start a new Android Studio project.
+For starters, you begin by **starting a new Android Studio project**.
 
 ![Create new android project](https://github.com/navisens/NaviDocs/blob/resources/Images/1.1.png)
 
