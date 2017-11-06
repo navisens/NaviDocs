@@ -2,7 +2,7 @@
 
 <sup>(Don't speak [`Android`](BEER.Android.md)? Try [`iOS`](BEER.iOS.md) instead!)</sup>
 
-So you cracked a cold one with the boys...
+So you cracked open a cold one...
 
 Let's set the scene. You've been working on a project desperately in need of a robust and accurate positioning system, yet you haven't been able to find a reliable one. Lucky for you, a friend of yours tipped you off a while back on an excellent library, and in you're half-inebriated state, your outstanding judgement dictates that now's the time to give that library a shot. With half a mind ready to start, you pull out your computer and set aside your (now mysteriously half-empty) beer.
 
