@@ -1,16 +1,6 @@
 # NaviDocs
 How does Navisens work? Tutorials, quick starts, and extensive documentation on all our newest and latest features!
 
-1. How it works?
-   1. What is Navisens?
-   2. What can you do?
-2. Getting Started
-3. Tutorials
-4. Documentation
-5. Licensing
-
-=====
-
 ### Navisens Mini Tutorial/Quickstart (aka “The Beer Test”)
 The purpose of this tutorial is to become familiar with the Navisens SDK in the time it takes you to drink approximately one standard size beer 🍺.
 
