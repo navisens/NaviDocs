@@ -1,6 +1,6 @@
 # The Beer Test
 
-<sub>(Don't speak [`iOS`](BEER.iOS.md)? Try [`Android`](BEER.Android.md) instead!)</sub>
+<sub>(Don't speak [`iOS`](/BEER.iOS.md)? Try [`Android`](/BEER.Android.md) instead!)</sub>
 
 So you cracked open a cold one...
 
