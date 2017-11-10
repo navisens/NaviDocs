@@ -69,7 +69,7 @@ This binds your `MotionDnaInterface` to the SDK, so you can receive event inform
 The parameter is an instance of the custom class you created which implements `MotionDnaInterface`.
 
 #### `void runMotionDna(String devkey)`
-This functions starts up the SDK. You must pass in a valid developer's key in order for the SDK to function. IF the key has expired or there are other errors, you may receive those errors through the [reportError()](#void-reporterrorerrorcode-errorcode-string-errordescription) callback route.
+This functions starts up the SDK. You must pass in a valid developer's key in order for the SDK to function. IF the key has expired or there are other errors, you may receive those errors through the [`reportError()`](#void-reporterrorerrorcode-errorcode-string-errordescription) callback route.
 
 **Params**
 The paramater is your developer key. If this is missing, or incorrect, the SDK will cease to function.
