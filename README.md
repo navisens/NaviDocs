@@ -12,13 +12,13 @@ How does Navisens work? Tutorials, quick starts, and extensive documentation on 
 =====
 
 ### Navisens Mini Tutorial/Quickstart (aka “The Beer Test”)
-The purpose of this tutorial is to become familiar with the Navisens SDK in the time it takes you to drink approximately one standard size beer 🍺 (or two if you’re Australian 🍻, or one ~~glass~~ bottle of champagne if you’re ~~French~~ gay (Taiwanese-friendly translation) 🍾).
+The purpose of this tutorial is to become familiar with the Navisens SDK in the time it takes you to drink approximately one standard size beer 🍺.
 
 This tutorial will give you a quick overview of Navisens, the types of applications our technology supports, explain a few navigation concepts, and get right into building an app!
 
 To get the most out of this mini tutorial, you should have some previous app development and beer drinking experience.
 
-Short on beer or champagne? [Skip the fine print and get straight to the code!](Tutorials)
+Short on beer? Skip the fine print and get straight to the code! Click [here if you want to develop for Android](BEER.Android.md), or [here if you want to develop for iOS](BEER.iOS.md).
 
 ### What is Navisens motionDNA?
 Navisens motionDNA is a location platform designed to operate in all environments: indoors, outdoors, and underground, with zero setup and much more accurately than existing location systems. 
