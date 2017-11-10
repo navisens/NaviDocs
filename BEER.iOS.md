@@ -47,7 +47,7 @@ We need to name this file `Podfile`. We'll be using this to setup the CocoaPods 
 
 We need to add some dependencies to the `Podfile`. Copy and paste the following new dependencies in. This sets up our CocoaPods environment for iOS 9.1, and attaches the environment to the target `iOSBeerTest`. We then import our core SDK, along with the plugins required for this project.
 
-```podfile
+```pod
 source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, '9.1'
 
