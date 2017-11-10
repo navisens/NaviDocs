@@ -15,7 +15,7 @@ You pull out all the tools you need:
 
 ## 1. The Start
 
-For starters, you begin by **creating a new Xcode workspace**.
+For starters, you begin by **creating a new Xcode project**.
 
 ![Create new xcode project](https://github.com/navisens/NaviDocs/blob/resources/Images/iOS/1.1.png)
 
