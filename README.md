@@ -8,7 +8,7 @@ This tutorial will give you a quick overview of Navisens, the types of applicati
 
 To get the most out of this mini tutorial, you should have some previous app development and beer drinking experience.
 
-Short on beer? Skip the fine print and get straight to the code! Click [here if you want to develop for Android](BEER.Android.md), or [here if you want to develop for iOS](BEER.iOS.md).
+Short on beer? Skip the fine print and get straight to the code! Click [here if you want to develop for Android](/BEER.Android.md), or [here if you want to develop for iOS](/BEER.iOS.md).
 
 ### What is Navisens motionDNA?
 Navisens motionDNA is a location platform designed to operate in all environments: indoors, outdoors, and underground, with zero setup and much more accurately than existing location systems. 
