@@ -137,13 +137,13 @@ Pause estimation of the current location. Estimation can be resumed at a later t
 #### `void stop()`
 Completely shut down all estimation in our SDK, and release any resources that are in-use.
 
------
 #### `void resetLocalEstimation()`
 Resets the cartesian coordinates back to the origin `(0, 0)`, and sets the heading to `0` degrees.
 
 #### `void resetLocalHeading()`
 Resets just the heading to `0` degrees.
 
+-----
 #### `void setARModeEnabled(boolean mode)`
 Enables AR mode. AR mode publishes orientation quaternion at a higher rate.
 
