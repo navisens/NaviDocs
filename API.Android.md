@@ -100,7 +100,7 @@ There are many ways to control the SDK. Here, we have split control methods into
 	* [`void setLocationLatitudeLongitude(double lat, double lng)`](#void-setlocationlatitudelongitudedouble-lat-double-lng)
 	* [`void setLocationLatitudeLongitudeAndHeadingInDegrees(double lat, double lng, double angle)`](#void-setlocationlatitudelongitudeandheadingindegreesdouble-lat-double-lng-double-angle)
 	* [`void setHeadingMagInDegrees()`](#void-setheadingmagindegrees)
-	* [`void setHeadingInDegrees()`](#void-setheadingindegrees)
+	* [`void setHeadingInDegrees(double heading)`](#void-setheadingindegreesdouble-heading)
 * Location Sharing
 	* [`void startUDP(...)`](#void-startudp)
 	* [`void stopUDP()`](#void-stopudp)
@@ -200,7 +200,7 @@ Wait for the next magnetic compass reading, and set the heading to that reading.
 
 Given the limitations of the magnetic compass, don't use this unless you are sure the device supports readings at high accuracy.
 
-#### `void setHeadingInDegrees()`
+#### `void setHeadingInDegrees(double heading)`
 Manually set the initial global heading
 
 It is advised if you are using global heading, to manually set this, or allow the user to set this.
