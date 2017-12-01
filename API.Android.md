@@ -354,7 +354,7 @@ The `uncertainty` is the uncertainty in the local location estimation.
 
 The `heading` and `localHeading` are self-explanatory, and provide the global and local heading values respectively.
 
-The `verticalMotionStatus` is the vertical motion status type.  Due to the low sample rate and delay in barometer data on iOS devices, the motion status’ may be delayed by a few seconds. The options include:
+The `verticalMotionStatus` is the vertical motion status type.  The options include:
 - `VERTICAL_STATUS_LEVEL_GROUND` when on flat/level ground or outdoors (will always report this outdoors)
 - `VERTICAL_STATUS_ESCALATOR_UP` when riding escalator up
 - `VERTICAL_STATUS_ESCALATOR_DOWN` when riding escalator down
