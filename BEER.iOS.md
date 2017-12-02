@@ -11,7 +11,7 @@ You pull out all the tools you need:
 * [CocoaPods](https://cocoapods.org)
 * An iOS mobile device
 * An internet connection
-* The magic Key of Development (which can be obtained from [here](developer.navisens.com))
+* The magic Key of Development (which can be obtained from [here](https://developer.navisens.com))
 
 ## 1. The Start
 
