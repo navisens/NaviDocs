@@ -10,7 +10,7 @@ You pull out all the tools you need:
 * [Android Studio](https://developer.android.com/studio/index.html)
 * An Android mobile device
 * An internet connection
-* The magic Key of Development (which can be obtained from [here](developer.navisens.com))
+* The magic Key of Development (which can be obtained from [here](https://developer.navisens.com))
 
 ## 1. The Start
 
