@@ -118,7 +118,7 @@ Enables AR mode. AR mode publishes orientation quaternion at a higher rate.
 Enable or disable AR mode.
 
 #### `setBackgroundModeEnabled(_ state: Bool)`
-Allow our SDK to run while your app is backgrounded. If you wish to use this, you must enable the `Location updates` `Background Mode` and enabled `Background Modes` if it is not on.
+Allow our SDK to run while your app is backgrounded. If you wish to use this, you must enable the `Location updates` `Background Mode` and enable `Background Modes` if it is not on.
 
 Furthermore, if you are using iOS 11+, then you should also go to your `AppDelegate` file and find the `applicationDidEnterBackground` event. Then add the following line of code into it:
 
