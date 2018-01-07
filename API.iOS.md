@@ -60,6 +60,7 @@ There are many ways to control the SDK. Here, we have split control methods into
 	* [`resetLocalEstimation()`](#resetlocalestimation)
 * SDK Settings
 	* [`setARModeEnabled(_ state: Bool)`](#setarmodeenabled_-state-bool)
+	* [`setBackgroundModeEnabled(_ state: Bool)`](#setbackgroundmodeenabled_-state-bool)
 	* [`setBinaryFileLoggingEnabled(_ state: Bool)`](#setbinaryfileloggingenabled_-state-bool)
 	* [`setCallbackUpdateRateInMs(_ rate: Double)`](#setcallbackupdaterateinms_-rate-double)
 	* [`setNetworkUpdateRateInMs(_ rate: Double)`](#setnetworkupdaterateinms_-rate-double)
@@ -115,6 +116,18 @@ Enables AR mode. AR mode publishes orientation quaternion at a higher rate.
 
 **Params**
 Enable or disable AR mode.
+
+#### `setBackgroundModeEnabled(_ state: Bool)`
+Allow our SDK to run while your app is backgrounded. If you wish to use this, you must enable the `Location updates` `Background Mode` and enabled `Background Modes` if it is not on.
+
+Furthermore, if you are using iOS 11+, then you should also go to your `AppDelegate` file and find the `applicationDidEnterBackground` event. Then add the following line of code into it:
+
+```swift
+  MotionDnaSDK.enableBackgroundSensors()
+```
+
+**Params**
+Enable or disable background location updates.
 
 #### `setBinaryFileLoggingEnabled(_ state: Bool)`
 Allow our SDK to record data and use it to enhance our estimation system.
