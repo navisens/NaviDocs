@@ -94,6 +94,7 @@ There are many ways to control the SDK. Here, we have split control methods into
 	* [`void setBinaryFileLoggingEnabled(boolean state)`](#void-setbinaryfileloggingenabledboolean-state)
 	* [`void setCallbackUpdateRateInMs(double rate)`](#void-setcallbackupdaterateinmsdouble-rate)
 	* [`void setNetworkUpdateRateInMs(double rate)`](#void-setnetworkupdaterateinmsdouble-rate)
+	* [`void setPowerMode(PowerConsumptionMode mode)`](#void-setpowermodepowerconsumptionmode-mode)
 * Global Location Initialization
 	* [`void setLocationNavisens()`](#void-setlocationnavisens)
 	* [`void setLocationGPS()`](#void-setlocationgps)
@@ -167,6 +168,17 @@ Tell our SDK how often to publish our location to your servers. This allows your
 
 **Params**
 The number of milliseconds `ms` between each network update. Setting this to 5000 will send network estimation results every 5 seconds, while setting this to 0 will send results at the fastest rate our SDK is capable of running estimations (though not consistently timed).
+
+#### `void setPowerMode(PowerConsumptionMode mode)`
+Set the power consumption mode to trade off accuracy of predictions for power saving.
+
+**Params**
+The `PowerConsumptionMode` is one of the following:
+
+* `SUPER_LOW_CONSUMPTION`: Batches samples for 2 minutes and processes them queued up and internal estimation runs at 6Hz.
+* `LOW_CONSUMPTION`: Internal Estimation at 6.25Hz
+* `MEDIUM_CONSUMPTION`: Internal Estimation at 12.5Hz
+* `PERFORMANCE`: Internal Estimation at 25Hz
 
 -----
 #### `void setLocationNavisens()`
