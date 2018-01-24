@@ -148,7 +148,7 @@ Tell our SDK how often to publish our location to your servers. This allows your
 **Params**
 The number of milliseconds `ms` between each network update. Setting this to 5000 will send network estimation results every 5 seconds, while setting this to 0 will send results at the fastest rate our SDK is capable of running estimations (though not consistently timed).
 
-#### `void setPowerMode(_ mode: PowerConsumptionMode)`
+#### `setPowerMode(_ mode: PowerConsumptionMode)`
 Set the power consumption mode to trade off accuracy of predictions for power saving.
 
 **Params**
