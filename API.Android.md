@@ -157,6 +157,13 @@ Allow our SDK to record data and use it to enhance our estimation system.
 **Params**
 Enable or disable file logging.
 
+##### Tutorial: Downloading Logs
+Downloading these logs is a very good way of providing debug information, should there be an issue with our SDK. On Android, this is very easily done. First, make sure you have the "Android Debug Bridge" or `adb` Android Platform Tool downloaded. Once you have it set up correctly, plug in your Android device to a computer. On the computer, open a command terminal and run the following command:
+
+`adb pull /sdcard/MotionDna/Logs`
+
+This will pull the log files and place them in the current directory. You may add an additional argument to specify where you want to put the logs to.
+
 #### `void setCallbackUpdateRateInMs(double rate)`
 Tell our SDK how often to provide estimation results. Note that there is a limit on how fast our SDK can provide results, but usually setting a slower update rate improves results. Setting the rate to `0ms` will output estimation results at our maximum rate.
 
