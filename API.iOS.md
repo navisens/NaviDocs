@@ -136,6 +136,17 @@ Allow our SDK to record data and use it to enhance our estimation system.
 **Params**
 Enable or disable file logging.
 
+##### Tutorial: Downloading Logs
+Downloading these logs is a very good way of providing debug information, should there be an issue with our SDK. For iOS, first make sure you have Xcode set up. Open it up, and make sure your device is plugged in into your computer.
+
+1. Go to the top and click on the **Window** tab.
+2. Open up the **Devices and Simulators** window from the menu.
+3. Select the **Devices** tab at the top.
+4. Under **Installed Apps**, select the relevant app.
+5. Click on the *Gear Icon* to open up settings.
+6. Click on **Download Container**. This may take a while.
+7. After it is done, right click on the container and click **Show Package Contents**.
+
 #### `setCallbackUpdateRateInMs(_ rate: Double)`
 Tell our SDK how often to provide estimation results. Note that there is a limit on how fast our SDK can provide results, but usually setting a slower update rate improves results. Setting the rate to `0ms` will output estimation results at our maximum rate.
 
