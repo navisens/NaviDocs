@@ -16,6 +16,7 @@ Short on beer? Skip the fine print and get straight to the code! Click [here if 
 * [iOS Quickstart](/BEER.iOS.md)
 * [Android API Docs](/API.Android.md)
 * [iOS API Docs](/API.iOS.md)
+* [Tutorials and Guides](/Tutorials)
 
 ### What is Navisens motionDNA?
 Navisens motionDNA is a location platform designed to operate in all environments: indoors, outdoors, and underground, with zero setup and much more accurately than existing location systems. 
