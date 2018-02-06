@@ -4,7 +4,7 @@ The tutorials provide a more in-depth explanation of various features of our Nav
 
 Table of Contents:
 * [Creating New NavisensPlugins](#creating-new-navisensplugins)
-* [Setting up the Environment](#setting-up-the-environment)
+* [Publishing NavisensPlugins](#publishing-navisensplugins)
 * [Initializing Your Location](#initializing-your-location)
 
 ## Creating New NavisensPlugins
@@ -13,9 +13,11 @@ Table of Contents:
 
 A guide on how to create your own NavisensPlugins. Using the NavisensPlugins framework makes it easy to combine different plugins together and ensure they all work together as intended.
 
-## Setting Up the Environment
+## Publishing NavisensPlugins
 
-Work in Progress
+<sup>[Android](/Tutorials/publishing-navisensplugins.Android.md)</sup>
+
+A continuation of the [**creating new NavisensPlugins**](#creating-new-navisensplugins) guide for if you want to publish your plugins online for others to use.
 
 ## Initializing Your Location
 
