@@ -17,7 +17,7 @@ A guide on how to create your own NavisensPlugins. Using the NavisensPlugins fra
 
 <sup>[Android](/Tutorials/publishing-navisensplugins.Android.md)</sup>
 
-A continuation of the [**creating new NavisensPlugins**](#creating-new-navisensplugins) guide for if you want to publish your plugins online for others to use.
+A continuation of the **creating new NavisensPlugins** guide above for if you want to publish your plugins online for others to use.
 
 ## Initializing Your Location
 
