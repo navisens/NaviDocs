@@ -2,6 +2,8 @@
 
 Publishing iOS plugins using cocoapods is more difficult.
 
+The following tutorial is a very simplified version. It is recommended that you instead learn how to make your own repositories from [here](https://guides.cocoapods.org/making/index.html).
+
 The general idea is to first generate the framework, and then push it up on a cocoapods repo.
 
 To generate the framework, you should build your plugin for both *iphoneos* and *iphonesimulator*. Find the files by right clicking on **Products** in Xcode and using **Show in Finder**. You'll need to run a script to combine them into a universal framework, either by making a new script file in the directory, or copying those out into your own build folder. The shell script will look like this:
