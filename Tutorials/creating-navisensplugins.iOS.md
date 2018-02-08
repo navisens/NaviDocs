@@ -124,13 +124,13 @@ Here are some methods of `NavisensCore` that you should call in the `init` metho
 If you want to subscribe to all `MotionDna` from both the current device stream, all online devices, and any errors, use this:
 
 ```swift
-  core.subscribe(this, NavisensCore.MOTION_DNA | NavisensCore.NETWORK_DNA | NavisensCore.ERRORS);
+  core.subscribe(self, to: NavisensCore.MOTION_DNA | NavisensCore.NETWORK_DNA | NavisensCore.ERRORS);
 ```
 
 If you do not want to subscribe to anything, you can ignore the method call. You can also do this:
 
 ```swift
-  core.subscribe(this, NavisensCore.NOTHING);
+  core.subscribe(self, to: NavisensCore.NOTHING);
 ```
 
 * `core.settings` is an object used to request the core apply certain settings. The settings object can also be used to force a setting.
@@ -162,5 +162,110 @@ This call will force the state to 50 ms, even if another plugin had originally r
 This method will terminate a plugin. You must call `core.remove(self)` in this method so the `NavisensCore` will drop the reference to this plugin, to prevent memory leaks (unless your plugin can't be stopped at the current time).
 
 If you return `true` from this method, you must release all resources, as `NavisensCore` will drop all references of this plugin, so you want to make sure not to have any memory leaks. If you return `false`, then you are telling the user that they cannot end this plugin at the current time, and that they should take action to resolve why.
+
+## Using `NavisensCore`
+
+The `NavisensCore` is the central interlocutor between all plugins.
+
+Here is a brief API of features that `NavisensPlugin`s may use. These are **not** listed alongside the API presented [here](https://github.com/navisens/iOS-Plugin/tree/master/navisenscore#api) as they are designed to be used by plugins exclusively, although you may call them as normal if necessary.
+
+#### `func subscribe(_ plugin: NavisensPlugin, to which: Int)`
+
+This method subscribes a plugin to different resource streams. There are currently five resource streams as listed below:
+
+* `MOTION_DNA` is the base stream of `MotionDna` for all location data of the current device
+* `NETWORK_DNA` is a network stream of `MotionDna` of other devices that are on the same network (see the [NaviShare](https://github.com/navisens/iOS-Plugin/tree/master/navishare) plugin for more info).
+* `NETWORK_DATA` is a network stream of strings from other devices that are on the same network (see the [NaviShare](https://github.com/navisens/iOS-Plugin/tree/master/navishare) plugin for more info).
+* `PLUGIN_DATA` is an internal stream of raw tagged objects used to communicate between plugins.
+* `ERRORS` is an error stream and is recommended. See [reportError](https://github.com/navisens/NaviDocs/blob/master/API.iOS.md#reporterror_-errorcode-errorcode-withmessage-s-string) for more information.
+
+All streams are processed on their own thread, but all together. If one of your methods is expected to take a non-trivial amount of time to execute, it is recommended that you start a new thread to offload the work, so as to not stall the remaining plugins who are also awaiting resources from the corresponding streams. Also, the stream data is not copied to each plugin, so changing the resource data object may have unintended consequences.
+
+The stream values can be mathematically or'd together to combine multiple streams (see example below). There are two additional symbolic streams:
+
+* `NOTHING` is no streams
+* `ALL` is all streams
+
+**Examples**
+
+If you want only `MOTION_DNA`, use this:
+
+```swift
+  core.subscribe(self, to: NavisensCore.MOTION_DNA);
+```
+
+If you want both `MOTION_DNA` and `ERRORS`, use this:
+
+```swift
+  core.subscribe(self, to: NavisensCore.MOTION_DNA | NavisensCore.ERRORS);
+```
+
+If you want everything except the `PLUGIN_DATA` stream, you can do this too:
+
+```swift
+  core.subscribe(self, to: NavisensCore.ALL ^ NavisensCore.PLUGIN_DATA);
+```
+
+#### `func unsubscribe(_ plugin: NavisensPlugin, from which: Int)`
+
+This behaves the same as the above `subscribe` method, except that it stops providing the resources to the plugin.
+
+#### `func broadcast(_ tag: String, data: Any)`
+
+This method is used to communicate with other plugins. Any plugin that is currently subscribed to the resource `PLUGIN_DATA` will receive both the identifier, along with the Object array. The identifier is purely used by plugins to determine if the data being presented is something they recognize and can process. Since there is only one `PLUGIN_DATA` stream, the `tag` is designed as a secondary filter for this stream in the case that you have multiple mutually independent sets of `PLUGIN_DATA` resource-subscribing plugins.
+
+#### `var motionDna: MotionDnaService?`
+
+This method retrieves the base Navisens SDK object, which can be used to make low-level calls at the SDK level.
+
+#### `var settings: NavisensSettings`
+
+This method retrieves a shared settings object that all plugins can use to request various settings. The settings object will determine whether or not a requested setting will be applied. After settings are selected, make sure to call [`applySettings`](#func-applysettings) to commit changes. There are two types of methods to be called on the returned settings object: `request` methods and `override` methods.
+
+When using the `request` methods, the settings object guarantees that the requested settings will be applied *only if* they are of equal or greater precedence than the currently applied setting. For example, when requesting a callback rate, if the current callback rate is 100 ms, and a request of 50 ms is issued, then the callback rate will be updated to 50 ms. However, if the current callback rate is 10 ms, and a request of 50 ms is issued, then the request will not change anything, since 10 ms is at least as good as 50 ms.
+
+The behavior is different if you use the `override` methods, which will set the value regardless.
+
+Finally, certain settings don't make sense to have a precedence, and thus will always behave like `override` methods, even when using the `request` version. An example is setting the host ip when using a shared server.
+
+Below is listed the methods currently accepted. More low-level settings can be accessed through [`motionDna`](#var-motiondna-motiondnaservice). Note that a few other settings are set internally, but they are mainly for ease-of-use, and should not affect your plugin unless you explicitly require such settings.
+
+```swift
+public static class NavisensSettings {
+    public func requestARMode()
+    public func overrideARMode(_ mode: Bool?)
+    
+    public func requestCallbackRate(_ rate: Int)
+    public func overrideCallbackRate(_ rate: Int?)
+    
+    public func requestGlobalMode()
+    public func overrideEstimationMode(_ mode: EstimationMode?)
+    
+    public func requestPositioningMode(_ mode: ExternalPositioningState)
+    public func overridePositioningMode(_ mode: ExternalPositioningState?)
+    
+    public func requestNetworkRate(_ rate: Int)
+    public func overrideNetworkRate(_ rate: Int?)
+    
+    public func requestPowerMode(_ mode: PowerConsumptionMode)
+    public func overridePowerMode(_ mode: PowerConsumptionMode?)
+    
+    public func requestHost(_ host: String, andPort port: String)
+    public func overrideHost(_ host: String?, andPort port: String?)
+    
+    public func requestRoom(_ room: String)
+    public func overrideRoom(_ room: String?)
+}
+```
+
+As always, since all of the source code for the plugins system is open-source, if you are unsure of anything, go ahead and look at the source files.
+
+#### `func applySettings()`
+
+This method simply commits any settings you requested (or overrode) permanently. These settings are pushed to the main SDK, and applied immediately. If you do not call this method, none of the settings you requested earlier will take effect.
+
+#### `func startServices()`
+
+This method should be called if your plugin needs to begin running any background services. Only two services are started at the current time. The first is a global localization algorithm, which will only run if you request that the estimation mode be set to global using `NavisensSettings.requestGlobalMode`. The second connects to a server, if you are sharing your location with other devices, and only runs if you have set a non-null host and port.
 
 
