@@ -73,3 +73,94 @@ If you want to use other libraries, make sure to add them in too. Change the `Pr
 Now we can start writing code.
 
 ## Implementing `NavisensPlugin`
+
+Now that we are done setting up, we will briefly discuss how `NavisensCore` works, and how the `NavisensPlugin` fits in with all of this.
+
+The `NavisensCore` is in charge of starting up our Navisens SDK using the provided SDK key. After it has instantiated our SDK, it begins awaiting plugins. Anytime a user wants to use a plugin, the user must invoke the function [`add(NavisensPlugin)`](https://github.com/navisens/iOS-Plugin/blob/master/navisenscore#func-addt-navisensplugin-_-navisensplugin-ttype-withparams-params-any---t). Afterwards, all control of the Navisens SDK is handed off to the plugins. This is very important! It is entirely up to the plugins system to invoke any Navisens SDK functions. While the `NavisensCore` will run the SDK, a user would need a plugin in order to set the user's location, etc.
+
+When the `NavisensCore` is requested to instantiate a new `NavisensPlugin`, it will first call the constructor of the requested plugin. Immediately afterwards, it calls the plugin's own `initialize` method, passing in any of the user's parameters or arguments.
+
+To shut down the system, `NavisensCore` will request all plugins to stop via the `stop` method, before killing the Navisens SDK.
+
+Below, we will present the `NavisensPlugin` interface. The `initialize` and `stop` methods are described below, while the remaining methods are described in the [using Navisens data and interplugin communication](#using-navisens-data-and-interplugin-communication) section.
+
+```swift
+public interface NavisensPlugin {
+  open func initialize(usingCore core: NavisensCore, andArgs args: [Any]) throws -> Bool
+  open func stop() throws -> Bool
+  open func receiveMotionDna(_ motionDna: MotionDna!) throws
+  open func receiveNetworkData(_ motionDna: MotionDna!) throws
+  open func receiveNetworkData(_ networkCode: NetworkCode, withPayload map: Dictionary<AnyHashable, Any>) throws
+  open func receivePluginData(_ tag: String, data: Any) throws
+  open func reportError(_ errorCode: ErrorCode, withMessage s: String) throws
+}
+```
+
+The lifecycle of a plugin is very simple.
+1. (External) `NavisensCore.add` is called, requesting the plugin
+2. The plugin constructor is called
+3. The plugin's `inititialize` method is called
+4. (External) A request to stop the plugin is made 
+5. The plugin's `stop` method is called
+6. All of the resources that were requested by the plugin are discontinued and released
+7. The plugin reference is dropped from the core
+
+Note that all functions will throw an error if they are called, and unimplemented. It is not necessary to implement all functions if you can guarantee they will not be used. `initialize` and `stop` are guaranteed to be called by the core, while the remaining five receivers are guaranteed *not* to be called unless the plugin requests the core for the relevant resources.
+
+#### `func initialize(usingCore core: NavisensCore, andArgs args: [Any]) throws -> Bool`
+
+The `initialize` method is guaranteed to be called shortly after the constructor is called. A reference to the `NavisensCore` is passed in. You should save a reference to this object for later use. The `args` parameter contains any arguments that were passed in by the user. These may be used to further customize the behavior of a plugin.
+
+See the [using NavisensCore](#using-navisenscore) below for details on what methods can be called from the `NavisensCore`.
+
+At the end, you must return `true` if everything was initialized correctly. If you return `false`, the core will call the `stop` function shortly afterwards, terminating the plugin lifecycle.
+
+Here are some methods of `NavisensCore` that you should call in the `init` method:
+
+* [`core.subscribe`](#func-subscribe_-plugin-navisensplugin-to-which-int) can be used to request resources, or listen for certain types of events. These events include data like the core motion statistics for user location, network data for messages from other devices, or even errors from the SDK.
+
+**Examples**
+
+If you want to subscribe to all `MotionDna` from both the current device stream, all online devices, and any errors, use this:
+
+```swift
+  core.subscribe(this, NavisensCore.MOTION_DNA | NavisensCore.NETWORK_DNA | NavisensCore.ERRORS);
+```
+
+If you do not want to subscribe to anything, you can ignore the method call. You can also do this:
+
+```swift
+  core.subscribe(this, NavisensCore.NOTHING);
+```
+
+* `core.settings` is an object used to request the core apply certain settings. The settings object can also be used to force a setting.
+
+**Examples**
+
+If you want to increase the refresh rate from 100 ms to 50 ms, you can do this:
+
+```swift
+  core.settings.requestCallbackRate(50);
+```
+
+However, if another plugin already called `core.settings.requestCallbackRate(10)`, then the above call will not do anything, since 10 ms is at least better than 50 ms.
+
+You can optionally force a state. Note that if you do so, however, the order of execution **does** matter, and should be noted in your documentation.
+
+```java
+  core.settings.overrideCallbackRate(50);
+```
+
+This call will force the state to 50 ms, even if another plugin had originally requested 10 ms.
+
+* `core.motionDna` can be used to access even lower-level settings at the base SDK. Check out the API for more information on what you can do.
+
+* [`core.applySettings()`](#func-applysettings) is used to commit all settings requested and apply them to the SDK.
+
+#### `func stop() throws -> Bool`
+
+This method will terminate a plugin. You must call `core.remove(self)` in this method so the `NavisensCore` will drop the reference to this plugin, to prevent memory leaks (unless your plugin can't be stopped at the current time).
+
+If you return `true` from this method, you must release all resources, as `NavisensCore` will drop all references of this plugin, so you want to make sure not to have any memory leaks. If you return `false`, then you are telling the user that they cannot end this plugin at the current time, and that they should take action to resolve why.
+
+
