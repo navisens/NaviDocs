@@ -268,4 +268,27 @@ This method simply commits any settings you requested (or overrode) permanently.
 
 This method should be called if your plugin needs to begin running any background services. Only two services are started at the current time. The first is a global localization algorithm, which will only run if you request that the estimation mode be set to global using `NavisensSettings.requestGlobalMode`. The second connects to a server, if you are sharing your location with other devices, and only runs if you have set a non-null host and port.
 
+## Using Navisens Data and Interplugin Communication
+
+Once your plugin is running, you will begin receiving any requested resources from subscribed streams. The following summarizes the resources you get.
+
+#### `func receiveMotionDna(_ motionDna: MotionDna!) throws`
+
+This provides the `MotionDna` resource from the current device. Check out [here](https://github.com/navisens/NaviDocs/blob/master/API.iOS.md#getters) for information on the most commonly used components of the `MotionDna` object. For more information about the callback, see [here](https://github.com/navisens/NaviDocs/blob/master/API.iOS.md#receive_-motiondna-motiondna).
+
+#### `func receiveNetworkData(_ motionDna: MotionDna!) throws`
+
+This provides the `MotionDna` resource from all other devices in the current network room, if connected to a network room. Check out [here](https://github.com/navisens/NaviDocs/blob/master/API.iOS.md#getters) for information on the most commonly used components of the `MotionDna` object. For more information about the callback, see [here](https://github.com/navisens/NaviDocs/blob/master/API.iOS.md#receivenetworkdata_-motiondna-motiondna).
+
+#### `func receiveNetworkData(_ networkCode: NetworkCode, withPayload map: Dictionary<AnyHashable, Any>) throws`
+
+This provides information when working with NetworkData, including queries for devices, raw network data, or any network-related errors. For more information, see [here](https://github.com/navisens/NaviDocs/blob/master/API.iOS.md#receivenetworkdata_-networkcode-networkcode-withpayload-map-dictionary).
+
+#### `func receivePluginData(_ tag: String, data: Any) throws`
+
+This is a unique callback that deals with communications between plugins. All plugins using this stream will receive data broadcast from any other plugin. The identifier can be used to identify what type of data is being sent, and from what plugin. It is recommended that to make your identifier unique, you prefix all of your identifiers with the identifier of your project.
+
+#### `func reportError(_ errorCode: ErrorCode, withMessage s: String) throws`
+
+This reports any errors that may occur at the SDK level. For more information about the callback, see [here](https://github.com/navisens/NaviDocs/blob/master/API.iOS.md#reporterror_-errorcode-errorcode-withmessage-s-string).
 
