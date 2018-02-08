@@ -15,7 +15,7 @@ A guide on how to create your own NavisensPlugins. Using the NavisensPlugins fra
 
 ## Publishing NavisensPlugins
 
-<sup>[Android](/Tutorials/publishing-navisensplugins.Android.md)</sup>
+<sup>[Android](/Tutorials/publishing-navisensplugins.Android.md) | [iOS](/Tutorials/publishing-navisensplugins.iOS.md)</sup>
 
 A continuation of the **creating new NavisensPlugins** guide above for if you want to publish your plugins online for others to use.
 
