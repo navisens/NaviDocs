@@ -1,5 +1,12 @@
 # Setting up MotionDNA Continuous Service Mode on Android
 
+There are now 2 ways to run our SDK in the background on Android:
+
+* ForegroundService: is the “proper” way to run a location app with the icon in the top corner signaling a service to the user
+* BackgroundService: is an alternative for when your app cannot support a foreground service (e.g. for legacy reasons). 
+
+Enabling the background service will allow our location SDK to continue running similar to having a foreground service enabled. Our recommendation is to use a foreground service whenever possible.
+
 In order to use the service mode the following entry must be added to your application's `AndroidManifest.xml` file. 
 
 ```gradle
