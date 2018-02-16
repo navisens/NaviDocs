@@ -75,6 +75,14 @@ compile 'com.navisens:navisensmaps:0.0.9'
 
 ![Add dependencies](https://github.com/navisens/NaviDocs/blob/resources/Images/Android/2.5.png)
 
+**We've updated!** Try the newest versions:
+```gradle
+compile group: "com.navisens", name: "motiondnaapi", version: "1.2.0-SNAPSHOT", changing: true
+compile 'org.altbeacon:android-beacon-library:2.+'
+compile 'com.navisens:navisenscore:3.1.0'
+compile 'com.navisens:navisensmaps:1.1.10'
+```
+
 ## 3. The Code
 
 Now that we're done setting up our environment, we can go straight to the **MainActivity** file that has been generated for us. We can find the file in the navigator on the left, or it should already be in one of the open tabs. This is what it should have so far:
