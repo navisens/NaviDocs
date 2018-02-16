@@ -12,11 +12,23 @@ Short on beer? Skip the fine print and get straight to the code! Click [here if 
 
 ## Quick Links
 
-* [Android Quickstart](/BEER.Android.md)
-* [iOS Quickstart](/BEER.iOS.md)
-* [Android API Docs](/API.Android.md)
-* [iOS API Docs](/API.iOS.md)
-* [Tutorials and Guides](/Tutorials)
+**Quickstart**: The quick and easy way for beginners of mobile app development, and those unfamiliar with our Plugins system!
+
+<sup>[Android](/BEER.Android.md) | [iOS](/BEER.iOS.md)</sup>
+
+**Documentation**: The nitty-gritty of our SDK, with extensive details and examples.
+
+<sup>[Android](/API.Android.md) | [iOS](/API.iOS.md)</sup>
+
+**Plugins**: Our Plugins system for quickly testing out ideas or new ways of using our SDK. And all of it completley open source!
+
+<sup>[Android](https://github.com/navisens/Android-Plugin) | [iOS](https://github.com/navisens/iOS-Plugin)</sup>
+
+**Tutorials**: Some of our more advanced guides and workshops for getting the most out of MotionDna.
+
+<sup>[Android and iOS](/Tutorials)</sup>
+
+-----
 
 ### What is Navisens motionDNA?
 Navisens motionDNA is a location platform designed to operate in all environments: indoors, outdoors, and underground, with zero setup and much more accurately than existing location systems. 
