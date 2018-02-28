@@ -1,15 +1,6 @@
 # NaviDocs
 How does Navisens work? Tutorials, quick starts, and extensive documentation on all our newest and latest features!
 
-### Navisens Mini Tutorial/Quickstart (aka “The Beer Test”)
-The purpose of this tutorial is to become familiar with the Navisens SDK in the time it takes you to drink approximately one standard size beer 🍺.
-
-This tutorial will give you a quick overview of Navisens, the types of applications our technology supports, explain a few navigation concepts, and get right into building an app!
-
-To get the most out of this mini tutorial, you should have some previous app development and beer drinking experience.
-
-Short on beer? Skip the fine print and get straight to the code! Click [here if you want to develop for Android](/BEER.Android.md), or [here if you want to develop for iOS](/BEER.iOS.md).
-
 ## Quick Links
 
 **Quickstart**: The quick and easy way for beginners of mobile app development, and those unfamiliar with our Plugins system!
@@ -28,7 +19,21 @@ Short on beer? Skip the fine print and get straight to the code! Click [here if 
 
 <sup>[Android and iOS](/Tutorials)</sup>
 
+* [Android Continuous Service](/Tutorials#android-continuous-service)
+* [Creating New NavisensPlugins](/Tutorials#creating-new-navisensplugins)
+* [Initializing Your Location](/Tutorials#initializing-your-location)
+* [Publishing NavisensPlugins](/Tutorials#publishing-navisensplugins)
+
 -----
+
+### Navisens Mini Tutorial/Quickstart (aka “The Beer Test”)
+The purpose of this tutorial is to become familiar with the Navisens SDK in the time it takes you to drink approximately one standard size beer 🍺.
+
+This tutorial will give you a quick overview of Navisens, the types of applications our technology supports, explain a few navigation concepts, and get right into building an app!
+
+To get the most out of this mini tutorial, you should have some previous app development and beer drinking experience.
+
+Short on beer? Skip the fine print and get straight to the code! Click [here if you want to develop for Android](/BEER.Android.md), or [here if you want to develop for iOS](/BEER.iOS.md).
 
 ### What is Navisens motionDNA?
 Navisens motionDNA is a location platform designed to operate in all environments: indoors, outdoors, and underground, with zero setup and much more accurately than existing location systems. 
