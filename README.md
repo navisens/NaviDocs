@@ -15,14 +15,16 @@ How does Navisens work? Tutorials, quick starts, and extensive documentation on 
 
 <sup>[Android](https://github.com/navisens/Android-Plugin) | [iOS](https://github.com/navisens/iOS-Plugin)</sup>
 
-**Tutorials**: Some of our more advanced guides and workshops for getting the most out of MotionDna.
+[**Tutorials**](/Tutorials): Some of our more advanced guides and workshops for getting the most out of MotionDna.
 
-<sup>[Android and iOS](/Tutorials)</sup>
+*For Android:*
+* [Android Continuous Service](/Tutorials/setting-up-continuous-service.Android.md)
+* [Creating New NavisensPlugins](/Tutorials/creating-navisensplugins.Android.md)
+* [Publishing NavisensPlugins](/Tutorials/publishing-navisensplugins.Android.md)
 
-* [Android Continuous Service](/Tutorials#android-continuous-service)
-* [Creating New NavisensPlugins](/Tutorials#creating-new-navisensplugins)
-* [Initializing Your Location](/Tutorials#initializing-your-location)
-* [Publishing NavisensPlugins](/Tutorials#publishing-navisensplugins)
+*For iOS:*
+* [Creating New NavisensPlugins](/Tutorials/creating-navisensplugins.iOS.md)
+* [Publishing NavisensPlugins](/Tutorials/publishing-navisensplugins.Android.md)
 
 -----
 
