@@ -2,12 +2,6 @@
 
 The tutorials provide a more in-depth explanation of various features of our NavisensPlugins framework. Here, you can find lower-level documentation directed at the curious or more experienced.
 
-Table of Contents:
-* [Android Continuous Service](#android-continuous-service)
-* [Creating New NavisensPlugins](#creating-new-navisensplugins)
-* [Initializing Your Location](#initializing-your-location)
-* [Publishing NavisensPlugins](#publishing-navisensplugins)
-
 ## Android Continuous Service
 
 <sup>[Android only](/Tutorials/setting-up-continuous-service.Android.md)</sup>
