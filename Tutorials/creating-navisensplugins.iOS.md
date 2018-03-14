@@ -210,9 +210,9 @@ If you want everything except the `PLUGIN_DATA` stream, you can do this too:
 
 This behaves the same as the above `subscribe` method, except that it stops providing the resources to the plugin.
 
-#### `func broadcast(_ tag: String, data: Any)`
+#### `func broadcast(_ tag: String, operation: Int, data: Any)`
 
-This method is used to communicate with other plugins. Any plugin that is currently subscribed to the resource `PLUGIN_DATA` will receive both the identifier, along with the Object array. The identifier is purely used by plugins to determine if the data being presented is something they recognize and can process. Since there is only one `PLUGIN_DATA` stream, the `tag` is designed as a secondary filter for this stream in the case that you have multiple mutually independent sets of `PLUGIN_DATA` resource-subscribing plugins.
+This method is used to communicate with other plugins. Any plugin that is currently subscribed to the resource `PLUGIN_DATA` will receive both the identifier, along with the Object array. The identifier is purely used by plugins to determine if the data being presented is something they recognize and can process. Since there is only one `PLUGIN_DATA` stream, the `tag` is designed as a secondary filter for this stream in the case that you have multiple mutually independent sets of `PLUGIN_DATA` resource-subscribing plugins. The operation can be used to further specify a request of identify the data.
 
 #### `var motionDna: MotionDnaService?`
 
@@ -284,9 +284,9 @@ This provides the `MotionDna` resource from all other devices in the current net
 
 This provides information when working with NetworkData, including queries for devices, raw network data, or any network-related errors. For more information, see [here](https://github.com/navisens/NaviDocs/blob/master/API.iOS.md#receivenetworkdata_-networkcode-networkcode-withpayload-map-dictionary).
 
-#### `func receivePluginData(_ tag: String, data: Any) throws`
+#### `func receivePluginData(_ tag: String, operation: Int, data: Any) throws`
 
-This is a unique callback that deals with communications between plugins. All plugins using this stream will receive data broadcast from any other plugin. The identifier can be used to identify what type of data is being sent, and from what plugin. It is recommended that to make your identifier unique, you prefix all of your identifiers with the identifier of your project.
+This is a unique callback that deals with communications between plugins. All plugins using this stream will receive data broadcast from any other plugin. The identifier can be used to identify what type of data is being sent, and from what plugin. It is recommended that to make your identifier unique, you prefix all of your identifiers with the identifier of your project. The operation can be used to further specify the data packet or request type.
 
 #### `func reportError(_ errorCode: ErrorCode, withMessage s: String) throws`
 
