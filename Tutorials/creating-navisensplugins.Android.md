@@ -47,7 +47,7 @@ In our gradle buildscripts, we need to include all of the Navisens dependencies,
 Just like any other project that makes use of our `NavisensPlugin`s system, you must include the dependencies for the Navisens SDK, and `NavisensCore`.
 
 1. Open up your **project's gradle buildscript**. If you aren't sure how to do this, it is recommended you check out the [Beer Test Tutorial](/BEER.Android.md) for a picture-by-picture tutorial on creating a project and setting up your dependencies.
-2. Add the following into your **buildscript repositories**:
+2. Add the following into your **allprojects repositories**:
 
 ```gradle
 maven {
