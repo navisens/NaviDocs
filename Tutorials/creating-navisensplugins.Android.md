@@ -105,7 +105,9 @@ The lifecycle of a plugin is very simple.
 6. All of the resources that were requested by the plugin are discontinued and released
 7. The plugin reference is dropped from the core
 
-#### `boolean init(NavisensCore core, Object[] args)`
+-----
+
+### `boolean init(NavisensCore core, Object[] args)`
 
 The `init` method is guaranteed to be called shortly after the constructor is called. A reference to the `NavisensCore` is passed in. You should save a reference to this object for later use. The `args` parameter contains any arguments that were passed in by the user. These may be used to further customize the behavior of a plugin.
 
@@ -115,7 +117,9 @@ At the end, you must return `true` if everything was initialized correctly. If y
 
 Here are some methods of `NavisensCore` that you should call in the `init` method:
 
-* [`core.subscribe`](#void-subscribenavisensplugin-plugin-int-which) can be used to request resources, or listen for certain types of events. These events include data like the core motion statistics for user location, network data for messages from other devices, or even errors from the SDK.
+#### [`core.subscribe`](#void-subscribenavisensplugin-plugin-int-which)
+
+[`core.subscribe`](#void-subscribenavisensplugin-plugin-int-which) can be used to request resources, or listen for certain types of events. These events include data like the core motion statistics for user location, network data for messages from other devices, or even errors from the SDK.
 
 **Examples**
 
@@ -131,7 +135,9 @@ If you do not want to subscribe to anything, you can ignore the method call. You
   core.subscribe(this, NavisensCore.NOTHING);
 ```
 
-* [`core.getSettings`](#navisenssettings-getsettings) is used to request the core apply certain settings. The settings object can also be used to force a setting.
+#### [`core.getSettings`](#navisenssettings-getsettings)
+
+[`core.getSettings`](#navisenssettings-getsettings) is used to request certain settings. The settings object can also be used to force a setting.
 
 **Examples**
 
@@ -151,11 +157,17 @@ You can optionally force a state. Note that if you do so, however, the order of 
 
 This call will force the state to 50 ms, even if another plugin had originally requested 10 ms.
 
-* [`core.getMotionDna()`](#motiondnaappliaction-getmotiondna) can be used to access even lower-level settings at the base SDK. Check out the API for more information on what you can do.
+#### [`core.getMotionDna()`](#motiondnaapplication-getmotiondna)
 
-* [`core.applySettings()`](#void-applysettings) is used to commit all settings requested and apply them to the SDK.
+[`core.getMotionDna()`](#motiondnaapplication-getmotiondna) can be used to access even lower-level settings at the base SDK. Check out the API for more information on what you can do.
 
-#### `boolean stop()`
+#### [`core.applySettings()`](#void-applysettings)
+
+[`core.applySettings()`](#void-applysettings) is used to commit all setting requests and apply them to the SDK. You should call this after you are done requesting settings.
+
+-----
+
+### `boolean stop()`
 
 This method will terminate a plugin. You must call `core.remove(this)` in this method so the `NavisensCore` will drop the reference to this plugin, to prevent memory leaks (unless your plugin can't be stopped at the current time).
 
