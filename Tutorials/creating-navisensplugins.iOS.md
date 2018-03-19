@@ -107,7 +107,7 @@ The lifecycle of a plugin is very simple.
 
 Note that all functions will throw an error if they are called, and unimplemented. It is not necessary to implement all functions if you can guarantee they will not be used. `initialize` and `stop` are guaranteed to be called by the core, while the remaining five receivers are guaranteed *not* to be called unless the plugin requests the core for the relevant resources.
 
-#### `func initialize(usingCore core: NavisensCore, andArgs args: [Any]) throws -> Bool`
+### `func initialize(usingCore core: NavisensCore, andArgs args: [Any]) throws -> Bool`
 
 The `initialize` method is guaranteed to be called shortly after the constructor is called. A reference to the `NavisensCore` is passed in. You should save a reference to this object for later use. The `args` parameter contains any arguments that were passed in by the user. These may be used to further customize the behavior of a plugin.
 
@@ -117,7 +117,9 @@ At the end, you must return `true` if everything was initialized correctly. If y
 
 Here are some methods of `NavisensCore` that you should call in the `init` method:
 
-* [`core.subscribe`](#func-subscribe_-plugin-navisensplugin-to-which-int) can be used to request resources, or listen for certain types of events. These events include data like the core motion statistics for user location, network data for messages from other devices, or even errors from the SDK.
+#### [`core.subscribe`](#func-subscribe_-plugin-navisensplugin-to-which-int)
+
+[`core.subscribe`](#func-subscribe_-plugin-navisensplugin-to-which-int) can be used to request resources, or listen for certain types of events. These events include data like the core motion statistics for user location, network data for messages from other devices, or even errors from the SDK.
 
 **Examples**
 
@@ -133,7 +135,9 @@ If you do not want to subscribe to anything, you can ignore the method call. You
   core.subscribe(self, to: NavisensCore.NOTHING);
 ```
 
-* `core.settings` is an object used to request the core apply certain settings. The settings object can also be used to force a setting.
+#### `core.settings`
+
+`core.settings` is an object used to request the core apply certain settings. The settings object can also be used to force a setting.
 
 **Examples**
 
@@ -147,17 +151,23 @@ However, if another plugin already called `core.settings.requestCallbackRate(10)
 
 You can optionally force a state. Note that if you do so, however, the order of execution **does** matter, and should be noted in your documentation.
 
-```java
+```swift
   core.settings.overrideCallbackRate(50);
 ```
 
 This call will force the state to 50 ms, even if another plugin had originally requested 10 ms.
 
-* `core.motionDna` can be used to access even lower-level settings at the base SDK. Check out the API for more information on what you can do.
+#### `core.motionDna`
 
-* [`core.applySettings()`](#func-applysettings) is used to commit all settings requested and apply them to the SDK.
+`core.motionDna` can be used to access even lower-level settings at the base SDK. Check out the API for more information on what you can do.
 
-#### `func stop() throws -> Bool`
+#### [`core.applySettings()`](#func-applysettings)
+
+[`core.applySettings()`](#func-applysettings) is used to commit all settings requested and apply them to the SDK. You should call this function after you are done requesting settings.
+
+-----
+
+### `func stop() throws -> Bool`
 
 This method will terminate a plugin. You must call `core.remove(self)` in this method so the `NavisensCore` will drop the reference to this plugin, to prevent memory leaks (unless your plugin can't be stopped at the current time).
 
