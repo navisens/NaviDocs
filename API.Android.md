@@ -68,6 +68,20 @@ This binds your `MotionDnaInterface` to the SDK, so you can receive event inform
 **Params**
 The parameter is an instance of the custom class you created which implements `MotionDnaInterface`.
 
+Make sure your `MotionDnaInterface` implements all the required methods. There are two required methods (shown below) that further bind the interface to your application's activity, so MotionDna is able to retrieve the necessary permissions and capabilities. They should be implemented as follows:
+
+```java
+@Override
+    public Context getAppContext() {
+        return getApplicationContext();
+}
+
+@Override
+    public PackageManager getPkgManager() {
+        return getPackageManager();
+}
+```
+
 #### `void runMotionDna(String devkey)`
 This functions starts up the SDK. You must pass in a valid developer's key in order for the SDK to function. IF the key has expired or there are other errors, you may receive those errors through the [`reportError()`](#void-reporterrorerrorcode-errorcode-string-errordescription) callback route.
 
