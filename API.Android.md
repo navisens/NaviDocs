@@ -411,6 +411,7 @@ The `absoluteAltitudeUncertainty` is the altitude uncertainty, which takes into 
 > - **`void addFloorNumberAndHeight(int floor, double height)`**
 >   - Appends a floor number with its respective height in meters to a vector that we use internally and correlate it to the current internal altitude measurements and output the proper floor based on the floors and heights you have inputted in our core.
 >   - Then the `.getLocation().floor` outputted will be calculated using the floor numbers and heights you have inputted into our core.
+>   - Note: Please enter the floor heights linearly starting from floor 0, then 1, 2, etc.
 > - **`void setAverageFloorHeight(double floorHeight)`**
 >   - Sets the average floor height we use to calculate the floor transitions internally, our default value is 4.5. When an averageFloorHeight is inputted this will override our 4.5m default value and use the value you have entered to measure the floor fluctuations. If all floors have the same height you can simply set the average floor height. 
 > - **`void setFloorNumber(int floor)`**
