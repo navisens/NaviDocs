@@ -137,15 +137,15 @@ Allow our SDK to record data and use it to enhance our estimation system.
 Enable or disable file logging.
 
 ##### Tutorial: Downloading Logs
-Downloading these logs is a very good way of providing debug information, should there be an issue with our SDK. For iOS, first make sure you have Xcode set up. Open it up, and make sure your device is plugged in into your computer.
-
-1. Go to the top and click on the **Window** tab.
-2. Open up the **Devices and Simulators** window from the menu.
-3. Select the **Devices** tab at the top.
-4. Under **Installed Apps**, select the relevant app.
-5. Click on the *Gear Icon* to open up settings.
-6. Click on **Download Container**. This may take a while.
-7. After it is done, right click on the container and click **Show Package Contents**.
+> Downloading these logs is a very good way of providing debug information, should there be an issue with our SDK. For iOS, first make sure you have Xcode set up. Open it up, and make sure your device is plugged in into your computer.
+> 
+> 1. Go to the top and click on the **Window** tab.
+> 2. Open up the **Devices and Simulators** window from the menu.
+> 3. Select the **Devices** tab at the top.
+> 4. Under **Installed Apps**, select the relevant app.
+> 5. Click on the *Gear Icon* to open up settings.
+> 6. Click on **Download Container**. This may take a while.
+> 7. After it is done, right click on the container and click **Show Package Contents**.
 
 #### `setCallbackUpdateRateInMs(_ rate: Double)`
 Tell our SDK how often to provide estimation results. Note that there is a limit on how fast our SDK can provide results, but usually setting a slower update rate improves results. Setting the rate to `0ms` will output estimation results at our maximum rate.
@@ -366,24 +366,24 @@ The `absoluteAltitude` is the height of current position above mean sea level (o
 The `absoluteAltitudeUncertainty` is the altitude uncertainty, which takes into consideration the average deviations from different phone models barometric measurements, the availability of recent weather station measurements, and the usefulness of the data provided given the distance between the weather station and the user.
 
 ##### Tutorial: Setting Floor Number
-
-There are three functions for configuring the user floor number. Note that these functions are not listed under the **Control** section.
-
-- **`addFloorNumber(_ floor: Int, AndHeight height: Double)`**
-  - Appends a floor number with its respective height in meters to a vector that we use internally and correlate it to the current internal altitude measurements and output the proper floor based on the floors and heights you have inputted in our core.
-  - Then the `.getLocation().floor` outputted will be calculated using the floor numbers and heights you have inputted into our core.
-- **`setAverageFloorHeight(_ floorHeight: Double)`**
-  - Sets the average floor height we use to calculate the floor transitions internally, our default value is 4.5. When an averageFloorHeight is inputted this will override our 4.5m default value and use the value you have entered to measure the floor fluctuations. If all floors have the same height you can simply set the average floor height. 
-- **`setFloorNumber(_ floor: Int)`**
-  - This method allows you to enter the current floor you are on, which overrides our internal estimate. We start measuring floor fluctuations from the floor you have inputted using the barometric data we receive from the device.
-
-Known limitations:
-
-If the floor height differs significantly from our default values the floor fluctuations will start reporting inaccuracies due to our default value, if you tweak this default value based on a known floor height of the building you are testing in you will be receiving better results.
-
-Behavior:
-
-If you initialize with setLocationNavisens, Navisens will manage global initialization of your start position and will also override the floor number and set to zero when we detect that the user is outdoors at street level. 
+> 
+> There are three functions for configuring the user floor number. Note that these functions are not listed under the **Control** section.
+> 
+> - **`addFloorNumber(_ floor: Int, AndHeight height: Double)`**
+>   - Appends a floor number with its respective height in meters to a vector that we use internally and correlate it to the current internal altitude measurements and output the proper floor based on the floors and heights you have inputted in our core.
+>   - Then the `.getLocation().floor` outputted will be calculated using the floor numbers and heights you have inputted into our core.
+> - **`setAverageFloorHeight(_ floorHeight: Double)`**
+>   - Sets the average floor height we use to calculate the floor transitions internally, our default value is 4.5. When an averageFloorHeight is inputted this will override our 4.5m default value and use the value you have entered to measure the floor fluctuations. If all floors have the same height you can simply set the average floor height. 
+> - **`setFloorNumber(_ floor: Int)`**
+>   - This method allows you to enter the current floor you are on, which overrides our internal estimate. We start measuring floor fluctuations from the floor you have inputted using the barometric data we receive from the device.
+> 
+> Known limitations:
+> 
+> If the floor height differs significantly from our default values the floor fluctuations will start reporting inaccuracies due to our default value, if you tweak this default value based on a known floor height of the building you are testing in you will be receiving better results.
+>
+> Behavior:
+> 
+> If you initialize with setLocationNavisens, Navisens will manage global initialization of your start position and will also override the floor number and set to zero when we detect that the user is outdoors at street level. 
 
 #### `getMotion() -> Motion`
 Gets some more motion statistics, which provide the step frequency and the motion type. The motion type can be `STATIONARY`, `FIDGETING`, or `FORWARD`.
