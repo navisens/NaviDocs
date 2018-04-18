@@ -1,6 +1,8 @@
 # NaviDocs
 How does Navisens work? Tutorials, quick starts, and extensive documentation on all our newest and latest features!
 
+*Not sure where to start? Check out the **Quickstart** for [Android](/BEER.Android.md) and [iOS](/BEER.iOS.md)!*
+
 ## Quick Links
 
 **Quickstart**: The quick and easy way for beginners of mobile app development, and those unfamiliar with our Plugins system!
@@ -18,6 +20,7 @@ How does Navisens work? Tutorials, quick starts, and extensive documentation on 
 [**Tutorials**](/Tutorials): Some of our more advanced guides and workshops for getting the most out of MotionDna.
 
 *Android:*
+* **Recommended**: [Using and Making Plugins (for groups)](/Tutorials/navihelpme.Android.md)
 * [Android Continuous Service](/Tutorials/setting-up-continuous-service.Android.md)
 * [Creating New NavisensPlugins](/Tutorials/creating-navisensplugins.Android.md)
 * [Publishing NavisensPlugins](/Tutorials/publishing-navisensplugins.Android.md)
