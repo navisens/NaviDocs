@@ -76,3 +76,13 @@ The simplest way to use the motionDNA SDK is in relative positioning mode. This 
 
 The global positioning mode is designed as a direct replacement for GPS, and provides location coordinates in a global frame with positions provided as (latitude, longitude). To operate in this mode, a global (latitude, longitude) position must be set as a start position. There are several different ways this can be performed. It could be as simple as setting the start position to the GPS location provided by the phone, or by setting the start position based on a (latitude, longitude) which is associated with a beacon. The preferred method is to use a special feature of the motionDNA SDK whereby the start position is automatically determined by fusing information from the motionDNA relative trajectory along with global sensor information (GPS), after taking several measurements while the user is walking (requires the user to walk around 1-2 blocks outdoors). 
 
+### Helping out Navisens!
+Also, if you can provide us a dataset we can test it prior to releasing the SDK to make sure we’ve improved. If you can do that, I’d ask that you follow a few steps:
+* Choose a start point, and when you complete the dataset, make sure to return as close as possible to the start point so that the beginning and end position is the same.
+* When walking, please follow a consistent pattern of walking rather than mixing walking and stopping or other motions. This helps us analyze the data. If you do need to stop, it’s nicer if it’s a distinct stop for several seconds before you start walking again.
+* Walking a longer distance is preferred.
+* Walking a path which can be measured relative to a reference point helps, e.g. walking the entire length of a building and then turn around and walk back the same path.
+* Take a screenshot of the results you see in the app and send it to us
+* If it’s easier, you can use our demo app on the iOS App Store. We recently updated the app with a tutorial and UI refresh to make it easier to set a start position on Google Maps. We also have a dataset upload button so you can easily send us the dataset. You can find the app here: https://itunes.apple.com/us/app/navisens-maps/id1155641105?mt=8
+* Don’t forget to return back to the start point before you upload the dataset to us.
+* Also if you include a general description (if you can remember) of what you performed, that can also help.
