@@ -72,6 +72,8 @@ There are many ways to control the SDK. Here, we have split control methods into
 	* [`setLocationLatitude(_ latitude: Double, longitude: Double, andHeadingInDegrees heading: Double)`](#setlocationlatitude_-latitude-double=longitude-double-andheadingindegrees-heading-double)
 	* [`setHeadingMagInDegrees()`](#setheadingmagindegrees)
 	* [`setHeadingInDegrees(_ heading: Double)`](#setheadingindegrees_-heading-double)
+	* [`setCartesianOffsetInMetersX(_ x: Double, Y y: Double)`](#setcartesianoffsetinmetersx_-x-double-y-y-double)
+	* [`setLocalHeadingOffsetInDegrees(_ heading: Double)`](#setlocalheadingoffsetindegrees_-heading-double)
 * Location Sharing
 	* [`startUDP(...)`](#startudp)
 	* [`stopUDP()`](#stopudp)
@@ -209,6 +211,22 @@ It is advised if you are using global heading, to manually set this, or allow th
 
 **Params**
 The `heading`, as a rotation in degrees.
+
+#### `setCartesianOffsetInMetersX(_ x: Double, Y y: Double)`
+Adds a an offset to both and y axes. So if you are running the SDK in the local XY frame, you can start at custom XY positions.
+
+**Params**
+The `x` and `y` offset in meters.
+
+#### `setLocalHeadingOffsetInDegrees(_ heading: Double)`
+Sets the local heading offset in degrees. The heading offsets you input get accumulated. You can reset the offset by calling `resetLocalHeading`.
+
+**Params**
+The `heading`, as a counterclockwise rotation in degrees.
+
+##### Tutorial: Running the SDK in the local frame.
+> To run our SDK without any global reference, its simple, you only need to call `runMotionDna`, without any global input call. Since the system doesn't receive any user input or activation of the Navisens automatic initialization input (e.g. `setLocationNavisens`), it assumes the estimation is being run in the local XY frame.
+> When receiving user user motionDna, you can access the `localLocation` and `localHeading` attributes.
 
 -----
 #### `startUDP(...)`
