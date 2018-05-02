@@ -213,7 +213,7 @@ It is advised if you are using global heading, to manually set this, or allow th
 The `heading`, as a rotation in degrees.
 
 #### `setCartesianOffsetInMetersX(_ x: Double, Y y: Double)`
-Adds a an offset to both and y axes. So if you are running the SDK in the local XY frame, you can start at custom XY positions.
+Adds an offset to both x and y axes. So if you are running the SDK in the local XY frame, you can start at custom XY positions.
 
 **Params**
 The `x` and `y` offset in meters.
