@@ -116,6 +116,8 @@ There are many ways to control the SDK. Here, we have split control methods into
 	* [`void setLocationLatitudeLongitudeAndHeadingInDegrees(double lat, double lng, double angle)`](#void-setlocationlatitudelongitudeandheadingindegreesdouble-lat-double-lng-double-angle)
 	* [`void setHeadingMagInDegrees()`](#void-setheadingmagindegrees)
 	* [`void setHeadingInDegrees(double heading)`](#void-setheadingindegreesdouble-heading)
+	* [`void setCartesianOffsetInMetersXY(double x, double y)`](#void-setcartesianoffsetinmetersxydouble-x-double-y)
+	* [`void setLocalHeadingOffsetInDegrees(double heading)`](#void-setlocalheadingoffsetindegreesdouble-heading)
 * Location Sharing
 	* [`void startUDP(...)`](#void-startudp)
 	* [`void stopUDP()`](#void-stopudp)
@@ -240,6 +242,22 @@ It is advised if you are using global heading, to manually set this, or allow th
 
 **Params**
 The `heading`, as a rotation in degrees.
+
+#### `void setCartesianOffsetInMetersXY(double x, double y)`
+Adds a an offset to both and y axes. So if you are running the SDK in the local XY frame, you can start at custom XY positions.
+
+**Params**
+The `x` and `y` offset in meters.
+
+#### `void setLocalHeadingOffsetInDegrees(double heading)`
+Sets the local heading offset in degrees. The heading offsets you input get accumulated. You can reset the offset by calling `resetLocalHeading`.
+
+**Params**
+The `heading`, as a counterclockwise rotation in degrees.
+
+##### Tutorial: Running the SDK in the local frame.
+> To run our SDK without any global reference, its simple, you only need to call `runMotionDna`, without any global input call. Since the system doesn't receive any user input or activation of the Navisens automatic initialization input (e.g. `setLocationNavisens`), it assumes the estimation is being run in the local XY frame.
+> When receiving user user motionDna, you can access the `localLocation` and `localHeading` attributes.
 
 -----
 #### `void startUDP(...)`
