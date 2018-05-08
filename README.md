@@ -83,6 +83,6 @@ To help us out, you can provide us with a dataset you have recorded which we wil
 * Walking a longer distance is preferred.
 * Walking a path which can be measured relative to a reference point helps, e.g. walking the entire length of a building and then turn around and walk back the same path.
 * Take a screenshot of the results you see in the app and send it to us
-* If it’s easier, you can use our demo app on the iOS App Store. We recently updated the app with a tutorial and UI refresh to make it easier to set a start position on Google Maps. We also have a dataset upload button so you can easily send us the dataset. You can find the app here: https://itunes.apple.com/us/app/navisens-maps/id1155641105?mt=8
+* If it’s easier, you can use our demo app on the iOS and Android app store. We recently updated the app with a tutorial and UI refresh to make it easier to set a start position on Google Maps. We also have a dataset upload button so you can easily send us the dataset. You can find the iOS app here https://itunes.apple.com/us/app/navisens-maps/id1155641105?mt=8 and the Android app here https://play.google.com/store/apps/details?id=navisens.motiondna
 * Don’t forget to return back to the start point before you upload the dataset to us.
 * Also if you include a general description (if you can remember) of what you performed, that can also help.
