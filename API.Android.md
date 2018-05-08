@@ -205,7 +205,7 @@ The `PowerConsumptionMode` is one of the following:
 
 -----
 #### `void setLocationNavisens()`
-Use our internal algorithm to compute your location. Solving location may take some time, and may require the user to walk around a bit.
+Use our internal algorithm to automatically compute your location and heading by fusing inertial estimation with global location information. This is designed for outdoor use and will not compute a position when indoors. Solving location requires the user to be walking outdoors. Depending on the quality of the global location, this may only require as little as 10 meters of walking outdoors.
 
 While we are computing the user's location, you can use the `locationStatus` of [`getLocation()`](#location-getlocation) to determine when an accurate location has been determined.
 
