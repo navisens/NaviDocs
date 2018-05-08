@@ -58,6 +58,7 @@ There are many ways to control the SDK. Here, we have split control methods into
 	* [`pause()`](#pause)
 	* [`stop()`](#stop)
 	* [`resetLocalEstimation()`](#resetlocalestimation)
+	* [`resetLocalHeading()`](#resetlocalheading)
 * SDK Settings
 	* [`setARModeEnabled(_ state: Bool)`](#setarmodeenabled_-state-bool)
 	* [`setBackgroundModeEnabled(_ state: Bool)`](#setbackgroundmodeenabled_-state-bool)
@@ -112,6 +113,9 @@ Completely shut down all estimation in our SDK, and release any resources that a
 
 #### `resetLocalEstimation()`
 Resets the cartesian coordinates back to the origin `(0, 0)`, and sets the heading to `0` degrees.
+
+#### `resetLocalHeading()`
+Resets just the heading to 0 degrees.
 
 -----
 #### `setARModeEnabled(_ state: Bool)`
