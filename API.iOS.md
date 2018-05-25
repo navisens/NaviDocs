@@ -62,6 +62,7 @@ There are many ways to control the SDK. Here, we have split control methods into
 * SDK Settings
 	* [`setARModeEnabled(_ state: Bool)`](#setarmodeenabled_-state-bool)
 	* [`setBackgroundModeEnabled(_ state: Bool)`](#setbackgroundmodeenabled_-state-bool)
+	* [`setBackpropagationEnabled(_ state: Bool)`](#setbackpropagationenabled_-state-bool)
 	* [`setBinaryFileLoggingEnabled(_ state: Bool)`](#setbinaryfileloggingenabled_-state-bool)
 	* [`setCallbackUpdateRateInMs(_ rate: Double)`](#setcallbackupdaterateinms_-rate-double)
 	* [`setNetworkUpdateRateInMs(_ rate: Double)`](#setnetworkupdaterateinms_-rate-double)
@@ -135,6 +136,20 @@ Furthermore, if you are using iOS 11+, then you should also go to your `AppDeleg
 
 **Params**
 Enable or disable background location updates.
+
+#### `setBackpropagationEnabled(_ state: Bool)`
+
+When setLocationNavisens is enabled and setBackpropagationEnabled is called, once Navisens has initialized you will not only get the current position, but also a set of latitude longitude coordinates which lead back to the start position (where the SDK/App was started). This is useful to determine which building and even where inside a building the person started, or where the person exited a vehicle (e.g. the vehicle parking  spot or the location of a drop-off).
+
+The historical trajectory of points will be ordered as follows: Point(t-n), Point(t-2), Point(t-1), Point(t-0)
+So you will receive all the points from the past with the appropriate timestamps, until you get to your current position.
+
+```swift
+  MotionDnaSDK.enableBackpropagation()
+```
+
+**Params**
+Enable or disable location back propagation.
 
 #### `setBinaryFileLoggingEnabled(_ state: Bool)`
 Allow our SDK to record data and use it to enhance our estimation system.
