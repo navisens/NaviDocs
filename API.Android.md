@@ -106,6 +106,7 @@ There are many ways to control the SDK. Here, we have split control methods into
 * SDK Settings
 	* [`void setARModeEnabled(boolean mode)`](#void-setarmodeenabledboolean-mode)
 	* [`void setBinaryFileLoggingEnabled(boolean state)`](#void-setbinaryfileloggingenabledboolean-state)
+	* [`void setBackpropagationEnabled(boolean state)`](#void-setbackpropagationenabled-state)
 	* [`void setCallbackUpdateRateInMs(double rate)`](#void-setcallbackupdaterateinmsdouble-rate)
 	* [`void setNetworkUpdateRateInMs(double rate)`](#void-setnetworkupdaterateinmsdouble-rate)
 	* [`void setPowerMode(PowerConsumptionMode mode)`](#void-setpowermodepowerconsumptionmode-mode)
@@ -172,6 +173,15 @@ Allow our SDK to record data and use it to enhance our estimation system.
 
 **Params**
 Enable or disable file logging.
+
+#### `void setBackpropagationEnabled(boolean state)`
+When setLocationNavisens is enabled and setBackpropagationEnabled is called, once Navisens has initialized you will not only get the current position, but also a set of latitude longitude coordinates which lead back to the start position (where the SDK/App was started). This is useful to determine which building and even where inside a building the person started, or where the person exited a vehicle (e.g. the vehicle parking spot or the location of a drop-off).
+
+The historical trajectory of points will be ordered as follows: Point(t-n), Point(t-2), Point(t-1), Point(t-0)
+So you will receive all the points from the past with the appropriate timestamps, until you get to your current position.
+
+**Params**
+Enable or disable back propagation.
 
 ##### Tutorial: Downloading Logs
 > Downloading these logs is a very good way of providing debug information, should there be an issue with our SDK. On Android, this is very easily done. First, make sure you have the "Android Debug Bridge" or `adb` Android Platform Tool downloaded. Once you have it set up correctly, plug in your Android device to a computer. On the computer, open a command terminal and run the following command:
@@ -375,6 +385,7 @@ These are methods of the `MotionDna` object, and are used to get data from these
 * [`String getDeviceName()`](#string-getdevicename)
 * [`MotionStatistics getMotionStatistics()`](#motionstatistics-getmotionstatistics)
 * [`OrientationQuaternion getOrientationQuaternion()`](#orientationquaternion-getorientationquaternion)
+* [`Timestamp getTimestamp()`](#timestamp-gettimestamp)
 
 #### `Attitude getAttitude()`
 Gets the attitude of the current device. Attitude contains the following attributes:
@@ -457,3 +468,12 @@ Gets some motion statistics. These report the aggregate percentage of time spent
 
 #### `OrientationQuaternion getOrientationQuaternion()`
 Gets the look direction of the device. This can be useful for rendering applications. If you are dealing with augmented reality, make sure to call `setARModeEnabled(true)` to enable AR mode so the quaternion is broadcast in realtime.
+
+#### `Timestamp getTimestamp()`
+This timestamp represents the time at which the packet arrived, the time frame is with respect to when the phone last booted up.
+Based on your configuration (e.g. PowerConsumptionMode.PERFORMANCE/MEDIUM_CONSUMPTION/LOW_CONSUMPTION), 
+you will receive MotionDna events at different intervals:
+- PERFORMANCE: 0.04s intervals
+- MEDIUM_CONSUMPTION: 0.08s intervals
+- LOW_CONSUMPTION: 0.16s intervals
+
