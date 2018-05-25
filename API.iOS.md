@@ -139,7 +139,7 @@ Enable or disable background location updates.
 
 #### `setBackpropagationEnabled(_ state: Bool)`
 
-When setLocationNavisens is enabled and setBackpropagationEnabled is called, once Navisens has initialized you will not only get the current position, but also a set of latitude longitude coordinates which lead back to the start position (where the SDK/App was started). This is useful to determine which building and even where inside a building the person started, or where the person exited a vehicle (e.g. the vehicle parking  spot or the location of a drop-off).
+When setLocationNavisens is enabled and setBackpropagationEnabled is called, once Navisens has initialized you will not only get the current position, but also a set of latitude longitude coordinates which lead back to the start position (where the SDK/App was started). This is useful to determine which building and even where inside a building the person started, or where the person exited a vehicle (e.g. the vehicle parking  spot or the location of a drop-off).
 
 The historical trajectory of points will be ordered as follows: Point(t-n), Point(t-2), Point(t-1), Point(t-0)
 So you will receive all the points from the past with the appropriate timestamps, until you get to your current position.
