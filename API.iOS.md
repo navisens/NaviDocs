@@ -442,3 +442,8 @@ Gets the look direction of the device. This can be useful for rendering applicat
 
 #### `getTimestamp() -> Timestamp`
 This timestamp represents the time at which the packet arrived, the time frame is with respect to when the phone last booted up.
+Based on your configuration (e.g. PowerConsumptionMode.PERFORMANCE/MEDIUM_CONSUMPTION/LOW_CONSUMPTION), 
+you will receive MotionDna events at different intervals:
+- PERFORMANCE: 0.04s intervals
+- MEDIUM_CONSUMPTION: 0.08s intervals
+- LOW_CONSUMPTION: 0.16s intervals
