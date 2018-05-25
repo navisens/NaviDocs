@@ -355,6 +355,8 @@ These are methods of the `MotionDna` object, and are used to get data from these
 * [`getDeviceName() -> String`](#getdevicename---string)
 * [`getMotionStatistics() -> MotionStatistics`](#getmotionstatistics---motionstatistics)
 * [`getQuaternion() -> OrientationQuaternion`](#getquaternion---orientationquaternion)
+* [`getTimestamp() -> Timestamp`](#gettimestamp---timestamp)
+
 
 #### `getAttitude() -> Attitude`
 Gets the attitude of the current device. Attitude contains the following attributes:
@@ -437,3 +439,6 @@ Gets some motion statistics. These report the aggregate percentage of time spent
 
 #### `getOrientationQuaternion() -> OrientationQuaternion`
 Gets the look direction of the device. This can be useful for rendering applications. If you are dealing with augmented reality, make sure to call `setARModeEnabled(true)` to enable AR mode so the quaternion is broadcast in realtime.
+
+#### `getTimestamp() -> Timestamp`
+This timestamp represents the time at which the packet arrived, the time frame is with respect to when the phone last booted up.
