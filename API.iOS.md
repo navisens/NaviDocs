@@ -339,6 +339,7 @@ Report any errors of the estimation or internal SDK. There are five possible err
 * `ERROR_SENSOR_MISSING`
 * `ERROR_SDK_EXPIRED`
 * `ERROR_PERMISSION`
+* `WRONG_FLOOR_INPUT`
 
 The errors are self-explanatory, and the error description can be printed to gain further information on what caused the error. The most important error that should be handled is the permissions error, as this is the only error that is really relevant to the user. The other errors may be handled by simply shutting down the SDK.
 
