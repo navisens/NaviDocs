@@ -105,8 +105,8 @@ There are many ways to control the SDK. Here, we have split control methods into
 	* [`void resetLocalHeading()`](#void-resetlocalheading)
 * SDK Settings
 	* [`void setARModeEnabled(boolean mode)`](#void-setarmodeenabledboolean-mode)
+	* [`void setBackpropagationEnabled(boolean state)`](#void-setbackpropagationenabledboolean-state)
 	* [`void setBinaryFileLoggingEnabled(boolean state)`](#void-setbinaryfileloggingenabledboolean-state)
-	* [`void setBackpropagationEnabled(boolean state)`](#void-setbackpropagationenabled-state)
 	* [`void setCallbackUpdateRateInMs(double rate)`](#void-setcallbackupdaterateinmsdouble-rate)
 	* [`void setNetworkUpdateRateInMs(double rate)`](#void-setnetworkupdaterateinmsdouble-rate)
 	* [`void setPowerMode(PowerConsumptionMode mode)`](#void-setpowermodepowerconsumptionmode-mode)
@@ -168,17 +168,6 @@ Enables AR mode. AR mode publishes orientation quaternion at a higher rate.
 **Params**
 Enable or disable AR mode.
 
-#### `void setBinaryFileLoggingEnabled(boolean state)`
-Allow our SDK to record data and use it to enhance our estimation system.
-All of our .nav files get recorded to: /sdcard/MotionDna/Logs/
-You can download the .nav files by running this command:
-adb pull /sdcard/MotionDna/Logs/
-Or, if you know the name of the file you are looking for:
-adb pull /sdcard/MotionDna/Logs/nav_of_file.nav
-
-**Params**
-Enable or disable file logging.
-
 #### `void setBackpropagationEnabled(boolean state)`
 When setLocationNavisens is enabled and setBackpropagationEnabled is called, once Navisens has initialized you will not only get the current position, but also a set of latitude longitude coordinates which lead back to the start position (where the SDK/App was started). This is useful to determine which building and even where inside a building the person started, or where the person exited a vehicle (e.g. the vehicle parking spot or the location of a drop-off).
 
@@ -188,12 +177,23 @@ So you will receive all the points from the past with the appropriate timestamps
 **Params**
 Enable or disable back propagation.
 
+#### `void setBinaryFileLoggingEnabled(boolean state)`
+Allow our SDK to record data and use it to enhance our estimation system.
+
+**Params**
+Enable or disable file logging.
+
 ##### Tutorial: Downloading Logs
 > Downloading these logs is a very good way of providing debug information, should there be an issue with our SDK. On Android, this is very easily done. First, make sure you have the "Android Debug Bridge" or `adb` Android Platform Tool downloaded. Once you have it set up correctly, plug in your Android device to a computer. On the computer, open a command terminal and run the following command:
 > 
 > `adb pull /sdcard/MotionDna/Logs`
 > 
 > This will pull the log files and place them in the current directory. You may add an additional argument to specify where you want to put the logs to.
+> 
+> Or, if you know the name of the file you are looking for:
+> 
+> `adb pull /sdcard/MotionDna/Logs/nav_of_file.nav`
+
 
 #### `void setCallbackUpdateRateInMs(double rate)`
 Tell our SDK how often to provide estimation results. Note that there is a limit on how fast our SDK can provide results, but usually setting a slower update rate improves results. Setting the rate to `0ms` will output estimation results at our maximum rate.
