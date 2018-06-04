@@ -170,6 +170,11 @@ Enable or disable AR mode.
 
 #### `void setBinaryFileLoggingEnabled(boolean state)`
 Allow our SDK to record data and use it to enhance our estimation system.
+All of our .nav files get recorded to: /sdcard/MotionDna/Logs/
+You can download the .nav files by running this command:
+adb pull /sdcard/MotionDna/Logs/
+Or, if you know the name of the file you are looking for:
+adb pull /sdcard/MotionDna/Logs/nav_of_file.nav
 
 **Params**
 Enable or disable file logging.
