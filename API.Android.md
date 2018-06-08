@@ -112,7 +112,7 @@ There are many ways to control the SDK. Here, we have split control methods into
 	* [`void setPowerMode(PowerConsumptionMode mode)`](#void-setpowermodepowerconsumptionmode-mode)
 * Global Location Initialization
 	* [`void setLocationNavisens()`](#void-setlocationnavisens)
-	* [`void setLocationGPS()`](#void-setlocationgps)
+	* [`void setLocationGPSOnly()`](#void-setlocationgpsonly)
 	* [`void setLocationLatitudeLongitude(double lat, double lng)`](#void-setlocationlatitudelongitudedouble-lat-double-lng)
 	* [`void setLocationLatitudeLongitudeAndHeadingInDegrees(double lat, double lng, double angle)`](#void-setlocationlatitudelongitudeandheadingindegreesdouble-lat-double-lng-double-angle)
 	* [`void setHeadingMagInDegrees()`](#void-setheadingmagindegrees)
@@ -224,7 +224,7 @@ Use our internal algorithm to automatically compute your location and heading by
 
 While we are computing the user's location, you can use the `locationStatus` of [`getLocation()`](#location-getlocation) to determine when an accurate location has been determined.
 
-#### `void setLocationGPS()`
+#### `void setLocationGPSOnly()`
 Wait for the next GPS reading, and set the latitude and longitude to that reading.
 
 Given the limitations of GPS, it is best to use this only if you can guarantee the user has accurate GPS readings, and is outside, or you do not need a very accurate position.
