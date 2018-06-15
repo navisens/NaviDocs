@@ -63,7 +63,7 @@ There are many ways to control the SDK. Here, we have split control methods into
 	* [`setARModeEnabled(_ state: Bool)`](#setarmodeenabled_-state-bool)
 	* [`setBackgroundModeEnabled(_ state: Bool)`](#setbackgroundmodeenabled_-state-bool)
 	* [`setBackpropagationEnabled(_ state: Bool)`](#setbackpropagationenabled_-state-bool)
-	* [`setBackpropagationBufferSize(_ rate: Double)`](#setbackpropagationbuffersize_-rate-double)
+	* [`setBackpropagationBufferSize(_ size: Int)`](#setbackpropagationbuffersize_-size-int)
 	* [`setBinaryFileLoggingEnabled(_ state: Bool)`](#setbinaryfileloggingenabled_-state-bool)
 	* [`setCallbackUpdateRateInMs(_ rate: Double)`](#setcallbackupdaterateinms_-rate-double)
 	* [`setNetworkUpdateRateInMs(_ rate: Double)`](#setnetworkupdaterateinms_-rate-double)
@@ -152,7 +152,8 @@ So you will receive all the points from the past with the appropriate timestamps
 **Params**
 
 Enable or disable location back propagation.
-#### `setBackpropagationBufferSize(_ rate: Double)`
+
+#### `setBackpropagationBufferSize(_ size: Int)`
 
 If the user wants to see everything that happened before Navisens found an initial position,
 he can adjust the amount of the trajectory to see before the initial position was set automatically.
