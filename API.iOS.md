@@ -63,6 +63,7 @@ There are many ways to control the SDK. Here, we have split control methods into
 	* [`setARModeEnabled(_ state: Bool)`](#setarmodeenabled_-state-bool)
 	* [`setBackgroundModeEnabled(_ state: Bool)`](#setbackgroundmodeenabled_-state-bool)
 	* [`setBackpropagationEnabled(_ state: Bool)`](#setbackpropagationenabled_-state-bool)
+	* [`setBackpropagationBufferSize(_ rate: Double)`](#setbackpropagationbuffersize_-rate-double)
 	* [`setBinaryFileLoggingEnabled(_ state: Bool)`](#setbinaryfileloggingenabled_-state-bool)
 	* [`setCallbackUpdateRateInMs(_ rate: Double)`](#setcallbackupdaterateinms_-rate-double)
 	* [`setNetworkUpdateRateInMs(_ rate: Double)`](#setnetworkupdaterateinms_-rate-double)
@@ -149,7 +150,25 @@ So you will receive all the points from the past with the appropriate timestamps
 ```
 
 **Params**
+
 Enable or disable location back propagation.
+#### `setBackpropagationBufferSize(_ rate: Double)`
+
+If the user wants to see everything that happened before Navisens found an initial position,
+he can adjust the amount of the trajectory to see before the initial position was set automatically.
+
+To correlate the back propagation buffer in time you can measure it based on the POWER_MODE
+you set: PERFORMANCE/LOW/MEDIUM.
+Back propagation buffer is set to 4000 by default:
+In low power:
+4000 / 16: 250 seconds
+Medium:
+4000 / 8: 500 seconds
+Performance:
+4000 / 4: 1000 seconds
+
+**Params**
+Back propagation buffer size.
 
 #### `setBinaryFileLoggingEnabled(_ state: Bool)`
 Allow our SDK to record data and use it to enhance our estimation system.
