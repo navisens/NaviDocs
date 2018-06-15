@@ -106,7 +106,7 @@ There are many ways to control the SDK. Here, we have split control methods into
 * SDK Settings
 	* [`void setARModeEnabled(boolean mode)`](#void-setarmodeenabledboolean-mode)
 	* [`void setBackpropagationEnabled(boolean state)`](#void-setbackpropagationenabledboolean-state)
-	* [`setBackpropagationBufferSize(int size)`](#setbackpropagationbuffersizeint-size)
+	* [`void setBackpropagationBufferSize(int size)`](#setbackpropagationbuffersizeint-size)
 	* [`void setBinaryFileLoggingEnabled(boolean state)`](#void-setbinaryfileloggingenabledboolean-state)
 	* [`void setCallbackUpdateRateInMs(double rate)`](#void-setcallbackupdaterateinmsdouble-rate)
 	* [`void setNetworkUpdateRateInMs(double rate)`](#void-setnetworkupdaterateinmsdouble-rate)
