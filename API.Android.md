@@ -178,7 +178,7 @@ So you will receive all the points from the past with the appropriate timestamps
 **Params**
 Enable or disable back propagation.
 
-#### `setBackpropagationBufferSize(int size)`
+#### `void setBackpropagationBufferSize(int size)`
 
 If the user wants to see everything that happened before Navisens found an initial position,
 he can adjust the amount of the trajectory to see before the initial position was set automatically.
