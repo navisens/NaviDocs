@@ -5,6 +5,8 @@ How does Navisens work? Tutorials, quick starts, and extensive documentation on 
 
 ## Quick Links
 
+**SDK Release notes**: [Android-SDK](https://github.com/navisens/Android-SDK/releases) | [iOS-SDK](https://github.com/navisens/iOS-SDK/releases)
+
 **Quickstart**: The quick and easy way for beginners of mobile app development, and those unfamiliar with our Plugins system!
 
 <sup>[Android](/BEER.Android.md) | [iOS](/BEER.iOS.md)</sup>
