@@ -62,7 +62,7 @@ There are many ways to control the SDK. Here, we have split control methods into
 * SDK Settings
 	* [`setARModeEnabled(_ state: Bool)`](#setarmodeenabled_-state-bool)
 	* [`setBackgroundModeEnabled(_ state: Bool)`](#setbackgroundmodeenabled_-state-bool)
-	* [`enableBackgroundSensors()`](#enableBackgroundSensors_)
+	* [`enableBackgroundSensors()`](#enableBackgroundSensors)
 	* [`setBackpropagationEnabled(_ state: Bool)`](#setbackpropagationenabled_-state-bool)
 	* [`setBackpropagationBufferSize(_ size: Int)`](#setbackpropagationbuffersize_-size-int)
 	* [`setBinaryFileLoggingEnabled(_ state: Bool)`](#setbinaryfileloggingenabled_-state-bool)
