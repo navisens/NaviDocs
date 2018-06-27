@@ -136,7 +136,7 @@ to prevent sensors from stopping in the background.**
 **Params**
 Enable or disable background location updates.
 
-#### `enableBackgroundSensors`
+#### `enableBackgroundSensors()`
 
 If you are using iOS 11+, then you should also go to your `AppDelegate` file and find the `applicationDidEnterBackground` method and add this method into it.
 This method essentially restarts our internal CMMotionManager to ensure sensors updates keep occuring in background, this is an **Apple** bug that has already been submitted.
