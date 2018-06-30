@@ -89,6 +89,50 @@ This functions starts up the SDK. You must pass in a valid developer's key in or
 The paramater is your developer key. If this is missing, or incorrect, the SDK will cease to function.
 
 -----
+## Reducing Android SDK Size ##
+
+
+Our SDK internally handles 3 cpu architectures to provide as hardware support as possible:
+- arm 64bit
+- arm 32bit
+- x86
+
+If you think our SDK size is too big, you can strip out certain cpu architectures that you
+believe you don't need from our SDK shared libraries.
+You can do so by doing the following:
+
+Example for supporting arm 32bit cpu architectures (note: all phones that have arm 64bit will support arm 32bit):
+```gradle
+buildTypes {
+    release {
+        ndk {
+            abiFilters "armeabi-v7a"
+        }
+    }
+```
+
+For supporting arm 64 bit cpu architecture (this will not work on arm 32bit cpus):
+```gradle
+buildTypes {
+    release {
+        ndk {
+            abiFilters "arm64-v8a"
+    	}
+    }
+```
+
+For supporting arm 64 bit & armv-7a cpu architectures:
+```gradle
+buildTypes {
+    release {
+        ndk {
+            abiFilters "arm64-v8a", "armeabi-v7a"
+	}
+    }
+```
+
+
+-----
 ## Control ##
 
 There are many ways to control the SDK. Here, we have split control methods into several sections.
