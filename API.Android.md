@@ -98,7 +98,7 @@ Our SDK internally handles 3 cpu architectures to provide as much hardware suppo
 - x86
 
 If you don’t require support for all CPU architectures, you can strip out certain CPU architectures thus reducing the SDK size.
-You can do so by adding the followng lines of code to your `build.gradle` file.
+You can do so by adding the following lines of code to your `build.gradle` file.
 
 Example for supporting arm 32bit cpu architecture (note: all phones that have arm 64bit will support arm 32bit):
 ```gradle
