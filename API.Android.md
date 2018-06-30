@@ -92,7 +92,7 @@ The paramater is your developer key. If this is missing, or incorrect, the SDK w
 ## Reducing Android SDK Size ##
 
 
-Our SDK internally handles 3 cpu architectures to provide as hardware support as possible:
+Our SDK internally handles 3 cpu architectures to provide as much hardware support as possible:
 - arm 64bit
 - arm 32bit
 - x86
