@@ -101,7 +101,7 @@ If you think our SDK size is too big, you can strip out certain cpu architecture
 believe you don't need from our SDK shared libraries.
 You can do so by doing the following:
 
-Example for supporting arm 32bit cpu architectures (note: all phones that have arm 64bit will support arm 32bit):
+Example for supporting arm 32bit cpu architecture (note: all phones that have arm 64bit will support arm 32bit):
 ```gradle
 buildTypes {
     release {
@@ -121,7 +121,7 @@ buildTypes {
     }
 ```
 
-For supporting arm 64 bit & armv-7a cpu architectures:
+For supporting arm 64 bit & arm 32bit cpu architectures:
 ```gradle
 buildTypes {
     release {
