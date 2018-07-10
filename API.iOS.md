@@ -213,7 +213,6 @@ Set the power consumption mode to trade off accuracy of predictions for power sa
 **Params**
 The `PowerConsumptionMode` is one of the following:
 
-* `SUPER_LOW_CONSUMPTION`: Batches samples for 2 minutes and processes them queued up and internal estimation runs at 6Hz.
 * `LOW_CONSUMPTION`: Internal Estimation at 6.25Hz
 * `MEDIUM_CONSUMPTION`: Internal Estimation at 12.5Hz
 * `PERFORMANCE`: Internal Estimation at 25Hz
