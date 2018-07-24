@@ -465,6 +465,10 @@ These are self-explanatory.
 #### `Location getLocation()`
 Gets the location of the current device. The location contains the following attributes:
 * `LocationStatus locationStatus`
+	* `UNINITIALIZED` --> When the SDK is running in cartesian mode (XYZ frame only).
+	* `NAVISENS_INITIALIZING` --> After `setLocationNavisens` has been called, the SDK is automatically initializing.
+	* `NAVISENS_INITIALIZED` --> Whenever a user has input a location (through `setLocationLatitudeLongitude` or other) or 					    when the SDK has found a location automatically (after `setLocationNavisens` has been called).
+
 * `XYZ localLocation`
 * `GlobalLocation globalLocation`
 * `double heading`
