@@ -160,6 +160,8 @@ There are many ways to control the SDK. Here, we have split control methods into
 	* [`void setLocationGPSOnly()`](#void-setlocationgpsonly)
 	* [`void setLocationLatitudeLongitude(double lat, double lng)`](#void-setlocationlatitudelongitudedouble-lat-double-lng)
 	* [`void setLocationLatitudeLongitudeAndHeadingInDegrees(double lat, double lng, double angle)`](#void-setlocationlatitudelongitudeandheadingindegreesdouble-lat-double-lng-double-angle)
+	* [`void inputGlobalCoordinates(double lat, double lon, double timestamp)`](#void-inputglobalcoordinatesdouble-lat-double-lon-double-timestamp)
+	* [`void inputGlobalCoordinates(double lat, double lon, double timestamp, double angleThreshold)`](#void-inputglobalcoordinatesdouble-lat-double-lon-double-timestamp-double-anglethreshold)
 	* [`void setHeadingMagInDegrees()`](#void-setheadingmagindegrees)
 	* [`void setHeadingInDegrees(double heading)`](#void-setheadingindegreesdouble-heading)
 	* [`void setCartesianOffsetInMetersXY(double x, double y)`](#void-setcartesianoffsetinmetersxydouble-x-double-y)
@@ -323,6 +325,18 @@ It is advised if you are using global heading, to manually set this, or allow th
 **Params**
 The `heading`, as a rotation in degrees.
 
+### `void inputGlobalCoordinates(double lat, double lon, double timestamp)`
+This method allows you to feed in geodetic coordinates from an external positioning system (e.g. beacons/wifi) and running our internal algorithms to find an initial start point. The method expects: latitude, longitude and timestamp (in seconds since boot time).
+
+**Params**
+The latitude and longitude coordinates with the associated timestamp.
+
+### `void inputGlobalCoordinates(double lat, double lon, double timestamp, double angleThreshold)`
+Same as the above method except with an angular threshold input (the default is 7.5 degrees).
+
+**Params**
+The latitude and longitude coordinates and timestamp with the desired angular threshold.
+
 #### `void setCartesianOffsetInMetersXY(double x, double y)`
 Adds an offset to both x and y axes. So if you are running the SDK in the local XY frame, you can start at custom XY positions.
 
@@ -339,7 +353,7 @@ The `heading`, as a counterclockwise rotation in degrees (in +- 180 frame).
 Sets the Cartesian position in XY to the exact x and y passed in.
 
 **Params**
-The x and y coordinates to set the core.
+The x and y coordinates to set.
 
 #### `void setLocalHeading(double heading)`
 Sets the local heading the exact heading value passed in.
