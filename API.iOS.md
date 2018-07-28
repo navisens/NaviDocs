@@ -75,10 +75,14 @@ There are many ways to control the SDK. Here, we have split control methods into
 	* [`setLocationGPSOnly()`](#setlocationgpsonly)
 	* [`setLocationLatitude(_ latitude: Double, longitude: Double)`](#setlocationlatitude_-latitude-double-longitude-double)
 	* [`setLocationLatitude(_ latitude: Double, longitude: Double, andHeadingInDegrees heading: Double)`](#setlocationlatitude_-latitude-double=longitude-double-andheadingindegrees-heading-double)
+	* [`inputGlobalCoordinatesLat(_ latitude: Double, longitude: Double, AndTimestamp timestamp: Double)`](#inputglobalcoordinateslat_-latitude-double=longitude-double-andtimestamp-timestamp-double)
+	* [`inputGlobalCoordinatesLat(_ latitude: Double, longitude: Double, timestamp: Double, AndAngleThreshold angleThreshold: Double)`](#inputglobalcoordinateslat_-latitude-double=longitude-double-timestamp-double-andanglethreshold-anglethreshold-double)
 	* [`setHeadingMagInDegrees()`](#setheadingmagindegrees)
 	* [`setHeadingInDegrees(_ heading: Double)`](#setheadingindegrees_-heading-double)
 	* [`setCartesianOffsetInMetersX(_ x: Double, Y y: Double)`](#setcartesianoffsetinmetersx_-x-double-y-y-double)
 	* [`setLocalHeadingOffsetInDegrees(_ heading: Double)`](#setlocalheadingoffsetindegrees_-heading-double)
+	* [`setLocalHeading(_ heading: Double)`](#void-setlocalheading_-heading-double)
+	* [`setCartesianPositionX(_ x: Double, Y y: Double)`](#setcartesianpositionx_-x-double-y-y-double)
 * Location Sharing
 	* [`startUDP(...)`](#startudp)
 	* [`stopUDP()`](#stopudp)
@@ -274,6 +278,18 @@ It is advised if you are using global heading, to manually set this, or allow th
 **Params**
 The `heading`, as a rotation in degrees.
 
+#### `inputGlobalCoordinatesLat(_ latitude: Double, longitude: Double, andTimestamp timestamp: Double)`
+This method allows you to feed in geodetic coordinates from an external positioning system (e.g. beacons/wifi) and running our internal algorithms to find an initial start point. The method expects: latitude, longitude and timestamp (in seconds since boot time).
+
+**Params**
+The latitude and longitude coordinates with the associated timestamp.
+
+#### `inputGlobalCoordinates(_ latitude: Double, longitude: Double, timestamp: Double, AndAngleThreshold angleThreshold: Double)`
+Same as the above method except with an angular threshold input in degrees (the default is 7.5 degrees). The angleThreshold specifies the minimum required accuracy for Navisens to initialize the position and heading. The lower the value the more accurate the initialization and longer the initialization period. The higher the value the faster the initialization and the lower the accuracy as a tradeoff for speed.
+
+**Params**
+The latitude and longitude coordinates and timestamp with the desired angular threshold in degrees.
+
 #### `setCartesianOffsetInMetersX(_ x: Double, Y y: Double)`
 Adds an offset to both x and y axes. So if you are running the SDK in the local XY frame, you can start at custom XY positions.
 
@@ -285,6 +301,19 @@ Sets the local heading offset in degrees. The heading offsets you input get accu
 
 **Params**
 The `heading`, as a counterclockwise rotation in degrees.
+
+#### `setCartesianPositionX(_ x: Double, Y y: Double)`
+Sets the Cartesian position in XY to the exact x and y passed in.
+
+**Params**
+The x and y coordinates to set.
+
+#### `setLocalHeading(_ heading: Double)`
+Sets the local heading the exact heading value passed in.
+
+**Params**
+The `heading`, as a counterclockwise rotation in degrees (in +- 180 frame).
+
 
 ##### Tutorial: Running the SDK in the local frame.
 > To run our SDK without any global reference, its simple, you only need to call `runMotionDna`, without any global input call. Since the system doesn't receive any user input or activation of the Navisens automatic initialization input (e.g. `setLocationNavisens`), it assumes the estimation is being run in the local XY frame.
