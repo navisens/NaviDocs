@@ -164,7 +164,7 @@ There are many ways to control the SDK. Here, we have split control methods into
 	* [`void setHeadingInDegrees(double heading)`](#void-setheadingindegreesdouble-heading)
 	* [`void setCartesianOffsetInMetersXY(double x, double y)`](#void-setcartesianoffsetinmetersxydouble-x-double-y)
 	* [`void setLocalHeadingOffsetInDegrees(double heading)`](#void-setlocalheadingoffsetindegreesdouble-heading)
-	* [`void setLocalHeading(double heading)`](#void-setlocalheadingdouble-lat)
+	* [`void setLocalHeading(double heading)`](#void-setlocalheadingdouble-heading)
 	* [`void setCartesianPositionXY(double x, double y)`](#void-setcartesianpositionxydouble-x-double-y)
 * Location Sharing
 	* [`void startUDP(...)`](#void-startudp)
