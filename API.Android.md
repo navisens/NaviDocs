@@ -336,7 +336,7 @@ Sets the local heading offset in degrees. The heading offsets you input get accu
 The `heading`, as a counterclockwise rotation in degrees (in +- 180 frame).
 
 #### `void setCartesianPositionXY(double x, double y)`
-Sets the Cartesian position in XY to the exact x and passed in.
+Sets the Cartesian position in XY to the exact x and y passed in.
 
 **Params**
 The x and y coordinates to set the core.
