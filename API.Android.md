@@ -146,6 +146,7 @@ There are many ways to control the SDK. Here, we have split control methods into
 	* [`void stop()`](#void-stop)
 	* [`void resetLocalEstimation()`](#void-resetlocalestimation)
 	* [`void resetLocalHeading()`](#void-resetlocalheading)
+	
 * SDK Settings
 	* [`void setARModeEnabled(boolean mode)`](#void-setarmodeenabledboolean-mode)
 	* [`void setBackpropagationEnabled(boolean state)`](#void-setbackpropagationenabledboolean-state)
@@ -163,6 +164,8 @@ There are many ways to control the SDK. Here, we have split control methods into
 	* [`void setHeadingInDegrees(double heading)`](#void-setheadingindegreesdouble-heading)
 	* [`void setCartesianOffsetInMetersXY(double x, double y)`](#void-setcartesianoffsetinmetersxydouble-x-double-y)
 	* [`void setLocalHeadingOffsetInDegrees(double heading)`](#void-setlocalheadingoffsetindegreesdouble-heading)
+	* [`void setLocalHeading(double heading)`](#void-setlocalheadingdouble-lat)
+	* [`void setCartesianPositionXY(double x, double y)`](#void-setcartesianpositionxydouble-x-double-y)
 * Location Sharing
 	* [`void startUDP(...)`](#void-startudp)
 	* [`void stopUDP()`](#void-stopudp)
@@ -330,7 +333,19 @@ The `x` and `y` offset in meters.
 Sets the local heading offset in degrees. The heading offsets you input get accumulated. You can reset the offset by calling `resetLocalHeading`.
 
 **Params**
-The `heading`, as a counterclockwise rotation in degrees.
+The `heading`, as a counterclockwise rotation in degrees (in +- 180 frame).
+
+#### `void setCartesianPositionXY(double x, double y)`
+Sets the Cartesian position in XY to the exact x and passed in.
+
+**Params**
+The x and y coordinates to set the core.
+
+#### `void setLocalHeading(double heading)`
+Sets the local heading the exact heading value passed in.
+
+**Params**
+The `heading`, as a counterclockwise rotation in degrees (in +- 180 frame).
 
 ##### Tutorial: Running the SDK in the local frame.
 > To run our SDK without any global reference, its simple, you only need to call `runMotionDna`, without any global input call. Since the system doesn't receive any user input or activation of the Navisens automatic initialization input (e.g. `setLocationNavisens`), it assumes the estimation is being run in the local XY frame.
