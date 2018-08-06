@@ -258,7 +258,9 @@ Enable or disable file logging.
 > Select "Backup My Data" and this will begin an unencrypted bakcup of the navisens app package onto your computer.
 > 
 > Enter the following command to decompress the navisens app backup
+>
 > `python -c "import zlib,sys;sys.stdout.write(zlib.decompress(sys.stdin.read()))" > myAndroidBackup.tar; tar xvf myAndroidBackup.tar`
+>
 > This will give you access the the app storage file structure. Logs can be found under the "files/Logs" or "f/Logs" folder and subfolder
 
 #### `void setCallbackUpdateRateInMs(double rate)`
