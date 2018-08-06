@@ -253,14 +253,13 @@ Enable or disable file logging.
 ##### Tutorial: Downloading Logs
 > Downloading these logs is a very good way of providing debug information, should there be an issue with our SDK. On Android, this is very easily done. First, make sure you have the "Android Debug Bridge" or `adb` Android Platform Tool downloaded. Once you have it set up correctly, plug in your Android device to a computer. On the computer, open a command terminal and run the following command:
 > 
-> `adb pull /sdcard/MotionDna/Logs`
+> `adb backup -f myAndroidBackup.ab navisens.motiondna`
 > 
-> This will pull the log files and place them in the current directory. You may add an additional argument to specify where you want to put the logs to.
+> Select "Backup My Data" and this will begin an unencrypted bakcup of the navisens app package onto your computer.
 > 
-> Or, if you know the name of the file you are looking for:
-> 
-> `adb pull /sdcard/MotionDna/Logs/nav_of_file.nav`
-
+> Enter the following command to decompress the navisens app backup
+> `python -c "import zlib,sys;sys.stdout.write(zlib.decompress(sys.stdin.read()))" > myAndroidBackup.tar; tar xvf myAndroidBackup.tar`
+> This will give you access the the app storage file structure. Logs can be found under the "files/Logs" or "f/Logs" folder and subfolder
 
 #### `void setCallbackUpdateRateInMs(double rate)`
 Tell our SDK how often to provide estimation results. Note that there is a limit on how fast our SDK can provide results, but usually setting a slower update rate improves results. Setting the rate to `0ms` will output estimation results at our maximum rate.
