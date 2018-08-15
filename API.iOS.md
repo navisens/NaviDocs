@@ -447,7 +447,7 @@ Gets the location of the current device. The location contains the following att
 	* `NAVISENS_INITIALIZED` --> Whenever a user has input a location (through `setLocationLatitudeLongitude` or other) or 					    when the SDK has found a location automatically (after `setLocationNavisens` has been called).
 
 * `localLocation: XYZ`, units in meters.
-* `globalLocation: GlobalLocation`, units in latitude/longitude.
+* `globalLocation: GlobalLocation`, units in degrees (latitude/longitude).
 * `heading: Double`
 * `localHeading: Double`
 * `uncertainty: XY`
