@@ -500,7 +500,7 @@ Gets the location of the current device. The location contains the following att
 	* `NAVISENS_INITIALIZED` --> Whenever a user has input a location (through `setLocationLatitudeLongitude` or other) or 					    when the SDK has found a location automatically (after `setLocationNavisens` has been called).
 
 * `XYZ localLocation`, units in meters.
-* `GlobalLocation globalLocation`, units in latitude/longitude.
+* `GlobalLocation globalLocation`, units in degrees (latitude/longitude).
 * `double heading`
 * `double localHeading`
 * `XY uncertainty`
