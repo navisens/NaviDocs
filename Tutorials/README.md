@@ -2,12 +2,6 @@
 
 The tutorials provide a more in-depth explanation of various features of our NavisensPlugins framework. Here, you can find lower-level documentation directed at the curious or more experienced.
 
-## Android Continuous Service
-
-<sup>[Android only](/Tutorials/setting-up-continuous-service.Android.md)</sup>
-
-Set up a continuous background service to continue getting MotionDna even when your app is backgrounded!
-
 ## Creating New NavisensPlugins
 
 <sup>[Android](/Tutorials/creating-navisensplugins.Android.md) | [iOS](/Tutorials/creating-navisensplugins.iOS.md)</sup>
