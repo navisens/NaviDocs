@@ -23,7 +23,6 @@ How does Navisens work? Tutorials, quick starts, and extensive documentation on 
 
 *Android:*
 * **Recommended**: [Using and Making Plugins (for groups)](/Tutorials/navihelpme.Android.md)
-* [Android Continuous Service](/Tutorials/setting-up-continuous-service.Android.md)
 * [Creating New NavisensPlugins](/Tutorials/creating-navisensplugins.Android.md)
 * [Publishing NavisensPlugins](/Tutorials/publishing-navisensplugins.Android.md)
 
