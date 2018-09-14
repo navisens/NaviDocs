@@ -8,12 +8,6 @@ The tutorials provide a more in-depth explanation of various features of our Nav
 
 A guide on how to create your own NavisensPlugins. Using the NavisensPlugins framework makes it easy to combine different plugins together and ensure they all work together as intended.
 
-## Initializing Your Location
-
-<sup>Android and iOS</sup>
-
-Work in Progress
-
 ## Publishing NavisensPlugins
 
 <sup>[Android](/Tutorials/publishing-navisensplugins.Android.md) | [iOS](/Tutorials/publishing-navisensplugins.iOS.md)</sup>
