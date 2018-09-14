@@ -5,7 +5,7 @@ This is the central Android API documentation for the Navisens MotionDnaSDK.
 
 ## Installation ##
 
-If you haven't already done so or haven't build an Android app before, check out the [Quick Start Guide](/BEER.Android.md), as it is designed to be a very straight-forward demo of an easy app you can build with our SDK and tools. Otherwise, if you already have some experience building Android apps, here's what you need to do to set up the Navisens MotionDnaSDK.
+If you haven't already done so or haven't build an Android app before, check out the [Beer test for plugin](/BEER.Android.md) / [android-app-helloworld for native SDK](https://github.com/navisens/android-app-helloworld), as it is designed to be a very straight-forward demo of an easy app you can build with our SDK and tools. Otherwise, if you already have some experience building Android apps, here's what you need to do to set up the Navisens MotionDnaSDK.
 
 Add the following dependencies to your application buildscript:
 
