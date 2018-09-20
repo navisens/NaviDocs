@@ -448,7 +448,7 @@ Gets the location of the current device. The location contains the following att
 
 * `localLocation: XYZ`, units in meters.
 * `globalLocation: GlobalLocation`, units in degrees (latitude/longitude).
-* `heading: Double`
+* `heading: Double`, with respect to True North in the 0-360 frame.
 * `localHeading: Double`
 * `uncertainty: XY`
 * `verticalMotionStatus: VerticalMotionStatus`
