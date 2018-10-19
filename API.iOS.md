@@ -15,7 +15,7 @@ platform :ios, '9.1'
 
 target 'ProjectName' do
   use_frameworks!
-  pod 'MotionDnaSDK', :git => 'https://github.com/navisens/iOS-SDK.git'
+  pod 'MotionDnaSDK'
 end
 ```
 
