@@ -77,6 +77,22 @@ The simplest way to use the motionDNA SDK is in relative positioning mode. This 
 
 The global positioning mode is designed as a direct replacement for GPS, and provides location coordinates in a global frame with positions provided as (latitude, longitude). To operate in this mode, a global (latitude, longitude) position must be set as a start position. There are several different ways this can be performed. It could be as simple as setting the start position to the GPS location provided by the phone, or by setting the start position based on a (latitude, longitude) which is associated with a beacon. The preferred method is to use a special feature of the motionDNA SDK whereby the start position is automatically determined by fusing information from the motionDNA relative trajectory along with global sensor information (GPS), after taking several measurements while the user is walking (requires the user to walk around 1-2 blocks outdoors). 
 
+### Cartesian Coordinate System
+
+The Navisens SDK is constantly estimating in two frames: cartesian and geodesic.
+
+Here I'll be talking about our cartesian coordinate system. When a user is walking, every
+estimate outputs a distance and a heading delta with respect to the previous estimate.
+As we keep receiving these distances and headings we integrate them, which give us xy coordinates.
+
+When the SDK starts, the user is facing 90 degrees in our local frame of reference. The angle
+orientation grows counter clockwise.
+Assuming the user is 90 degrees and walks straight the Y axis will grow, then when the user 
+turns right the X axis will grow.
+
+The system can also be referred to a right handed coordinate system.
+
+
 ### Helping out Navisens!
 To help us out, you can provide us with a dataset you have recorded which we will be able to analyze in our labs. To do this please follow these instructions:
 * Choose a start point, and when you complete the dataset, make sure to return as close as possible to the start point so that the beginning and end position is the same.
