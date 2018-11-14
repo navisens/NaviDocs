@@ -132,6 +132,7 @@ There are many ways to control the SDK. Here, we have split control methods into
 	* [`void setARModeEnabled(boolean mode)`](#void-setarmodeenabledboolean-mode)
 	* [`void setBackpropagationEnabled(boolean state)`](#void-setbackpropagationenabledboolean-state)
 	* [`void setBackpropagationBufferSize(int size)`](#setbackpropagationbuffersizeint-size)
+	* [`void setCorrectionBackpropagationEnabled(boolean state)`](#void-setcorrectionbackpropagationenabledboolean-state)
 	* [`void setBinaryFileLoggingEnabled(boolean state)`](#void-setbinaryfileloggingenabledboolean-state)
 	* [`void setCallbackUpdateRateInMs(double rate)`](#void-setcallbackupdaterateinmsdouble-rate)
 	* [`void setNetworkUpdateRateInMs(double rate)`](#void-setnetworkupdaterateinmsdouble-rate)
@@ -224,6 +225,14 @@ Performance:
 
 **Params**
 Back propagation buffer size.
+
+#### `void setCorrectionBackpropagationEnabled(boolean state)`
+When setLocationNavisens is enabled and setCorrectionBackpropagationEnabled is called, after Navisens has initialized you will get the current position, and with certain corrections you will receive a series of latitude longitude coordinates representing a revised estimation on a recent portion of the traversed path.
+
+The corrected trajectory of points will be ordered by timestamp from oldest to most recent, until you get to your current revised position.
+
+**Params**
+Enable or disable correction back propagation
 
 #### `void setBinaryFileLoggingEnabled(boolean state)`
 Allow our SDK to record data and use it to enhance our estimation system.
