@@ -65,6 +65,7 @@ There are many ways to control the SDK. Here, we have split control methods into
 	* [`enableBackgroundSensors()`](#enablebackgroundsensors)
 	* [`setBackpropagationEnabled(_ state: Bool)`](#setbackpropagationenabled_-state-bool)
 	* [`setBackpropagationBufferSize(_ size: Int)`](#setbackpropagationbuffersize_-size-int)
+	* [`setCorrectionBackpropagationEnabled(_ state: Bool)`](#setcorrectionbackpropagationenabled_-state-bool)
 	* [`setBinaryFileLoggingEnabled(_ state: Bool)`](#setbinaryfileloggingenabled_-state-bool)
 	* [`setCallbackUpdateRateInMs(_ rate: Double)`](#setcallbackupdaterateinms_-rate-double)
 	* [`setNetworkUpdateRateInMs(_ rate: Double)`](#setnetworkupdaterateinms_-rate-double)
@@ -182,6 +183,16 @@ Performance:
 
 **Params**
 Back propagation buffer size.
+
+#### `setCorrectionBackpropagationEnabled(_ state: Bool)`
+
+When setLocationNavisens is enabled and setCorrectionBackpropagationEnabled is called, after Navisens has initialized you will get the current position, and with certain corrections you will receive a series of latitude longitude coordinates representing a revised estimation on a recent portion of the traversed path.
+
+The corrected trajectory of points will be ordered by timestamp from oldest to most recent, until you get to your current revised position.
+
+**Params**
+
+Enable or disable correction back propagation.
 
 #### `setBinaryFileLoggingEnabled(_ state: Bool)`
 Allow our SDK to record data and use it to enhance our estimation system.
