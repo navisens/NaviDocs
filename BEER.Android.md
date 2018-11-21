@@ -48,9 +48,6 @@ We're gonna add some new maven repo links into the **repositories** tag. Copy an
 
 ```gradle
 maven {
-  url 'https://oss.sonatype.org/content/groups/public'
-}
-maven {
   url 'https://maven.fabric.io/public'
 }
 maven {
