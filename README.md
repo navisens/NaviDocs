@@ -32,6 +32,26 @@ How does Navisens work? Tutorials, quick starts, and extensive documentation on 
 
 -----
 
+### Navisens prerequisites
+
+### Hardware
+
+We require at least an accelerometer and a gyroscope for our inertial estimation.
+
+#### Bonus
+
+If the phone is	equipped with a	barometer our estimation will be in 3D.
+
+### Software
+
+#### iOS
+
+We require at least iOS 9.
+
+#### Android
+
+Minimum SDK is 16
+
 ### Navisens Mini Tutorial/Quickstart (aka “The Beer Test”)
 The purpose of this tutorial is to become familiar with the Navisens SDK in the time it takes you to drink approximately one standard size beer 🍺.
 
