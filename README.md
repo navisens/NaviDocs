@@ -34,11 +34,13 @@ How does Navisens work? Tutorials, quick starts, and extensive documentation on 
 
 ### Navisens prerequisites
 
+Our SDK functions on 99.6% of Android devices (not taking into account hardware limitations (e.g. missing sensors)).
+
 #### Hardware
 
 We require at least an accelerometer and a gyroscope for our inertial estimation.
 
-##### Bonus
+##### Barometer
 
 If the phone is	equipped with a	barometer our estimation will be in 3D.
 
