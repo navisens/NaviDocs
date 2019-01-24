@@ -41,6 +41,7 @@ These are functions that must be called in order to configure the SDK completely
 
 * [`MotionDnaApplication(MotionDnaInterface)`](#motiondnaapplicationmotiondnainterface)
 * [`void runMotionDna(String devkey)`](#void-runmotiondnastring-devkey)
+* [`void runManualMotionDna(String ID)`](#void-runmanualmotiondnastring-id)
 
 -----
 #### `MotionDnaApplication(MotionDnaInterface)`
@@ -68,6 +69,15 @@ This functions starts up the SDK. You must pass in a valid developer's key in or
 
 **Params**
 The paramater is your developer key. If this is missing, or incorrect, the SDK will cease to function.
+
+#### `void runManualMotionDna(String ID)`
+This function behaves like the `runMotionDna()` method above and similarly requires a developer key. However it does not start up the phone sensors allowing sensor input from other sources.
+
+#### `void inputMotion(double timestamp, double roll, double pitch, double yaw, double accX, double accY, double accZ)` 
+This method must be calls at regular intervals with sensor data if you have started the SDK with `void runManualMotionDna()`.
+
+**Params**
+Timestamp units must be in seconds. Accelerometer x, y, and z should be in G's and Gyro roll, pitch, and yaw unit should be in radians/sec. 
 
 -----
 ## Reducing Android SDK Size ##
