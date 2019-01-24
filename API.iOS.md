@@ -35,7 +35,7 @@ Below, we will organize the API into several sections. First, the **Setup** and 
 These are functions that must be called in order to configure the SDK completely.
 
 * [`runMotionDna(_ devkey: String, receiver: MotionDnaSDK)`](#runmotiondna_-devkey-string-receiver-motiondnasdk)
-* [`runMotionDnaWithoutMotionManager(ID: String!)`](#runmotiondna_-devkey-string-receiver-motiondnasdk)
+* [`runMotionDnaWithoutMotionManager(ID: String)`](#runmotiondnawithoutmotionmanager-id-string)
 
 -----
 
@@ -46,7 +46,7 @@ This functions starts up the SDK. You must pass in a valid developer's key in or
 The first paramater is your developer key. If this is missing, or incorrect, the SDK will cease to function. The second parameter is the callback route. You may provide `self` as a valid object.
 
 
-#### `runMotionDnaWithoutMotionManager(ID: String!)`
+#### `runMotionDnaWithoutMotionManager(ID: String)`
 This function behaves like the `runMotionDna()` method above and similarly requires a developer key. However it does not start up the phone sensors allowing sensor input from other sources.
 
 #### `inputMotion(withTimestamp: Double, roll: Double, pitch: Double, yaw: Double, accX: Double, accY: Double, accZ: Double)` 
