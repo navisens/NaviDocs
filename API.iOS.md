@@ -35,6 +35,7 @@ Below, we will organize the API into several sections. First, the **Setup** and 
 These are functions that must be called in order to configure the SDK completely.
 
 * [`runMotionDna(_ devkey: String, receiver: MotionDnaSDK)`](#runmotiondna_-devkey-string-receiver-motiondnasdk)
+* [`runMotionDnaWithoutMotionManager(ID: String!)`](#runmotiondna_-devkey-string-receiver-motiondnasdk)
 
 -----
 
