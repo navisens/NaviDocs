@@ -473,8 +473,8 @@ Gets the location of the current device. The location contains the following att
 * `localLocation: XYZ`, units in meters.
 * `globalLocation: GlobalLocation`, units in degrees (latitude/longitude).
 * `heading: Double`, with respect to True North in the 0-360 frame.
-* `localHeading: Double`
-* `magneticHeading: Double`
+* `localHeading: Double`, within +-180 degrees.
+* `magneticHeading: Double`, with respect to True North in the 0-360 frame.
 * `uncertainty: XY`
 * `verticalMotionStatus: VerticalMotionStatus`
 * `floor: Int`
