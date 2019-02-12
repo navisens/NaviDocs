@@ -502,7 +502,7 @@ Gets the location of the current device. The location contains the following att
 * `XYZ localLocation`, units in meters.
 * `GlobalLocation globalLocation`, units in degrees (latitude/longitude).
 * `double heading`, with respect to True North in the 0-360 frame.
-* `double localHeading`
+* `double localHeading`, within +-180 degrees.
 * `XY uncertainty`
 * `VerticalMotionStatus verticalMotionStatus`
 * `int floor`
