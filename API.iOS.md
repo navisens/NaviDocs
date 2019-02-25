@@ -260,7 +260,7 @@ The `ExternalPositioningState` is one of the following:
 
 * `OFF`: GPS is off (application will not function in background)
 * `LOW_ACCURACY`: GPS set to 1 kilometer accuracy (kCLLocationAccuracyKilometer) (application will function in background)
-* `HIGH_ACCURACY`: GPS set to best accuracy (kCLLocationAccuracyBest) & no distance filter (kCLDistanceFilterNone) (application will function in background)
+* `HIGH_ACCURACY` (default): GPS set to best accuracy (kCLLocationAccuracyBest) & no distance filter (kCLDistanceFilterNone) (application will function in background)
 
 -----
 #### `setLocationNavisens()`
