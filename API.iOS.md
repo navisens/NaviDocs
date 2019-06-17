@@ -53,7 +53,13 @@ This function behaves like the `runMotionDna()` method above and similarly requi
 This method must be calls at regular intervals with sensor data if you have started the SDK with `void runManualMotionDna()`.
 
 **Params**
-Timestamp units must be in seconds. Accelerometer x, y, and z should be in G's and Gyro roll, pitch, and yaw unit should be in radians/sec. 
+Timestamp units must be in seconds. Accelerometer x, y, and z should be in G's and Gyro roll, pitch, and yaw unit should be in radians/sec. Please note that this method should only be used if you are interested in x,y cartesian estimation. If you require placement in a global frame (on a map), please use the method below.
+
+#### `inputMotion(withTimestamp: Double, roll: Double, pitch: Double, yaw: Double, accX: Double, accY: Double, accZ: Double, heading: Double, headingAccuracy: Double)` 
+This method must be calls at regular intervals with sensor data if you have started the SDK with `void runManualMotionDna()`.
+
+**Params**
+Timestamp units must be in seconds. Accelerometer x, y, and z should be in G's and Gyro roll, pitch, and yaw unit should be in radians/sec
 
 -----
 ## Control ##
