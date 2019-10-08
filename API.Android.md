@@ -11,7 +11,7 @@ Add the following dependencies to your application buildscript:
 
 ```gradle
 dependencies {
-    implementation group: "com.navisens", name: "motiondnaapi", version: "1.7.3", changing: true
+    implementation group: "com.navisens", name: "motiondnaapi", version: "1.8.14", changing: true
     // ...
 }
 ```
