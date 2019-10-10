@@ -253,7 +253,7 @@ Enable or disable file logging.
 ##### Tutorial: Downloading Logs
 > Downloading these logs is a very good way of providing debug information, should there be an issue with our SDK. On Android, this is very easily done. First, make sure you have the "Android Debug Bridge" or `adb` Android Platform Tool downloaded. Once you have it set up correctly, plug in your Android device to a computer. On the computer, open a command terminal and run the following command:
 > 
-> `adb backup -f navisensBackup.ab navisens.motiondna`
+> `adb backup -f navisensBackup.ab <your-app-package-name-here>`
 > 
 > Select "Backup My Data" and this will begin an unencrypted bakcup of the navisens app package onto your computer.
 > 
