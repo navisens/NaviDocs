@@ -1,4 +1,4 @@
-# Creating New NavisensPlugins for Android
+# Creating New NavisensPlugins for iOS
 
 <sup>(Don't speak [`iOS`](/Tutorials/creating-navisensplugins.iOS.md)? Try [`Android`](/Tutorials/creating-navisensplugins.Android.md) instead!)</sup>
 
@@ -49,7 +49,7 @@ platform :ios, '9.1'
 
 target ‘ProjectName’ do
   use_frameworks!
-  pod 'MotionDnaSDK', :git => 'https://github.com/navisens/iOS-SDK.git'
+  pod 'MotionDnaSDK'
   pod ‘NavisensPlugins/NavisensCore’, :git => 'https://github.com/navisens/iOS-Plugin.git', :branch => 'repositories'
 end
 
