@@ -64,9 +64,9 @@ Next, we're gonna open up the **module gradle buildscript**. This can be found n
 We're gonna add some new dependencies into the **dependencies** tag. Copy and paste the following new dependencies and add them at the top of the dependencies section on *line 23*. Once we're done, we can hit the **Sync Now** button on the top again.
 
 ```gradle
-compile group: "com.navisens", name: "motiondnaapi", version: "1.7.3", changing: true
-compile 'com.navisens:navisenscore:3.1.1'
-compile 'com.navisens:navisensmaps:1.3.2'
+implementation group: "com.navisens", name: "motiondnaapi", version: "1.8.15", changing: true
+implementation 'com.navisens:navisenscore:3.1.1'
+implementation 'com.navisens:navisensmaps:1.3.2'
 ```
 
 ![Add dependencies](https://github.com/navisens/NaviDocs/blob/resources/Images/Android/2.5.png)
