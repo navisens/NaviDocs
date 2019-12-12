@@ -113,10 +113,10 @@ android {
 }
 
 dependencies {
-    provided group: "com.navisens", name: "motiondnaapi", version: "1.0.0-SNAPSHOT", changing: true
-    compile 'org.altbeacon:android-beacon-library:2.+'
-    compile 'com.android.support:appcompat-v7:25.3.1'
-    testCompile 'junit:junit:4.12'
+    provided group: "com.navisens", name: "motiondnaapi", version: "1.8.15", changing: true
+    implementation 'org.altbeacon:android-beacon-library:2.+'
+    implementation 'com.android.support:appcompat-v7:25.3.1'
+    testImplementation 'junit:junit:4.12'
     provided 'com.navisens:navisenscore:2.0.2'
 }
 

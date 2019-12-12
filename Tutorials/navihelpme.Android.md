@@ -38,15 +38,15 @@ Next, we want to open up our module buildscript. In here, we need to import the 
 ### Module:app buildscript
 ```gradle
 dependencies {
-    compile group: "com.navisens", name: "motiondnaapi", version: "1.2.2-SNAPSHOT", changing: true
-    compile 'org.altbeacon:android-beacon-library:2.+'
+    implementation group: "com.navisens", name: "motiondnaapi", version: "1.8.15", changing: true
+    implementation 'org.altbeacon:android-beacon-library:2.+'
 
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile 'com.android.support:appcompat-v7:25.3.1'
-    compile 'com.android.support.constraint:constraint-layout:1.0.2'
-    testCompile 'junit:junit:4.12'
+    implementation 'com.android.support:appcompat-v7:25.3.1'
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    testImplementation 'junit:junit:4.12'
 }
 ```
 
@@ -57,18 +57,18 @@ The `NavisensCore` is the base plugin that all other plugins will depend on. If 
 ### Module:app buildscript
 ```diff
 dependencies {
-    compile group: "com.navisens", name: "motiondnaapi", version: "1.2.2-SNAPSHOT", changing: true
-    compile 'org.altbeacon:android-beacon-library:2.+'
-+    compile 'com.navisens:navisenscore:3.1.0'
-+    compile 'com.navisens:navishare:0.3.0'
-+    compile 'com.navisens:navihelp:1.2.1'
+    implementation group: "com.navisens", name: "motiondnaapi", version: "1.8.15", changing: true
+    implementation 'org.altbeacon:android-beacon-library:2.+'
++    implementation 'com.navisens:navisenscore:3.1.0'
++    implementation 'com.navisens:navishare:0.3.0'
++    implementation 'com.navisens:navihelp:1.2.1'
 
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile 'com.android.support:appcompat-v7:25.3.1'
-    compile 'com.android.support.constraint:constraint-layout:1.0.2'
-    testCompile 'junit:junit:4.12'
+    implementation 'com.android.support:appcompat-v7:25.3.1'
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    testImplementation 'junit:junit:4.12'
 }
 ```
 
@@ -196,18 +196,18 @@ At this point, we have a second plugin that will fix the issue we had. Now, we j
 ### Module:app buildscript
 ```diff
 dependencies {
-    compile group: "com.navisens", name: "motiondnaapi", version: "1.2.2-SNAPSHOT", changing: true
-    compile 'org.altbeacon:android-beacon-library:2.+'
-    compile 'com.navisens:navisenscore:3.1.0'
-    compile 'com.navisens:navishare:0.3.0'
-+    compile project(':navitutorial')
+    implementation group: "com.navisens", name: "motiondnaapi", version: "1.8.15", changing: true
+    implementation 'org.altbeacon:android-beacon-library:2.+'
+    implementation 'com.navisens:navisenscore:3.1.0'
+    implementation 'com.navisens:navishare:0.3.0'
++    implementation project(':navitutorial')
 
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile 'com.android.support:appcompat-v7:25.3.1'
-    compile 'com.android.support.constraint:constraint-layout:1.0.2'
-    testCompile 'junit:junit:4.12'
+    implementation 'com.android.support:appcompat-v7:25.3.1'
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    testImplementation 'junit:junit:4.12'
 }
 ```
 

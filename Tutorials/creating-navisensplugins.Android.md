@@ -65,9 +65,9 @@ maven {
 4. Add the following into your **dependencies**:
 
 ```gradle
-compile group: "com.navisens", name: "motiondnaapi", version: "1.1.1-SNAPSHOT", changing: true
-compile 'org.altbeacon:android-beacon-library:2.+'
-compile 'com.navisens:navisenscore:2.1.0'
+implementation group: "com.navisens", name: "motiondnaapi", version: "1.8.15", changing: true
+implementation 'org.altbeacon:android-beacon-library:2.+'
+implementation 'com.navisens:navisenscore:2.1.0'
 ```
 
 You should check out what the latest version of our Navisens SDK and `NavisensCore` are so you can use the latest stable version.
