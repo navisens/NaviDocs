@@ -34,9 +34,7 @@ How does Navisens work? Tutorials, quick starts, and extensive documentation on 
 
 ### Navisens prerequisites
 
-Our SDK functions on 99.6% of Android devices (not taking into account hardware limitations (e.g. missing sensors)).
-You can view below the required sensors and operating system versions to ensure proper functioning of our SDK, 
-we also have a method callback which reports any hardware problems: [reportError](https://github.com/navisens/NaviDocs/blob/master/API.Android.md#void-reporterrorerrorcode-errorcode-string-errordescription).
+Our SDK works on the majority of smartphones (both iOS and Android). You can view below the required sensors and operating system versions to ensure proper functioning of our SDK, we also have a method callback which reports any hardware problems: [reportError](https://github.com/navisens/NaviDocs/blob/master/API.Android.md#void-reporterrorerrorcode-errorcode-string-errordescription).
 
 #### Hardware
 
