@@ -291,8 +291,6 @@ The `PowerConsumptionMode` is one of the following:
 
 
 #### `setExternalPositioningState(_ mode: ExternalPositioningState)`
-This method is essentially a wrapper for Apple's CLLocationManager, which allows us to control from the API & the core sides
-Apple's GPS.
 You are required to at least set the externational positioning state to LOW_ACCURACY if you want your application to function in the background.
 And set it to HIGH_ACCURACY if you are using setLocationNavisens (need not worry thanks to our MotionDna
 technology we decide when to switch GPS between LOW and HIGH accuracies internally to prevent battery drainage).
