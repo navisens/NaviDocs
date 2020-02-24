@@ -147,6 +147,7 @@ There are many ways to control the SDK. Here, we have split control methods into
 	* [`void setCallbackUpdateRateInMs(double rate)`](#void-setcallbackupdaterateinmsdouble-rate)
 	* [`void setNetworkUpdateRateInMs(double rate)`](#void-setnetworkupdaterateinmsdouble-rate)
 	* [`void setPowerMode(PowerConsumptionMode mode)`](#void-setpowermodepowerconsumptionmode-mode)
+	* [`setExternalPositioningState(_ mode: ExternalPositioningState)`](#setexternalpositioningstate_-mode-externalpositioningstate)
 * Global Location Initialization
 	* [`void setLocationNavisens()`](#void-setlocationnavisens)
 	* [`void setLocationGPSOnly()`](#void-setlocationgpsonly)
@@ -285,6 +286,24 @@ The `PowerConsumptionMode` is one of the following:
 * `LOW_CONSUMPTION`: Internal Estimation at 6.25Hz
 * `MEDIUM_CONSUMPTION`: Internal Estimation at 12.5Hz
 * `PERFORMANCE`: Internal Estimation at 25Hz
+
+-----
+
+
+#### `setExternalPositioningState(_ mode: ExternalPositioningState)`
+This method is essentially a wrapper for Apple's CLLocationManager, which allows us to control from the API & the core sides
+Apple's GPS.
+You are required to at least set the externational positioning state to LOW_ACCURACY if you want your application to function in the background.
+And set it to HIGH_ACCURACY if you are using setLocationNavisens (need not worry thanks to our MotionDna
+technology we decide when to switch GPS between LOW and HIGH accuracies internally to prevent battery drainage).
+
+
+**Params**
+The `ExternalPositioningState` is one of the following:
+
+* `OFF`: GPS is off (application will not function in background)
+* `LOW_ACCURACY`: GPS set to 1 kilometer accuracy (kCLLocationAccuracyKilometer) (application will function in background)
+* `HIGH_ACCURACY` (default): GPS set to best accuracy (kCLLocationAccuracyBest) & no distance filter (kCLDistanceFilterNone) (application will function in background)
 
 -----
 #### `void setLocationNavisens()`
