@@ -7,17 +7,9 @@ How does Navisens work? Tutorials, quick starts, and extensive documentation on 
 
 **SDK Release notes**: [Android-SDK](https://github.com/navisens/Android-SDK/releases) | [iOS-SDK](https://github.com/navisens/iOS-SDK/releases)
 
-**Quickstart**: The quick and easy way for beginners of mobile app development, and those unfamiliar with our Plugins system!
-
-<sup>[Android](/BEER.Android.md) | [iOS](/BEER.iOS.md)</sup>
-
 **Documentation**: The nitty-gritty of our SDK, with extensive details and examples.
 
 <sup>[Android](/API.Android.md) | [iOS](/API.iOS.md)</sup>
-
-**Plugins**: Our Plugins system for quickly testing out ideas or new ways of using our SDK. And all of it completley open source!
-
-<sup>[Android](https://github.com/navisens/Android-Plugin) | [iOS](https://github.com/navisens/iOS-Plugin)</sup>
 
 [**Tutorials**](/Tutorials): Some of our more advanced guides and workshops for getting the most out of MotionDna.
 
