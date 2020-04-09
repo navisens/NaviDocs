@@ -1,7 +1,5 @@
 # NaviDocs
-How does Navisens work? Tutorials, quick starts, and extensive documentation on all our newest and latest features!
-
-*Not sure where to start? Check out the **Quickstart** for [Android](/BEER.Android.md) and [iOS](/BEER.iOS.md)!*
+How does Navisens work? Extensive documentation on all our newest and latest features!
 
 ## Quick Links
 
@@ -11,16 +9,15 @@ How does Navisens work? Tutorials, quick starts, and extensive documentation on 
 
 <sup>[Android](/API.Android.md) | [iOS](/API.iOS.md)</sup>
 
-[**Tutorials**](/Tutorials): Some of our more advanced guides and workshops for getting the most out of MotionDna.
+## Examples
 
 *Android:*
-* **Recommended**: [Using and Making Plugins (for groups)](/Tutorials/navihelpme.Android.md)
-* [Creating New NavisensPlugins](/Tutorials/creating-navisensplugins.Android.md)
-* [Publishing NavisensPlugins](/Tutorials/publishing-navisensplugins.Android.md)
+* [Hello World (Java)](https://github.com/navisens/android-app-helloworld)
+* [Hello World (Kotlin)](https://github.com/navisens/android-app-helloworld-kotlin)
 
 *iOS:*
-* [Creating New NavisensPlugins](/Tutorials/creating-navisensplugins.iOS.md)
-* [Publishing NavisensPlugins](/Tutorials/publishing-navisensplugins.Android.md)
+* [Hello World (Objective-C)](https://github.com/navisens/iOS-app-helloworld)
+* [Hello World (Swift)](https://github.com/navisens/iOS-app-helloworld-swift)
 
 -----
 
