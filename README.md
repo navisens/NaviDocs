@@ -19,6 +19,7 @@ How does Navisens work? Extensive documentation on all our newest and latest fea
 *iOS:*
 * [Hello World (Objective-C)](https://github.com/navisens/iOS-app-helloworld)
 * [Hello World (Swift)](https://github.com/navisens/iOS-app-helloworld-swift)
+* [Hello World (SwiftUI)](https://github.com/navisens/ios-app-helloworld-swiftui)
 * [Google Maps Integration (Swift)](https://github.com/navisens/ios-googlemaps-motiondna-integration)
 
 -----
