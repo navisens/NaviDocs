@@ -14,10 +14,12 @@ How does Navisens work? Extensive documentation on all our newest and latest fea
 *Android:*
 * [Hello World (Java)](https://github.com/navisens/android-app-helloworld)
 * [Hello World (Kotlin)](https://github.com/navisens/android-app-helloworld-kotlin)
+* [Map Manual Location Setting (Java)](https://github.com/navisens/android-app-map-manual-location)
 
 *iOS:*
 * [Hello World (Objective-C)](https://github.com/navisens/iOS-app-helloworld)
 * [Hello World (Swift)](https://github.com/navisens/iOS-app-helloworld-swift)
+* [Google Maps Integration (Swift)](https://github.com/navisens/ios-googlemaps-motiondna-integration)
 
 -----
 
