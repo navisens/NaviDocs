@@ -40,7 +40,7 @@ If the phone is	equipped with a	barometer our estimation will be in 3D, which me
 
 ##### iOS
 
-We require at least iOS 9.
+We require at least iOS 11.0.
 
 ##### Android
 
