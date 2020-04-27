@@ -71,9 +71,7 @@ Smart building/office: guiding staff and visitors to meeting rooms on large camp
 Industrial/facilities management: guiding workers to locate equipment and machinery inside large facilities and warehouses
 
 ### Known issues
-Some smartphones can have problems with the inertial sensors. For iOS, the iPhone 5/5S has known sensor hardware issues (this was covered by the media as “sensor-gate”).
-
-For Android, some devices may have issues due to hardware, and some due to software. In some cases, we have seen devices performing poorly (e.g. a Samsung Galaxy S4) perform much better after a firmware update. It’s best to always have the latest firmware update installed on your Android phone.
+Some smartphones can have problems with the inertial sensors. For Android, some devices may have issues due to hardware, and some due to software. In some cases, we have seen devices performing poorly perform much better after a firmware update. It’s best to always have the latest firmware update installed on your Android phone.
 
 ### Quick background of basic location concepts
 Navisens supports two modes of positioning: relative positioning and global positioning. This tutorial provide code examples of both.
