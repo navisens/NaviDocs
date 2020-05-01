@@ -1,4 +1,4 @@
-# NaviDocs/Android #
+# Android SDK Documentation #
 -----
 
 This is the central Android API documentation for the Navisens MotionDnaSDK.
@@ -11,7 +11,7 @@ Add the following dependencies to your application buildscript:
 
 ```gradle
 dependencies {
-    implementation group: "com.navisens", name: "motiondnaapi", version: "1.8.14", changing: true
+    implementation group: "com.navisens", name: "motiondnaapi", version: "1.9.4 ", changing: true
     // ...
 }
 ```
@@ -73,11 +73,11 @@ The paramater is your developer key. If this is missing, or incorrect, the SDK w
 #### `void runManualMotionDna(String ID)`
 This function behaves like the `runMotionDna()` method above and similarly requires a developer key. However it does not start up the phone sensors allowing sensor input from other sources.
 
-#### `void inputMotion(double timestamp, double roll, double pitch, double yaw, double accX, double accY, double accZ)` 
+#### `void inputMotion(double timestamp, double roll, double pitch, double yaw, double accX, double accY, double accZ)`
 This method must be calls at regular intervals with sensor data if you have started the SDK with `void runManualMotionDna()`.
 
 **Params**
-Timestamp units must be in seconds. Accelerometer x, y, and z should be in G's and Gyro roll, pitch, and yaw unit should be in radians/sec. 
+Timestamp units must be in seconds. Accelerometer x, y, and z should be in G's and Gyro roll, pitch, and yaw unit should be in radians/sec.
 
 -----
 ## Reducing Android SDK Size ##
@@ -137,7 +137,7 @@ There are many ways to control the SDK. Here, we have split control methods into
 	* [`void stop()`](#void-stop)
 	* [`void resetLocalEstimation()`](#void-resetlocalestimation)
 	* [`void resetLocalHeading()`](#void-resetlocalheading)
-	
+
 * SDK Settings
 	* [`void setARModeEnabled(boolean mode)`](#void-setarmodeenabledboolean-mode)
 	* [`void setBackpropagationEnabled(boolean state)`](#void-setbackpropagationenabledboolean-state)
@@ -253,11 +253,11 @@ Enable or disable file logging.
 
 ##### Tutorial: Downloading Logs
 > Downloading these logs is a very good way of providing debug information, should there be an issue with our SDK. On Android, this is very easily done. First, make sure you have the "Android Debug Bridge" or `adb` Android Platform Tool downloaded. Once you have it set up correctly, plug in your Android device to a computer. On the computer, open a command terminal and run the following command:
-> 
+>
 > `adb backup -f navisensBackup.ab <your-app-package-name-here>`
-> 
+>
 > Select "Backup My Data" and this will begin an unencrypted bakcup of the navisens app package onto your computer.
-> 
+>
 > Enter the following command to decompress the navisens app backup
 >
 > `dd if=navisensBackup.ab bs=24 skip=1 | python -c "import zlib,sys;sys.stdout.write(zlib.decompress(sys.stdin.read()))" | tar -xvf -`
@@ -408,7 +408,7 @@ Use `startUDPHostAndPort(String host, String port)` for internal testing, and on
 Stop broadcasting positional data to your servers.
 
 #### `void setUDPRoom(String room)`
-Change the current 
+Change the current
 
 #### `void sendUDPPacket(String msg)`
 Send a string of data that will be broadcast to all other devices also in the same server room.
@@ -552,25 +552,25 @@ The `absoluteAltitude` is the height of current position above mean sea level (o
 The `absoluteAltitudeUncertainty` is the altitude uncertainty, which takes into consideration the average deviations from different phone models barometric measurements, the availability of recent weather station measurements, and the usefulness of the data provided given the distance between the weather station and the user.
 
 ##### Tutorial: Setting Floor Number
-> 
+>
 > There are three functions for configuring the user floor number. Note that these functions are not listed under the **Control** section.
-> 
+>
 > - **`void addFloorNumberAndHeight(int floor, double height)`**
 >   - Appends a floor number with its respective height in meters to a vector that we use internally and correlate it to the current internal altitude measurements and output the proper floor based on the floors and heights you have inputted in our core.
 >   - Then the `.getLocation().floor` outputted will be calculated using the floor numbers and heights you have inputted into our core.
 >   - Note: Please enter the floor heights linearly starting from floor 0, then 1, 2, etc.
 > - **`void setAverageFloorHeight(double floorHeight)`**
->   - Sets the average floor height we use to calculate the floor transitions internally, our default value is 4.5. When an averageFloorHeight is inputted this will override our 4.5m default value and use the value you have entered to measure the floor fluctuations. If all floors have the same height you can simply set the average floor height. 
+>   - Sets the average floor height we use to calculate the floor transitions internally, our default value is 4.5. When an averageFloorHeight is inputted this will override our 4.5m default value and use the value you have entered to measure the floor fluctuations. If all floors have the same height you can simply set the average floor height.
 > - **`void setFloorNumber(int floor)`**
 >   - This method allows you to enter the current floor you are on, which overrides our internal estimate. We start measuring floor fluctuations from the floor you have inputted using the barometric data we receive from the device.
-> 
+>
 > Known limitations:
-> 
+>
 > If the floor height differs significantly from our default values the floor fluctuations will start reporting inaccuracies due to our default value, if you tweak this default value based on a known floor height of the building you are testing in you will be receiving better results.
-> 
+>
 > Behavior:
-> 
-> If you initialize with setLocationNavisens, Navisens will manage global initialization of your start position and will also override the floor number and set to zero when we detect that the user is outdoors at street level. 
+>
+> If you initialize with setLocationNavisens, Navisens will manage global initialization of your start position and will also override the floor number and set to zero when we detect that the user is outdoors at street level.
 
 #### `Motion getMotion()`
 Gets some more motion statistics, which provide the step frequency and the motion type. The motion type can be `STATIONARY`, `FIDGETING`, or `FORWARD`.
@@ -589,7 +589,7 @@ Gets the look direction of the device. This can be useful for rendering applicat
 
 #### `Timestamp getTimestamp()`
 This timestamp represents the time at which the packet arrived, the time frame is with respect to when the phone last booted up.
-Based on your configuration (e.g. PowerConsumptionMode.PERFORMANCE/MEDIUM_CONSUMPTION/LOW_CONSUMPTION), 
+Based on your configuration (e.g. PowerConsumptionMode.PERFORMANCE/MEDIUM_CONSUMPTION/LOW_CONSUMPTION),
 you will receive MotionDna events at different intervals:
 - PERFORMANCE: 0.04s intervals
 - MEDIUM_CONSUMPTION: 0.08s intervals
