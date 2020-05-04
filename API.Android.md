@@ -147,7 +147,7 @@ There are many ways to control the SDK. Here, we have split control methods into
 	* [`void setCallbackUpdateRateInMs(double rate)`](#void-setcallbackupdaterateinmsdouble-rate)
 	* [`void setNetworkUpdateRateInMs(double rate)`](#void-setnetworkupdaterateinmsdouble-rate)
 	* [`void setPowerMode(PowerConsumptionMode mode)`](#void-setpowermodepowerconsumptionmode-mode)
-	* [`setExternalPositioningState(_ mode: ExternalPositioningState)`](#setexternalpositioningstate_-mode-externalpositioningstate)
+	* [`void setExternalPositioningState(ExternalPositioningState state)`](#setexternalpositioningstate_-mode-externalpositioningstate)
 * Global Location Initialization
 	* [`void setLocationNavisens()`](#void-setlocationnavisens)
 	* [`void setLocationGPSOnly()`](#void-setlocationgpsonly)
