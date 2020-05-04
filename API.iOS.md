@@ -88,7 +88,7 @@ There are many ways to control the SDK. Here, we have split control methods into
 	* [`setNetworkUpdateRateInMs(_ rate: Double)`](#setnetworkupdaterateinms_-rate-double)
 	* [`setPowerMode(_ mode: PowerConsumptionMode)`](#setpowermode_-mode-powerconsumptionmode)
 	* [`setExternalPositioningState(_ mode: ExternalPositioningState)`](#setexternalpositioningstate_-mode-externalpositioningstate)
-* Global Location Initialization
+* Global Location
 	* [`setLocationNavisens()`](#setlocationnavisens)
 	* [`setLocationGPSOnly()`](#setlocationgpsonly)
 	* [`setLocationLatitude(_ latitude: Double, longitude: Double)`](#setlocationlatitude_-latitude-double-longitude-double)
@@ -97,6 +97,7 @@ There are many ways to control the SDK. Here, we have split control methods into
 	* [`inputGlobalCoordinatesLat(_ latitude: Double, longitude: Double, timestamp: Double, AndAngleThreshold angleThreshold: Double)`](#inputglobalcoordinates_-latitude-double-longitude-double-timestamp-double-andanglethreshold-anglethreshold-double)
 	* [`setHeadingMagInDegrees()`](#setheadingmagindegrees)
 	* [`setHeadingInDegrees(_ heading: Double)`](#setheadingindegrees_-heading-double)
+* Local Location
 	* [`setCartesianOffsetInMetersX(_ x: Double, Y y: Double)`](#setcartesianoffsetinmetersx_-x-double-y-y-double)
 	* [`setLocalHeadingOffsetInDegrees(_ heading: Double)`](#setlocalheadingoffsetindegrees_-heading-double)
 	* [`setLocalHeading(_ heading: Double)`](#setlocalheading_-heading-double)
@@ -107,6 +108,8 @@ There are many ways to control the SDK. Here, we have split control methods into
 	* [`setUDPRoom(_ room: String)`](#setudproom_-room-string)
 	* [`sendUDPPacket(_ msg: String)`](#sendudppacket_-msg-string)
 	* [`sendUDPQueryRooms(_ rooms: NSMutableArray)`](#sendudpqueryrooms_-rooms-nsmutablearray)
+* EXPERIMENTAL
+  * [`recordObservation(withIdentifier: Int, andUncertainty: Double)`](#recordobservation-withidentifier-int-anduncertainty-double)
 
 -----
 #### `MotionDnaSDK.checkSDKVersion() -> String`
@@ -388,6 +391,11 @@ Query the server for the current capacity of the listed rooms. Note that the ser
 
 To receive the results of a query, see [`receiveNetworkData()`](#receivenetworkdata_-networkcode-networkcode-withpayload-map-dictionary)
 
+### EXPERIMENTAL
+
+#### `recordObservation(withIdentifier: Int, andUncertainty: Double)`
+Input an identifier when visiting and revisiting a landmark in an indoor setting. The ID must be accompanied by an uncertainty value in meters indicating the maximum possible distance the user could currently be from the ID'd landmark. This will provide the SDK with additional information that can enable improved corrections to a users position.
+
 -----
 
 ## Callbacks ##
@@ -459,6 +467,7 @@ These are methods of the `MotionDna` object, and are used to get data from these
 * [`getMotionStatistics() -> MotionStatistics`](#getmotionstatistics---motionstatistics)
 * [`getQuaternion() -> OrientationQuaternion`](#getquaternion---orientationquaternion)
 * [`getTimestamp() -> Timestamp`](#gettimestamp---timestamp)
+* [`getClassifiers() -> [String : Classifier]`](#getclassifiers)
 
 
 #### `getAttitude() -> Attitude`
@@ -555,3 +564,12 @@ you will receive MotionDna events at different intervals:
 - PERFORMANCE: 0.04s intervals
 - MEDIUM_CONSUMPTION: 0.08s intervals
 - LOW_CONSUMPTION: 0.16s intervals
+
+#### `getClassifiers()` (BETA)
+This method will return a hashmap holding all a number of classifiers that our SDK provided predictions for. Each classifier will have withing it a string with the current predicted state label for that classifier as well as a confidence in that prediction. A hash maps will also be included with a series of PredictionStats objects for all predictions made so far. The objects will contain duraation and distance information for that particular prediction during the given SDK run.
+
+#### _Current Classifiers_
+  - Indoor Outdoor (key: "indoorOutdoor")
+    - predicts where a users device is currently indoors or outdoors
+  - Vehicle Pedestrian (key: "vehicle")
+    - predicts whether a user and their device is moving via walking or by way of a vehicle of some kind

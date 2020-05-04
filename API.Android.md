@@ -167,6 +167,8 @@ There are many ways to control the SDK. Here, we have split control methods into
 	* [`void setUDPRoom(String room)`](#void-setudproomstring-room)
 	* [`void sendUDPPacket(String msg)`](#void-sendudppacketstring-msg)
 	* [`void sendUDPQueryRooms(String[] rooms)`](#void-sendudpqueryroomsstring-rooms)
+* EXPERIMENTAL
+	* [`void recordObservation(int id, double uncertainty)`](#void-recordobservationint-id-double-uncertainty)
 
 -----
 #### `String MotionDnaApplication.checkSDKVersion()`
@@ -422,6 +424,11 @@ Query the server for the current capacity of the listed rooms. Note that the ser
 
 To receive the results of a query, see [`receiveNetworkData()`](#void-receivenetworkdatanetworkcode-opcode-map-payload)
 
+### EXPERIMENTAL
+
+#### `void recordObservation(int id, double uncertainty)`
+Input an identifier when visiting and revisiting a landmark in an indoor setting. The ID must be accompanied by an uncertainty value in meters indicating the maximum possible distance the user could currently be from the ID'd landmark. This will provide the SDK with additional information that can enable improved corrections to a users position.
+
 -----
 
 ## Callbacks ##
@@ -500,6 +507,7 @@ These are methods of the `MotionDna` object, and are used to get data from these
 * [`MotionStatistics getMotionStatistics()`](#motionstatistics-getmotionstatistics)
 * [`OrientationQuaternion getOrientationQuaternion()`](#orientationquaternion-getorientationquaternion)
 * [`Timestamp getTimestamp()`](#timestamp-gettimestamp)
+* [`HashMap<String, MotionDna.Classifier> getClassifiers()`](#hashmap-getclassifiers)
 
 #### `Attitude getAttitude()`
 Gets the attitude of the current device. Attitude contains the following attributes:
@@ -595,3 +603,11 @@ you will receive MotionDna events at different intervals:
 - MEDIUM_CONSUMPTION: 0.08s intervals
 - LOW_CONSUMPTION: 0.16s intervals
 
+#### `HashMap getClassifiers()` (BETA)
+This method will return a hashmap holding all a number of classifiers that our SDK provided predictions for. Each classifier will have withing it a string with the current predicted state label for that classifier as well as a confidence in that prediction. A hash maps will also be included with a series of PredictionStats objects for all predictions made so far. The objects will contain duraation and distance information for that particular prediction during the given SDK run.
+
+#### _Current Classifiers_
+  - Indoor Outdoor (key: "indoorOutdoor")
+    - predicts where a users device is currently indoors or outdoors
+  - Vehicle Pedestrian (key: "vehicle")
+    - predicts whether a user and their device is moving via walking or by way of a vehicle of some kind
