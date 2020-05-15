@@ -79,7 +79,6 @@ There are many ways to control the SDK. Here, we have split control methods into
 * SDK Settings
 	* [`setARModeEnabled(_ state: Bool)`](#setarmodeenabled_-state-bool)
 	* [`setBackgroundModeEnabled(_ state: Bool)`](#setbackgroundmodeenabled_-state-bool)
-	* [`enableBackgroundSensors()`](#enablebackgroundsensors)
 	* [`setBackpropagationEnabled(_ state: Bool)`](#setbackpropagationenabled_-state-bool)
 	* [`setBackpropagationBufferSize(_ size: Int)`](#setbackpropagationbuffersize_-size-int)
 	* [`setCorrectionBackpropagationEnabled(_ state: Bool)`](#setcorrectionbackpropagationenabled_-state-bool)
@@ -161,17 +160,6 @@ to prevent sensors from stopping in the background.**
 
 **Params**
 Enable or disable background location updates.
-
-#### [Deprecated] `enableBackgroundSensors()`
-
-This function is no longer needed for MotionDna to run in background. From v1.8.0 it does nothing. It will be removed in next major release.
-
-~~If you are using iOS 11+, then you should also go to your `AppDelegate` file and find the `applicationDidEnterBackground` method and add this method into it.
-This method essentially restarts our internal CMMotionManager to ensure sensors updates keep occuring in background, this is an **Apple** bug that has already been submitted.~~
-
-```swift
-  MotionDnaSDK.enableBackgroundSensors()
-```
 
 #### `setBackpropagationEnabled(_ state: Bool)`
 
