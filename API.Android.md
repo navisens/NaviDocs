@@ -529,7 +529,6 @@ Gets the location of the current device. The location contains the following att
 * `double heading`, with respect to True North in the 0-360 frame.
 * `double localHeading`, within +-180 degrees.
 * `XY uncertainty`
-* `VerticalMotionStatus verticalMotionStatus`
 * `int floor`
 * `double absoluteAltitude`
 * `double absoluteAltitudeUncertainty`
@@ -543,15 +542,6 @@ The `globalLocation` on the other hand provides a latitude, longitude, and altit
 The `uncertainty` is the uncertainty in the local location estimation.
 
 The `heading` and `localHeading` are self-explanatory, and provide the global and local heading values respectively.
-
-The `verticalMotionStatus` is the vertical motion status type.  The options include:
-- `VERTICAL_STATUS_LEVEL_GROUND` when on flat/level ground or outdoors (will always report this outdoors)
-- `VERTICAL_STATUS_ESCALATOR_UP` when riding escalator up
-- `VERTICAL_STATUS_ESCALATOR_DOWN` when riding escalator down
-- `VERTICAL_STATUS_ELEVATOR_UP` when riding elevator up
-- `VERTICAL_STATUS_ELEVATOR_DOWN` when riding elevator down
-- `VERTICAL_STATUS_STAIRS_UP` when walking up stairs
-- `VERTICAL_STATUS_STAIRS_DOWN` when walking down stairs
 
 The `floor` is the relative floor with respect to the initial location.  For example: if you set the location on floor 4, that will be the reference floor (i.e. floor 0).  Then, if you go up one floor, Navisens will report floor 1.  This function will always report 0 if there is no barometer.
 
