@@ -5,13 +5,15 @@ This is the central iOS API documentation for the Navisens MotionDnaSDK.
 
 ## Installation ##
 
-If you haven't already done so or haven't build an iOS app before, check out the [Quick Start Guide](/BEER.iOS.md), as it is designed to be a very straight-forward demo of an easy app you can build with our SDK and tools. Otherwise, if you already have some experience building iOS apps, here's what you need to do to set up the Navisens MotionDnaSDK.
+Here is what you need to set up the Navisens MotionDnaSDK.
 
-Creating a `Podfile` with the following pods, and install them:
+The SDK is easily installed using the Cocoapods dependency manager. You can find installation instructions for cocoapods [here](https://cocoapods.org).
+
+Create a `Podfile` with the following pods, and install them with ```pod install``` in the terminal from the project folder:
 
 ```pod
 source 'https://github.com/CocoaPods/Specs.git'
-platform :ios, '9.1'
+platform :ios, '12.0'
 
 target 'ProjectName' do
   use_frameworks!
