@@ -87,7 +87,6 @@ There are many ways to control the SDK. Here, we have split control methods into
 	* [`setBinaryFileLoggingEnabled(_ state: Bool)`](#setbinaryfileloggingenabled_-state-bool)
 	* [`setCallbackUpdateRateInMs(_ rate: Double)`](#setcallbackupdaterateinms_-rate-double)
 	* [`setNetworkUpdateRateInMs(_ rate: Double)`](#setnetworkupdaterateinms_-rate-double)
-	* [`setPowerMode(_ mode: PowerConsumptionMode)`](#setpowermode_-mode-powerconsumptionmode)
 	* [`setExternalPositioningState(_ mode: ExternalPositioningState)`](#setexternalpositioningstate_-mode-externalpositioningstate)
 * Global Location
 	* [`setLocationNavisens()`](#setlocationnavisens)
@@ -183,16 +182,6 @@ Enable or disable location back propagation.
 If the user wants to see everything that happened before Navisens found an initial position,
 he can adjust the amount of the trajectory to see before the initial position was set automatically.
 
-To correlate the back propagation buffer in time you can measure it based on the POWER_MODE
-you set: PERFORMANCE/LOW/MEDIUM.
-Back propagation buffer is set to 4000 by default:
-In low power:
-4000 / 16: 250 seconds
-Medium:
-4000 / 8: 500 seconds
-Performance:
-4000 / 4: 1000 seconds
-
 **Params**
 Back propagation buffer size.
 
@@ -234,16 +223,6 @@ Tell our SDK how often to publish our location to your servers. This allows your
 
 **Params**
 The number of milliseconds `ms` between each network update. Setting this to 5000 will send network estimation results every 5 seconds, while setting this to 0 will send results at the fastest rate our SDK is capable of running estimations (though not consistently timed).
-
-#### `setPowerMode(_ mode: PowerConsumptionMode)`
-Set the power consumption mode to trade off accuracy of predictions for power saving.
-
-**Params**
-The `PowerConsumptionMode` is one of the following:
-
-* `LOW_CONSUMPTION`: Internal Estimation at 6.25Hz
-* `MEDIUM_CONSUMPTION`: Internal Estimation at 12.5Hz
-* `PERFORMANCE`: Internal Estimation at 25Hz
 
 
 #### `setExternalPositioningState(_ mode: ExternalPositioningState)`
