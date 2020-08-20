@@ -146,7 +146,6 @@ There are many ways to control the SDK. Here, we have split control methods into
 	* [`void setBinaryFileLoggingEnabled(boolean state)`](#void-setbinaryfileloggingenabledboolean-state)
 	* [`void setCallbackUpdateRateInMs(double rate)`](#void-setcallbackupdaterateinmsdouble-rate)
 	* [`void setNetworkUpdateRateInMs(double rate)`](#void-setnetworkupdaterateinmsdouble-rate)
-	* [`void setPowerMode(PowerConsumptionMode mode)`](#void-setpowermodepowerconsumptionmode-mode)
 	* [`void setExternalPositioningState(ExternalPositioningState state)`](#setexternalpositioningstate_-mode-externalpositioningstate)
 * Global Location Initialization
 	* [`void setLocationNavisens()`](#void-setlocationnavisens)
@@ -226,16 +225,6 @@ Enable or disable back propagation.
 If the user wants to see everything that happened before Navisens found an initial position,
 he can adjust the amount of the trajectory to see before the initial position was set automatically.
 
-To correlate the back propagation buffer in time you can measure it based on the POWER_MODE
-you set: PERFORMANCE/LOW/MEDIUM.
-Back propagation buffer is set to 4000 by default:
-In low power:
-4000 / 16: 250 seconds
-Medium:
-4000 / 8: 500 seconds
-Performance:
-4000 / 4: 1000 seconds
-
 **Params**
 Back propagation buffer size.
 
@@ -277,17 +266,6 @@ Tell our SDK how often to publish our location to your servers. This allows your
 
 **Params**
 The number of milliseconds `ms` between each network update. Setting this to 5000 will send network estimation results every 5 seconds, while setting this to 0 will send results at the fastest rate our SDK is capable of running estimations (though not consistently timed).
-
-#### `void setPowerMode(PowerConsumptionMode mode)`
-Set the power consumption mode to trade off accuracy of predictions for power saving.
-
-**Params**
-The `PowerConsumptionMode` is one of the following:
-
-* `SUPER_LOW_CONSUMPTION`: Batches samples for 2 minutes and processes them queued up and internal estimation runs at 6Hz.
-* `LOW_CONSUMPTION`: Internal Estimation at 6.25Hz
-* `MEDIUM_CONSUMPTION`: Internal Estimation at 12.5Hz
-* `PERFORMANCE`: Internal Estimation at 25Hz
 
 -----
 
