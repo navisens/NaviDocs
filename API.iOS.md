@@ -79,7 +79,6 @@ There are many ways to control the SDK. Here, we have split control methods into
 	* [`resetLocalEstimation()`](#resetlocalestimation)
 	* [`resetLocalHeading()`](#resetlocalheading)
 * SDK Settings
-	* [`setARModeEnabled(_ state: Bool)`](#setarmodeenabled_-state-bool)
 	* [`setBackgroundModeEnabled(_ state: Bool)`](#setbackgroundmodeenabled_-state-bool)
 	* [`setBackpropagationEnabled(_ state: Bool)`](#setbackpropagationenabled_-state-bool)
 	* [`setBackpropagationBufferSize(_ size: Int)`](#setbackpropagationbuffersize_-size-int)
@@ -147,11 +146,6 @@ Resets the cartesian coordinates back to the origin `(0, 0)`, and sets the headi
 Resets just the heading to 0 degrees.
 
 -----
-#### `setARModeEnabled(_ state: Bool)`
-Enables AR mode. AR mode publishes orientation quaternion at a higher rate.
-
-**Params**
-Enable or disable AR mode.
 
 #### `setBackgroundModeEnabled(_ state: Bool)`
 Allow our SDK to run while your app is backgrounded by turning the CLLocationManager on. If you wish to use this, you must enable the `Location updates` `Background Mode` and enable `Background Modes` if it is not on.
@@ -164,7 +158,7 @@ Enable or disable background location updates.
 
 #### `setBackpropagationEnabled(_ state: Bool)`
 
-When setLocationNavisens is enabled and setBackpropagationEnabled is called, once Navisens has initialized you will not only get the current position, but also a set of latitude longitude coordinates which lead back to the start position (where the SDK/App was started). This is useful to determine which building and even where inside a building the person started, or where the person exited a vehicle (e.g. the vehicle parking  spot or the location of a drop-off).
+When setLocationNavisens is enabled and setBackpropagationEnabled is called, once Navisens has initialized you will not only get the current position, but also a set of latitude longitude coordinates which lead back to the start position (where the SDK/App was started). This is useful to determine which building and even where inside a building the person started, or where the person exited a vehicle (e.g. the vehicle parking spot or the location of a drop-off).
 
 The historical trajectory of points will be ordered as follows: Point(t-n), Point(t-2), Point(t-1), Point(t-0)
 So you will receive all the points from the past with the appropriate timestamps, until you get to your current position.
@@ -514,7 +508,7 @@ Gets the name of the device.
 Gets some motion statistics. These report the aggregate percentage of time spent in each motion type like the `getMotion()` method provides.
 
 #### `getOrientationQuaternion() -> OrientationQuaternion`
-Gets the look direction of the device. This can be useful for rendering applications. If you are dealing with augmented reality, make sure to call `setARModeEnabled(true)` to enable AR mode so the quaternion is broadcast in realtime.
+Gets the look direction of the device. This can be useful for rendering applications. If you are dealing with augmented reality,  make sure to pass  `ar-standard` for the `model` configuration option to enable AR mode so the quaternion is broadcast in realtime.
 
 #### `getTimestamp() -> Timestamp`
 This timestamp represents the time at which the packet arrived, the time frame is with respect to when the phone last booted up.

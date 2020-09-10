@@ -139,7 +139,6 @@ There are many ways to control the SDK. Here, we have split control methods into
 	* [`void resetLocalHeading()`](#void-resetlocalheading)
 
 * SDK Settings
-	* [`void setARModeEnabled(boolean mode)`](#void-setarmodeenabledboolean-mode)
 	* [`void setBackpropagationEnabled(boolean state)`](#void-setbackpropagationenabledboolean-state)
 	* [`void setBackpropagationBufferSize(int size)`](#setbackpropagationbuffersizeint-size)
 	* [`void setCorrectionBackpropagationEnabled(boolean state)`](#void-setcorrectionbackpropagationenabledboolean-state)
@@ -205,11 +204,6 @@ Resets the cartesian coordinates back to the origin `(0, 0)`, and sets the headi
 Resets just the heading to `0` degrees.
 
 -----
-#### `void setARModeEnabled(boolean mode)`
-Enables AR mode. AR mode publishes orientation quaternion at a higher rate.
-
-**Params**
-Enable or disable AR mode.
 
 #### `void setBackpropagationEnabled(boolean state)`
 When setLocationNavisens is enabled and setBackpropagationEnabled is called, once Navisens has initialized you will not only get the current position, but also a set of latitude longitude coordinates which lead back to the start position (where the SDK/App was started). This is useful to determine which building and even where inside a building the person started, or where the person exited a vehicle (e.g. the vehicle parking spot or the location of a drop-off).
@@ -561,7 +555,7 @@ Gets the name of the device.
 Gets some motion statistics. These report the aggregate percentage of time spent in each motion type like the `getMotion()` method provides.
 
 #### `OrientationQuaternion getOrientationQuaternion()`
-Gets the look direction of the device. This can be useful for rendering applications. If you are dealing with augmented reality, make sure to call `setARModeEnabled(true)` to enable AR mode so the quaternion is broadcast in realtime.
+Gets the look direction of the device. This can be useful for rendering applications. If you are dealing with augmented reality, make sure to pass  `ar-standard` for the `model` configuration option to enable AR mode so the quaternion is broadcast in realtime.
 
 #### `Timestamp getTimestamp()`
 This timestamp represents the time at which the packet arrived, the time frame is with respect to when the phone last booted up.
