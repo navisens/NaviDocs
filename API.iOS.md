@@ -11,8 +11,7 @@
           - [func pause()](#func-pause)
           - [func resume()](#func-resume)
       - [Configuration](#configuration)
-      - [Global Estimation
-        Modification](#global-estimation-modification)
+      - [Change Global Estimation](#change-global-estimation)
           - [func setLocationLatitude(latitude: Double, longitude:
             Double)](#func-setlocationlatitudelatitude-double-longitude-double)
           - [func setLocationLatitude(latitude: Double, longitude:
@@ -20,8 +19,7 @@
             ](#func-setlocationlatitudelatitude-double-longitude-double-andheadingindegrees-double)
           - [func setHeadingInDegrees(heading:
             Double)](#func-setheadingindegreesheading-double)
-      - [Cartesian Estimation
-        Modification](#cartesian-estimation-modification)
+      - [Change Cartesian Estimation](#change-cartesian-estimation)
           - [func setCartesianHeading(heading:
             Double)](#func-setcartesianheadingheading-double)
           - [func setCartesianPositionX( x: Double, y:
@@ -67,7 +65,7 @@
 | callback              | Double                                     | 40ms        | Rate (ms) at which estimation is delivered to app layer                                            |
 | logging               | Bool                                       | false       | Record log file for debugging with Navisens team                                                   |
 
-## Global Estimation Modification
+## Change Global Estimation
 
 ### func setLocationLatitude(latitude: Double, longitude: Double)
 
@@ -75,7 +73,7 @@
 
 ### func setHeadingInDegrees(heading: Double)
 
-## Cartesian Estimation Modification
+## Change Cartesian Estimation
 
 ### func setCartesianHeading(heading: Double)
 
