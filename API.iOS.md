@@ -79,7 +79,7 @@ estimation state
 
 ### func reset()
 
-Equivalent to a stop followed but a start() while preserving the
+Equivalent to a stop() followed by a start() while preserving the
 developer key and any confguration from the initial start() call.
 
 ### func pause()
