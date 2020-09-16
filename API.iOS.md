@@ -107,41 +107,41 @@ Estimation Properties below for further details.
 
 These are the values representing the estimation provided
 
-|                   |                  |                                  |
-| ----------------- | ---------------- | -------------------------------- |
-| Class             | Variable/Getter  | Type                             |
-| MotionDna         | attitude         | Attitude                         |
-|                   | location         | Location                         |
-|                   | MotionType       | enum MotionType                  |
-|                   | classifiers      | Dictionary \[String:Classifier\] |
-|                   | motionStatistics | MotionStatstics                  |
-|                   | timestamp        | double                           |
-|                   |                  |                                  |
-| Attitude          | euler            | Euler                            |
-|                   | quaternion       | Quaternion                       |
-|                   |                  |                                  |
-| Euler             | roll             | double                           |
-|                   | pitch            | double                           |
-|                   | yaw              | double                           |
-|                   |                  |                                  |
-| Quaternion        | x                | double                           |
-|                   | y                | double                           |
-|                   | z                | double                           |
-|                   | w                | double                           |
-|                   |                  |                                  |
-| Location          | cartesian        | CartesianLocation                |
-|                   | global           | GlobalLocation                   |
-|                   |                  |                                  |
-| CartesianLocation | x                | double                           |
-|                   | y                | double                           |
-|                   | z                | double                           |
-|                   | heading          | double                           |
-|                   |                  |                                  |
-| GlobalLocation    | latitude         | double                           |
-|                   | longitude        | double                           |
-|                   | altitude         | double                           |
-|                   | accuracy         | enum GlobalLocationAccuracy      |
-|                   |                  |                                  |
-| MotionStatistics  | fidgeting        | double                           |
-|                   | walking          | double                           |
-|                   | stationary       | double                           |
+|                       |                     |                                  |
+| --------------------- | ------------------- | -------------------------------- |
+| **Class**             | **Variable/Getter** | **Type**                         |
+| **MotionDna**         | attitude            | Attitude                         |
+|                       | location            | Location                         |
+|                       | MotionType          | enum MotionType                  |
+|                       | classifiers         | Dictionary \[String:Classifier\] |
+|                       | motionStatistics    | MotionStatstics                  |
+|                       | timestamp           | double                           |
+|                       |                     |                                  |
+| **Attitude**          | euler               | Euler                            |
+|                       | quaternion          | Quaternion                       |
+|                       |                     |                                  |
+| **Euler**             | roll                | double                           |
+|                       | pitch               | double                           |
+|                       | yaw                 | double                           |
+|                       |                     |                                  |
+| **Quaternion**        | x                   | double                           |
+|                       | y                   | double                           |
+|                       | z                   | double                           |
+|                       | w                   | double                           |
+|                       |                     |                                  |
+| **Location**          | cartesian           | CartesianLocation                |
+|                       | global              | GlobalLocation                   |
+|                       |                     |                                  |
+| **CartesianLocation** | x                   | double                           |
+|                       | y                   | double                           |
+|                       | z                   | double                           |
+|                       | heading             | double                           |
+|                       |                     |                                  |
+| **GlobalLocation**    | latitude            | double                           |
+|                       | longitude           | double                           |
+|                       | altitude            | double                           |
+|                       | accuracy            | enum GlobalLocationAccuracy      |
+|                       |                     |                                  |
+| **MotionStatistics**  | fidgeting           | double                           |
+|                       | walking             | double                           |
+|                       | stationary          | double                           |
