@@ -84,7 +84,7 @@ developer key and any confguration from the initial start() call.
 
 ### func pause()
 
-Halts position estiamtion and collection of sensor data.
+Halts position estimation and collection of sensor data.
 
 ### func resume()
 
