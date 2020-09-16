@@ -17,12 +17,12 @@ Hello world examples below contain thoroughly documented code examples along wit
 
 
 
-*Android:*
+**Android:**
 * [Hello World (Java)](https://github.com/navisens/android-app-helloworld)
 * [Hello World (Kotlin)](https://github.com/navisens/android-app-helloworld-kotlin)
 * [Map Manual Location Setting (Java)](https://github.com/navisens/android-app-map-manual-location)
 
-*iOS:*
+**iOS:**
 * [Hello World (Objective-C)](https://github.com/navisens/iOS-app-helloworld)
 * [Hello World (Swift)](https://github.com/navisens/iOS-app-helloworld-swift)
 * [Hello World (SwiftUI)](https://github.com/navisens/ios-app-helloworld-swiftui)
