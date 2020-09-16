@@ -7,10 +7,15 @@ How does Navisens work? Extensive documentation on all our newest and latest fea
 - [Android Release Notes](https://github.com/navisens/Android-SDK/releases)
 - [iOS Release Notes](https://github.com/navisens/iOS-SDK/releases)
 
-**Documentation**: The nitty-gritty of our SDK, with extensive details and examples.
+**Documentation**:
 
-- [Android Docs](/API.Android.md)
-- [iOS Docs](/API.iOS.md)</sup>
+*Android:*
+- [Getting Started](/GettingStarted.Android.md)
+- [Android API](/API.Android.md)
+
+*iOS:*
+- [Getting Started](/GettingStarted.iOS.md)
+- [iOS API](/API.iOS.md)
 
 ## Quick Start Examples
 Hello world examples below contain thoroughly documented code examples along with common use case code snippets in the project readme.
