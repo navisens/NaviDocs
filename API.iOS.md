@@ -103,25 +103,25 @@ the CLLocationManager on. If you wish to use this, you must enable the
 | --------------------- | ------------------------------------------ | ----------- | -------------------------------------------------------------------------------------------------- |
 | **Keyword**           | **Options**                                | **Default** | **Description**                                                                                    |
 | model                 | String (“simple”, “standard”, “headmount”) | “standard”  | Choose the type of model to use for motion estimation                                              |
-| gps                   | Bool                                       | true        | Use gps in estimation                                                                              |
+| gps                   | Bool                                       | true        | Use GPS to set an initial position and perform corrections when outdoors                                                                              |
 | corrected\_trajectory | Bool                                       | false       | Show path leading up to global position fix and a history the updated path then corrections happen |
 | callback              | Double                                     | 40ms        | Rate (ms) at which estimation is delivered to app layer                                            |
-| motion\_source        | String (“device”,”external”)               | “device”    | Determines source of sensor data for intertial estimation of position                              |
+| motion\_source        | String (“device”,”external”)               | “device”    | Determines the source of inertial sensor data used for position estimation                              |
 | logging               | Bool                                       | false       | Record log file for debugging with Navisens team                                                   |
 
 ## Change Global Estimation
 
 ### func setLocationLatitude(latitude: Double, longitude: Double)
 
-Manually assigned the user’s position in the global frame.
+Manually assigns the user’s position in the global frame.
 
 ### func setLocationLatitude(latitude: Double, longitude: Double, andHeadingInDegrees: Double) 
 
-Manually assigned the user’s position and heading in the global frame.
+Manually assigns the user’s position and heading in the global frame.
 
 ### func setHeadingInDegrees(heading: Double)
 
-Manually assigned the user’s heading in the global frame. Units are in
+Manually assigns the user’s heading in the global frame. Units are in
 degrees.
 
 ## Change Cartesian Estimation
@@ -142,8 +142,7 @@ cartesian space. Parameter units are in meters.
 
 This method must be called at regular intervals with sensor data if you
 have started the SDK with configuration \`motion\_source\` set to
-\`external\`. Please note that this method should only be used if you
-are interested in x,y cartesian estimation.
+\`external\`.
 
 **Parameters**
 
@@ -154,8 +153,7 @@ in G's and Gyro roll, pitch, and yaw unit should be in radians/sec.
 
 This method must be called at regular intervals with sensor data if you
 have started the SDK with configuration \`motion\_source\` set to
-\`external\`. Please note that this method should only be used if you
-are interested in x,y cartesian estimation.
+\`external\`.
 
 **Parameters**
 
@@ -234,7 +232,7 @@ These are the values representing the estimation provided
 |                       | walking             | double                           |
 |                       | stationary          | double                           |
 
-## Experimental
+## Simultaneous Localization and Mapping (SLAM)
 
 ### recordObservation(withIdentifier: Int, andUncertainty: Double)
 
