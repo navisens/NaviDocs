@@ -180,11 +180,16 @@ This static method will provide the currention version number of the SDK
 
 ### func receive(\_ motionDna: MotionDna)
 
-This methods will provide a MotionDna object with the current position
-information and other characteristics of a users motion and status. See
-Estimation Properties below for further details.
+Provides a MotionDna object with the current position information and
+other characteristics of a users motion and status. See Estimation
+Properties below for further details.
 
 ### func report(\_ status: MotionDnaSDKStatus, withMessage message: String?)
+
+Reports to the developer any changes to the SDK or errors that are
+noteworthy. Status types are accompanied by a message providing
+additional details on the event that has occured and any action that
+should be taken.
 
 ## Estimation Properties
 
@@ -232,3 +237,9 @@ These are the values representing the estimation provided
 ## Experimental
 
 ### recordObservation(withIdentifier: Int, andUncertainty: Double)
+
+Input an identifier when visiting and revisiting a landmark in an indoor
+setting. The ID must be accompanied by an uncertainty value in meters
+indicating the maximum possible distance the user could currently be
+from the ID'd landmark. This will provide the SDK with additional
+information that can enable improved corrections to a users position.
