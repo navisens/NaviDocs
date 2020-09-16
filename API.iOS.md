@@ -85,11 +85,21 @@
 
 ### static func sdkBuild() -\> String
 
+This static method will return a string representing the current build
+number (e.g. NAVISENS-R20.08.17.15.56-MASTER).
+
 ### static func sdkVersion() -\> String
+
+This static method will provide the currention version number of the SDK
+(e.g. v2.0.0).
 
 ## Callbacks (MotionDnaSDKDelegate implementation)
 
 ### func receive(\_ motionDna: MotionDna)
+
+This methods will provide a MotionDna object with the current position
+information and other characteristics of a users motion and status. See
+Estimation Properties below for further details.
 
 ### func report(\_ status: MotionDnaSDKStatus, withMessage message: String?)
 
