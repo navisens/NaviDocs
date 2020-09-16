@@ -76,9 +76,6 @@ Shopping malls/retail: guiding users to stores and items within stores
 Smart building/office: guiding staff and visitors to meeting rooms on large campuses
 Industrial/facilities management: guiding workers to locate equipment and machinery inside large facilities and warehouses
 
-### Known issues
-Some smartphones can have problems with the inertial sensors. For Android, some devices may have issues due to hardware, and some due to software. In some cases, we have seen devices performing poorly perform much better after a firmware update. It’s best to always have the latest firmware update installed on your Android phone.
-
 ### Quick background of basic location concepts
 Navisens supports two modes of positioning: relative positioning and global positioning. This tutorial provide code examples of both.
 
@@ -100,15 +97,3 @@ Assuming the user is 90 degrees and walks straight the Y axis will grow, then wh
 turns right the X axis will grow.
 
 The system can also be referred to a right handed coordinate system.
-
-
-### Helping out Navisens!
-To help us out, you can provide us with a dataset you have recorded which we will be able to analyze in our labs. To do this please follow these instructions:
-* Choose a start point, and when you complete the dataset, make sure to return as close as possible to the start point so that the beginning and end position is the same.
-* When walking, please follow a consistent pattern of walking rather than mixing walking and stopping or other motions. This helps us analyze the data. If you do need to stop, it’s nicer if it’s a distinct stop for several seconds before you start walking again.
-* Walking a longer distance is preferred.
-* Walking a path which can be measured relative to a reference point helps, e.g. walking the entire length of a building and then turn around and walk back the same path.
-* Take a screenshot of the results you see in the app and send it to us
-* If it’s easier, you can use our demo app on the iOS and Android app store. We recently updated the app with a tutorial and UI refresh to make it easier to set a start position on Google Maps. We also have a dataset upload button so you can easily send us the dataset. You can find the iOS app here https://itunes.apple.com/us/app/navisens-maps/id1155641105?mt=8 and the Android app here https://play.google.com/store/apps/details?id=navisens.motiondna
-* Don’t forget to return back to the start point before you upload the dataset to us.
-* Also if you include a general description (if you can remember) of what you performed, that can also help.
