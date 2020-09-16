@@ -46,11 +46,11 @@ If the phone is	equipped with a	barometer our estimation will be in 3D, which me
 
 ##### iOS
 
-We require at least iOS 11.0.
+We require at least iOS 12.0.
 
 ##### Android
 
-Minimum SDK is 16.
+Minimum SDK is 21.
 
 ### What is Navisens motionDNA?
 Navisens motionDNA is a location platform designed to operate in all environments: indoors, outdoors, and underground, with zero setup and much more accurately than existing location systems.
