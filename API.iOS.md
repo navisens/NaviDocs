@@ -1,18 +1,62 @@
-# Control
+  - [iOS MotionDnaSDK API
+    Documentation](#ios-motiondnasdk-api-documentation)
+      - [Control](#control)
+          - [func start(withDeveloperKey:
+            String)](#func-startwithdeveloperkey-string)
+          - [func start(withDeveloperKey: String, andConfigurations:
+            \[String :
+            Any\])](#func-startwithdeveloperkey-string-andconfigurations-string-any)
+          - [func stop()](#func-stop)
+          - [func reset()](#func-reset)
+          - [func pause()](#func-pause)
+          - [func resume()](#func-resume)
+      - [Configuration](#configuration)
+      - [Global Estimation
+        Modification](#global-estimation-modification)
+          - [func setLocationLatitude(latitude: Double, longitude:
+            Double)](#func-setlocationlatitudelatitude-double-longitude-double)
+          - [func setLocationLatitude(latitude: Double, longitude:
+            Double, andHeadingInDegrees: Double)
+            ](#func-setlocationlatitudelatitude-double-longitude-double-andheadingindegrees-double)
+          - [func setHeadingInDegrees(heading:
+            Double)](#func-setheadingindegreesheading-double)
+      - [Cartesian Estimation
+        Modification](#cartesian-estimation-modification)
+          - [func setCartesianHeading(heading:
+            Double)](#func-setcartesianheadingheading-double)
+          - [func setCartesianPositionX( x: Double, y:
+            Double)](#func-setcartesianpositionx-x-double-y-double)
+      - [SDK Info](#sdk-info)
+          - [static func sdkBuild() -\>
+            String](#static-func-sdkbuild---string)
+          - [static func sdkVersion() -\>
+            String](#static-func-sdkversion---string)
+      - [Callbacks (MotionDnaSDKDelegate
+        implementation)](#callbacks-motiondnasdkdelegate-implementation)
+          - [func receive(\_ motionDna:
+            MotionDna)](#func-receive_-motiondna-motiondna)
+          - [func report(\_ status: MotionDnaSDKStatus, withMessage
+            message:
+            String?)](#func-report_-status-motiondnasdkstatus-withmessage-message-string)
+      - [Estimation Properties](#estimation-properties)
 
-## start(withDeveloperKey: String)
+# iOS MotionDnaSDK API Documentation
 
-## start(withDeveloperKey: String, andConfigurations: \[String : Any\])
+## Control
 
-## stop()
+### func start(withDeveloperKey: String)
 
-## reset()
+### func start(withDeveloperKey: String, andConfigurations: \[String : Any\])
 
-## pause()
+### func stop()
 
-## resume()
+### func reset()
 
-# Configuration
+### func pause()
+
+### func resume()
+
+## Configuration
 
 |                       |                                            |             |                                                                                                    |
 | --------------------- | ------------------------------------------ | ----------- | -------------------------------------------------------------------------------------------------- |
@@ -23,39 +67,31 @@
 | callback              | Double                                     | 40ms        | Rate (ms) at which estimation is delivered to app layer                                            |
 | logging               | Bool                                       | false       | Record log file for debugging with Navisens team                                                   |
 
-#
+## Global Estimation Modification
 
-# Estimation Modification
+### func setLocationLatitude(latitude: Double, longitude: Double)
 
-## **Global**
+### func setLocationLatitude(latitude: Double, longitude: Double, andHeadingInDegrees: Double) 
 
-## func setLocationLatitude(latitude: Double, longitude: Double)
+### func setHeadingInDegrees(heading: Double)
 
-## func setLocationLatitude(latitude: Double, longitude: Double, andHeadingInDegrees: Double)
+## Cartesian Estimation Modification
 
-## func setHeadingInDegrees(heading: Double)
+### func setCartesianHeading(heading: Double)
 
-## **Cartesian**
+### func setCartesianPositionX( x: Double, y: Double)
 
-## func setCartesianHeading(heading: Double)
+## SDK Info
 
-## func setCartesianPositionX( x: Double, y: Double)
+### static func sdkBuild() -\> String
 
-# SDK Info
+### static func sdkVersion() -\> String
 
-## static func sdkBuild() -\> String
+## Callbacks (MotionDnaSDKDelegate implementation)
 
-## static func sdkVersion() -\> String
+### func receive(\_ motionDna: MotionDna)
 
-# Callbacks (MotionDnaSDKDelegate implementation)
-
-##
-
-## func receive(\_ motionDna: MotionDna)
-
-## func report(\_ status: MotionDnaSDKStatus, withMessage message: String?)
-
-#
+### func report(\_ status: MotionDnaSDKStatus, withMessage message: String?)
 
 ## Estimation Properties
 
