@@ -20,6 +20,11 @@ The Navisens SDK provides the following information in real-time:
 - Hardware: Navisens requires an accelerometer and gyroscope. Be default, Navisens uses the sensors internal to your device and will report if a sensor is missing. A barometer is optional but required for 3D location. A magnetometer is optional but provides additional information to our sensor fusion algorithms.
 - Operating system: minimum iOS 12, Android minimum SDK version 21
 
+### FAQ
+- **Does Navisens provide an app?** The Navisens SDK is designed to be integrated into an app. We provide examples to help you get familiar with our SDK and we provide support to help you integrate our SDK into your app, however we do not provide a customer-facing app.
+- **Do I need a map?** The Navisens SDK functions independent of a map and continually provides location coordinates indoors and outdoors with or without a map. It’s up to the host app to visualize the location provided by the Navisens SDK, and this may require a map for the user experience. We provide examples demonstrating how to integrate our SDK with popular map platforms and we have partnerships in place with companies which specialize in creating custom maps. Please contact us for more information regarding our map partnerships.
+- **Does Navisens support my custom device?** Navisens currently supports smartphones and select smartglasses via our API which supports external inertial sensor data input. We currently do not provide support for custom hardware and applications such as drones, mobile robots, or other vehicles.
+
 # Navisens SDK Documentation
 
 **Release Notes**
