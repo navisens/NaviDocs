@@ -19,8 +19,8 @@
           - [func setLocationLatitude(latitude: Double, longitude:
             Double, andHeadingInDegrees: Double)
             ](#func-setlocationlatitudelatitude-double-longitude-double-andheadingindegrees-double)
-          - [func setHeadingInDegrees(heading:
-            Double)](#func-setheadingindegreesheading-double)
+          - [func setGlobalHeading(heading:
+            Double)](#func-setglobalheadingheading-double)
       - [Change Cartesian Estimation](#change-cartesian-estimation)
           - [func setCartesianHeading(heading:
             Double)](#func-setcartesianheadingheading-double)
@@ -48,7 +48,8 @@
             message:
             String?)](#func-report_-status-motiondnasdkstatus-withmessage-message-string)
       - [Estimation Properties](#estimation-properties)
-      - [Experimental](#experimental)
+      - [Simultaneous Localization and Mapping
+        (SLAM)](#simultaneous-localization-and-mapping-slam)
           - [recordObservation(withIdentifier: Int, andUncertainty:
             Double)](#recordobservationwithidentifier-int-anduncertainty-double)
 
@@ -103,10 +104,10 @@ the CLLocationManager on. If you wish to use this, you must enable the
 | --------------------- | ------------------------------------------ | ----------- | -------------------------------------------------------------------------------------------------- |
 | **Keyword**           | **Options**                                | **Default** | **Description**                                                                                    |
 | model                 | String (“simple”, “standard”, “headmount”) | “standard”  | Choose the type of model to use for motion estimation                                              |
-| gps                   | Bool                                       | true        | Use GPS to set an initial position and perform corrections when outdoors                                                                              |
+| gps                   | Bool                                       | true        | Use GPS to set an initial position and perform corrections when outdoors                           |
 | corrected\_trajectory | Bool                                       | false       | Show path leading up to global position fix and a history the updated path then corrections happen |
 | callback              | Double                                     | 40ms        | Rate (ms) at which estimation is delivered to app layer                                            |
-| motion\_source        | String (“device”,”external”)               | “device”    | Determines the source of inertial sensor data used for position estimation                              |
+| motion\_source        | String (“device”,”external”)               | “device”    | Determines the source of inertial sensor data used for position estimation                         |
 | logging               | Bool                                       | false       | Record log file for debugging with Navisens team                                                   |
 
 ## Change Global Estimation
@@ -119,7 +120,7 @@ Manually assigns the user’s position in the global frame.
 
 Manually assigns the user’s position and heading in the global frame.
 
-### func setHeadingInDegrees(heading: Double)
+### func setGlobalHeading(heading: Double)
 
 Manually assigns the user’s heading in the global frame. Units are in
 degrees.
@@ -193,44 +194,46 @@ should be taken.
 
 These are the values representing the estimation provided
 
-|                       |                     |                                  |
-| --------------------- | ------------------- | -------------------------------- |
-| **Class**             | **Variable/Getter** | **Type**                         |
-| **MotionDna**         | attitude            | Attitude                         |
-|                       | location            | Location                         |
-|                       | MotionType          | enum MotionType                  |
-|                       | classifiers         | Dictionary \[String:Classifier\] |
-|                       | motionStatistics    | MotionStatstics                  |
-|                       | timestamp           | double                           |
-|                       |                     |                                  |
-| **Attitude**          | euler               | Euler                            |
-|                       | quaternion          | Quaternion                       |
-|                       |                     |                                  |
-| **Euler**             | roll                | double                           |
-|                       | pitch               | double                           |
-|                       | yaw                 | double                           |
-|                       |                     |                                  |
-| **Quaternion**        | x                   | double                           |
-|                       | y                   | double                           |
-|                       | z                   | double                           |
-|                       | w                   | double                           |
-|                       |                     |                                  |
-| **Location**          | cartesian           | CartesianLocation                |
-|                       | global              | GlobalLocation                   |
-|                       |                     |                                  |
-| **CartesianLocation** | x                   | double                           |
-|                       | y                   | double                           |
-|                       | z                   | double                           |
-|                       | heading             | double                           |
-|                       |                     |                                  |
-| **GlobalLocation**    | latitude            | double                           |
-|                       | longitude           | double                           |
-|                       | altitude            | double                           |
-|                       | accuracy            | enum GlobalLocationAccuracy      |
-|                       |                     |                                  |
-| **MotionStatistics**  | fidgeting           | double                           |
-|                       | walking             | double                           |
-|                       | stationary          | double                           |
+|                       |                             |                                         |
+| --------------------- | --------------------------- | --------------------------------------- |
+| **Class**             | **Variable/Getter**         | **Type**                                |
+| **MotionDna**         | attitude                    | Attitude                                |
+|                       | location                    | Location                                |
+|                       | classifiers                 | Dictionary \[String:Classifier\]        |
+|                       | timestamp                   | double                                  |
+|                       |                             |                                         |
+| **Attitude**          | euler                       | Euler                                   |
+|                       | quaternion                  | Quaternion                              |
+|                       |                             |                                         |
+| **Euler**             | roll                        | double                                  |
+|                       | pitch                       | double                                  |
+|                       | yaw                         | double                                  |
+|                       |                             |                                         |
+| **Quaternion**        | x                           | double                                  |
+|                       | y                           | double                                  |
+|                       | z                           | double                                  |
+|                       | w                           | double                                  |
+|                       |                             |                                         |
+| **Location**          | cartesian                   | CartesianLocation                       |
+|                       | global                      | GlobalLocation                          |
+|                       |                             |                                         |
+| **CartesianLocation** | x                           | double                                  |
+|                       | y                           | double                                  |
+|                       | z                           | double                                  |
+|                       | heading                     | double                                  |
+|                       |                             |                                         |
+| **GlobalLocation**    | latitude                    | double                                  |
+|                       | longitude                   | double                                  |
+|                       | altitude                    | double                                  |
+|                       | accuracy                    | enum GlobalLocationAccuracy             |
+|                       |                             |                                         |
+| **Classifier**        | currentPredictionLabel      | double                                  |
+|                       | currentPredictionConfidence | double                                  |
+|                       | predictionStats             | Dictionary \[String : PredictionStats\] |
+|                       |                             |                                         |
+| **PredictionStats**   | duration                    | double                                  |
+|                       | distance                    | double                                  |
+|                       | percentage                  | double                                  |
 
 ## Simultaneous Localization and Mapping (SLAM)
 
