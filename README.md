@@ -25,7 +25,7 @@ The Navisens SDK provides the following information in real-time:
 - **Do I need a map?** The Navisens SDK functions independent of a map and continually provides location coordinates indoors and outdoors with or without a map. It’s up to the host app to visualize the location provided by the Navisens SDK, and this may require a map for the user experience. We provide examples demonstrating how to integrate our SDK with popular map platforms and we have partnerships in place with companies which specialize in creating custom maps. Please contact us for more information regarding our map partnerships.
 - **Does Navisens support my custom device?** Navisens currently supports smartphones and select smartglasses via our API which supports external inertial sensor data input. We currently do not provide support for custom hardware and applications such as drones, mobile robots, or other vehicles.
 
-# Navisens SDK Documentation
+## Navisens SDK Documentation
 
 **Release Notes**
 - [Android](https://github.com/navisens/Android-SDK/releases)
