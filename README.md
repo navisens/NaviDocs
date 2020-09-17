@@ -59,7 +59,7 @@ Navisens achieves this without forcing you to install any sensors or hardware su
 
 You can think of motionDNA as a modern GPS which works in urban environments and is designed to support modern use-cases and applications such as Augmented Reality (AR). Navisens motionDNA is available as a cross-platform Software Development Kit (SDK) for iOS and Android with the exact same capabilities and functionality on both platforms. To use the location capabilities of Navisens, you simply integrate the motionDNA SDK into your iOS or Android app.
 
-For a quick test: [download our demo app](https://itunes.apple.com/us/app/navisens-indoor-location/id1224813390) and simply walk around your office or building, and watch the position update in real-time as a history of your previous positions is also visualized.
+For a quick test: download our demo app and simply walk around your office or building, and watch the position update in real-time as a history of your previous positions is also visualized.
 
 ### How does Navisens motionDNA work?
 Rather than relying on infrastructure such as beacons and WiFi APs which require a lot of overhead to install, calibrate, and maintain, Navisens leverages the accelerometers and gyroscopes built into mobile devices (these sensors are called “inertial sensors”).
