@@ -30,28 +30,6 @@ Hello world examples below contain thoroughly documented code examples along wit
 
 -----
 
-### Navisens prerequisites
-
-Our SDK works on the majority of smartphones (both iOS and Android). You can view below the required sensors and operating system versions to ensure proper functioning of our SDK, we also have a method callback which reports any hardware problems: [reportError](https://github.com/navisens/NaviDocs/blob/master/API.Android.md#void-reporterrorerrorcode-errorcode-string-errordescription).
-
-#### Hardware
-
-We require at least an accelerometer and a gyroscope for our inertial estimation.
-
-##### Barometer
-
-If the phone is	equipped with a	barometer our estimation will be in 3D, which means we will report the altitude.
-
-#### Software
-
-##### iOS
-
-We require at least iOS 12.0.
-
-##### Android
-
-Minimum SDK is 21.
-
 ### What is Navisens motionDNA?
 Navisens motionDNA is a location platform designed to operate in all environments: indoors, outdoors, and underground, with zero setup and much more accurately than existing location systems.
 
@@ -65,16 +43,6 @@ For a quick test: download our demo app and simply walk around your office or bu
 Rather than relying on infrastructure such as beacons and WiFi APs which require a lot of overhead to install, calibrate, and maintain, Navisens leverages the accelerometers and gyroscopes built into mobile devices (these sensors are called “inertial sensors”).
 
 Navisens processes the data from the inertial sensors in a novel way so that an accurate position can be calculated, without requiring the placement of sensors in the environment. Navisens motionDNA continues tracking whether the phone is in your hand or in your pocket, and provides a low-latency position and orientation of the device, making it suitable both for AR applications and as a GPS “blue dot” replacement for regular applications.
-
-### What are the limitations?
-To provide as best performance as possible without relying on external hardware, Navisens is optimized for certain applications and use cases. Currently Navisens is optimized for pedestrian applications - these are applications based on tracking mobile devices carried by humans. Navisens is not currently optimized for drones, mobile robots, or other vehicles.
-
-### Typical applications
-The Navisens motionDNA SDK has been implemented in all types of applications by Fortune 100 companies to small startups.
-
-Shopping malls/retail: guiding users to stores and items within stores
-Smart building/office: guiding staff and visitors to meeting rooms on large campuses
-Industrial/facilities management: guiding workers to locate equipment and machinery inside large facilities and warehouses
 
 ### Quick background of basic location concepts
 Navisens supports two modes of positioning: relative positioning and global positioning. This tutorial provide code examples of both.
