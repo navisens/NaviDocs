@@ -27,17 +27,11 @@ The Navisens SDK provides the following information in real-time:
 
 ## Navisens SDK Documentation
 
-**Release Notes**
-- [Android](https://github.com/navisens/Android-SDK/releases)
-- [iOS](https://github.com/navisens/iOS-SDK/releases)
+**Release Notes**: [Android](https://github.com/navisens/Android-SDK/releases), [iOS](https://github.com/navisens/iOS-SDK/releases)
 
-**API Reference**
-- [Android](/API.Android.md)
-- [iOS](/API.iOS.md)
+**API Reference**: [Android](/API.Android.md), [iOS](/API.iOS.md)
 
-**Getting Started Guide**
-- [Android](/GettingStarted.Android.md)
-- [iOS](/GettingStarted.iOS.md)
+**Getting Started Guide**: [Android](/GettingStarted.Android.md), [iOS](/GettingStarted.iOS.md)
 
 ## Quick Start Examples
 Hello world examples below contain thoroughly documented code examples along with common use case code snippets in the project readme.
