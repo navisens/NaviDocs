@@ -49,8 +49,8 @@
       - [Estimation Properties](#estimation-properties)
       - [Simultaneous Localization and Mapping
         (SLAM)](#simultaneous-localization-and-mapping-slam)
-          - [recordObservation(withIdentifier: Int, andUncertainty:
-            Double)](#recordobservationwithidentifier-int-anduncertainty-double)
+          - [recordObservation(withIdentifier: Int, uncertainty:
+            Double)](#recordobservationwithidentifier-int-uncertainty-double)
 
 # iOS MotionDnaSDK API Documentation
 
@@ -236,7 +236,7 @@ These are the values representing the estimation provided
 
 ## Simultaneous Localization and Mapping (SLAM)
 
-### recordObservation(withIdentifier: Int, andUncertainty: Double)
+### recordObservation(withIdentifier: Int, uncertainty: Double)
 
 Input an identifier when visiting and revisiting a landmark in an indoor
 setting. The ID must be accompanied by an uncertainty value in meters
