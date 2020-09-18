@@ -1,5 +1,5 @@
-  - [iOS MotionDnaSDK API
-    Documentation](#ios-motiondnasdk-api-documentation)
+  - [Android MotionDnaSDK API
+    Documentation](#android-motiondnasdk-api-documentation)
       - [Construction](#construction)
           - [MotionDnaSDK(Context context, MotionDnaSDKListener
             motionDnaSDKListener)](#motiondnasdkcontext-context-motiondnasdklistener-motiondnasdklistener)
@@ -54,7 +54,7 @@
           - [public void recordObservation(int identifier, double
             uncertainty)](#public-void-recordobservationint-identifier-double-uncertainty)
 
-# iOS MotionDnaSDK API Documentation
+# Android MotionDnaSDK API Documentation
 
 ## Construction
 
