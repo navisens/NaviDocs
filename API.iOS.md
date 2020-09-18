@@ -14,18 +14,18 @@
             Bool)](#func-setbackgroundmodeenabled_-state-bool)
       - [Configuration](#configuration)
       - [Change Global Estimation](#change-global-estimation)
-          - [func setLocationLatitude(latitude: Double, longitude:
-            Double)](#func-setlocationlatitudelatitude-double-longitude-double)
-          - [func setLocationLatitude(latitude: Double, longitude:
-            Double, andHeadingInDegrees: Double)
-            ](#func-setlocationlatitudelatitude-double-longitude-double-andheadingindegrees-double)
+          - [func setGlobalPosition(latitude: Double, longitude:
+            Double)](#func-setglobalpositionlatitude-double-longitude-double)
+          - [func setGlobalPosition(latitude: Double, longitude: Double,
+            heading:
+            Double)](#func-setglobalpositionlatitude-double-longitude-double-heading-double)
           - [func setGlobalHeading(heading:
             Double)](#func-setglobalheadingheading-double)
       - [Change Cartesian Estimation](#change-cartesian-estimation)
           - [func setCartesianHeading(heading:
             Double)](#func-setcartesianheadingheading-double)
-          - [func setCartesianPositionX( x: Double, y:
-            Double)](#func-setcartesianpositionx-x-double-y-double)
+          - [func setCartesianPosition(x: Double, y:
+            Double)](#func-setcartesianpositionx-double-y-double)
       - [External Sensors](#external-sensors)
           - [func inputMotion(withTimestamp: Double, roll: Double,
             pitch: Double, yaw: Double, accX: Double, accY: Double,
@@ -42,11 +42,10 @@
             String](#static-func-sdkversion---string)
       - [Callbacks (MotionDnaSDKDelegate
         implementation)](#callbacks-motiondnasdkdelegate-implementation)
-          - [func receive(\_ motionDna:
-            MotionDna)](#func-receive_-motiondna-motiondna)
-          - [func report(\_ status: MotionDnaSDKStatus, withMessage
-            message:
-            String?)](#func-report_-status-motiondnasdkstatus-withmessage-message-string)
+          - [func receive(motionDna:
+            MotionDna)](#func-receivemotiondna-motiondna)
+          - [ func report( status: MotionDnaSDK.Status, message:
+            String)](#func-report-status-motiondnasdk.status-message-string)
       - [Estimation Properties](#estimation-properties)
       - [Simultaneous Localization and Mapping
         (SLAM)](#simultaneous-localization-and-mapping-slam)
@@ -112,11 +111,11 @@ the CLLocationManager on. If you wish to use this, you must enable the
 
 ## Change Global Estimation
 
-### func setLocationLatitude(latitude: Double, longitude: Double)
+### func setGlobalPosition(latitude: Double, longitude: Double)
 
 Manually assigns the user’s position in the global frame.
 
-### func setLocationLatitude(latitude: Double, longitude: Double, andHeadingInDegrees: Double) 
+### func setGlobalPosition(latitude: Double, longitude: Double, heading: Double)
 
 Manually assigns the user’s position and heading in the global frame.
 
@@ -132,7 +131,7 @@ degrees.
 Manually assigns the user’s heading in cartesian space. Parameter units
 are in degrees and must be contrained to the -180 to +180 frame.
 
-### func setCartesianPositionX( x: Double, y: Double)
+### func setCartesianPosition(x: Double, y: Double)
 
 Manually assigns the user’s cartesian position to the postition (x,y) in
 cartesian space. Parameter units are in meters.
@@ -177,13 +176,13 @@ This static method will provide the currention version number of the SDK
 
 ## Callbacks (MotionDnaSDKDelegate implementation)
 
-### func receive(\_ motionDna: MotionDna)
+### func receive(motionDna: MotionDna)
 
 Provides a MotionDna object with the current position information and
 other characteristics of a users motion and status. See Estimation
 Properties below for further details.
 
-### func report(\_ status: MotionDnaSDKStatus, withMessage message: String?)
+###  func report( status: MotionDnaSDK.Status, message: String)
 
 Reports to the developer any changes to the SDK or errors that are
 noteworthy. Status types are accompanied by a message providing
