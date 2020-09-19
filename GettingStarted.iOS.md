@@ -18,7 +18,7 @@ target 'ProjectName' do
 end
 ```
 
-# Configure SDK #
+## Configure SDK ##
 -----
 To setup the MotionDnaSDK, there are two objects you must create.
 
