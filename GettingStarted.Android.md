@@ -15,7 +15,7 @@ dependencies {
 
 Replace the version with whichever version of the SDK you wish to use.
 
-# Configure SDK #
+## Configure SDK ##
 -----
 To setup the MotionDnaSDK, there are two objects you must create.
 
