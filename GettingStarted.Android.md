@@ -13,7 +13,7 @@ dependencies {
 
 ## Permissions ##
 
-MotionDnaSDK needs the following permissions added to the AndroidManifest.xml to allow them to be used and/or requested in app as needed.
+MotionDnaSDK needs the following permissions added to the `AndroidManifest.xml` to allow them to be used and/or requested in app as needed.
 
 ``` xml
     <uses-permission android:name="android.permission.INTERNET" />
@@ -22,7 +22,6 @@ MotionDnaSDK needs the following permissions added to the AndroidManifest.xml to
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
 ```
 
 Some of these permissions will need to be requested from the main app activity and approved by the user. By calling `getRequiredPermissions()` you can retrieve a list of permissions that are needed to run the MotionDnaSDK. This request should be made through the `requestPermissions()` method on the Activity or ActivityCompat that the SDK is running in.
@@ -56,4 +55,8 @@ If you wish to start MotionDnaSDK without specifying configuration options you c
 ------------------------
 Using the SDK call above, you application will usually continue to estimate in the background for a period of time. However, the OS reserves the right to shut it down if memory or CPU usage gets too high, and there is no guarantee that sensor input from the gyroscope and accelerometer will be continuous, resulting in potential errors in the estimation.
 
-To mitigate this we have the `startForegroundService` method. This creates a permanent message in the notification tray while the app is running and indicates to the OS that the app should still maintain priority on resources and sensor data that is comparable to any app that is running in the forground. If you are already using a forground service this method should not be necessary.
+To mitigate this we have the `startForegroundService()` method. This, coupled with the addition of
+```xml
+<uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+```
+ to the application `AndroidManifest.xml` creates a permanent message in the notification tray while the app is running and indicates to the OS that the app should still maintain priority on resources and sensor data that is comparable to any app that is running in the forground. If you are already using a forground service this method should not be necessary.
