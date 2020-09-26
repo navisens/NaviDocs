@@ -1,58 +1,57 @@
-  - [iOS MotionDnaSDK API
-    Documentation](#ios-motiondnasdk-api-documentation)
-      - [Control](#control)
-          - [func start(withDeveloperKey:
-            String)](#func-startwithdeveloperkey-string)
-          - [func start(withDeveloperKey: String, andConfigurations:
-            \[String :
-            Any\])](#func-startwithdeveloperkey-string-andconfigurations-string-any)
-          - [func stop()](#func-stop)
-          - [func reset()](#func-reset)
-          - [func pause()](#func-pause)
-          - [func resume()](#func-resume)
-          - [func setBackgroundModeEnabled(\_ state:
-            Bool)](#func-setbackgroundmodeenabled_-state-bool)
-      - [Configuration](#configuration)
-      - [Change Global Estimation](#change-global-estimation)
-          - [func setGlobalPosition(latitude: Double, longitude:
-            Double)](#func-setglobalpositionlatitude-double-longitude-double)
-          - [func setGlobalPosition(latitude: Double, longitude: Double,
-            heading:
-            Double)](#func-setglobalpositionlatitude-double-longitude-double-heading-double)
-          - [func setGlobalHeading(heading:
-            Double)](#func-setglobalheadingheading-double)
-      - [Change Cartesian Estimation](#change-cartesian-estimation)
-          - [func setCartesianHeading(heading:
-            Double)](#func-setcartesianheadingheading-double)
-          - [func setCartesianPosition(x: Double, y:
-            Double)](#func-setcartesianpositionx-double-y-double)
-      - [External Sensors](#external-sensors)
-          - [func inputMotion(withTimestamp: Double, roll: Double,
-            pitch: Double, yaw: Double, accX: Double, accY: Double,
-            accZ:
-            Double)](#func-inputmotionwithtimestamp-double-roll-double-pitch-double-yaw-double-accx-double-accy-double-accz-double)
-          - [func inputMotion(withTimestamp: Double, roll: Double,
-            pitch: Double, yaw: Double, accX: Double, accY: Double,
-            accZ: Double, heading: Double, headingAccuracy:
-            Double)](#func-inputmotionwithtimestamp-double-roll-double-pitch-double-yaw-double-accx-double-accy-double-accz-double-heading-double-headingaccuracy-double)
-      - [SDK Info](#sdk-info)
-          - [static func sdkBuild() -\>
-            String](#static-func-sdkbuild---string)
-          - [static func sdkVersion() -\>
-            String](#static-func-sdkversion---string)
-      - [Callbacks (MotionDnaSDKDelegate
-        implementation)](#callbacks-motiondnasdkdelegate-implementation)
-          - [func receive(motionDna:
-            MotionDna)](#func-receivemotiondna-motiondna)
-          - [ func report( status: MotionDnaSDK.Status, message:
-            String)](#func-report-status-motiondnasdk.status-message-string)
-      - [Estimation Properties](#estimation-properties)
-      - [Simultaneous Localization and Mapping
-        (SLAM)](#simultaneous-localization-and-mapping-slam)
-          - [recordObservation(withIdentifier: Int, uncertainty:
-            Double)](#recordobservationwithidentifier-int-uncertainty-double)
-
 # iOS MotionDnaSDK API Documentation
+
+  - [Control](#control)
+      - [func start(withDeveloperKey:
+        String)](#func-startwithdeveloperkey-string)
+      - [func start(withDeveloperKey: String, andConfigurations:
+        \[String :
+        Any\])](#func-startwithdeveloperkey-string-andconfigurations-string-any)
+      - [func stop()](#func-stop)
+      - [func reset()](#func-reset)
+      - [func pause()](#func-pause)
+      - [func resume()](#func-resume)
+      - [func setBackgroundModeEnabled(\_ state:
+        Bool)](#func-setbackgroundmodeenabled_-state-bool)
+  - [Configuration](#configuration)
+  - [Change Global Estimation](#change-global-estimation)
+      - [func setGlobalPosition(latitude: Double, longitude:
+        Double)](#func-setglobalpositionlatitude-double-longitude-double)
+      - [func setGlobalPosition(latitude: Double, longitude: Double,
+        heading:
+        Double)](#func-setglobalpositionlatitude-double-longitude-double-heading-double)
+      - [func setGlobalHeading(heading:
+        Double)](#func-setglobalheadingheading-double)
+  - [Change Cartesian Estimation](#change-cartesian-estimation)
+      - [func setCartesianHeading(heading:
+        Double)](#func-setcartesianheadingheading-double)
+      - [func setCartesianPosition(x: Double, y:
+        Double)](#func-setcartesianpositionx-double-y-double)
+  - [External Sensors](#external-sensors)
+      - [func inputMotion(withTimestamp: Double, roll: Double,
+        pitch: Double, yaw: Double, accX: Double, accY: Double,
+        accZ:
+        Double)](#func-inputmotionwithtimestamp-double-roll-double-pitch-double-yaw-double-accx-double-accy-double-accz-double)
+      - [func inputMotion(withTimestamp: Double, roll: Double,
+        pitch: Double, yaw: Double, accX: Double, accY: Double,
+        accZ: Double, heading: Double, headingAccuracy:
+        Double)](#func-inputmotionwithtimestamp-double-roll-double-pitch-double-yaw-double-accx-double-accy-double-accz-double-heading-double-headingaccuracy-double)
+  - [SDK Info](#sdk-info)
+      - [static func sdkBuild() -\>
+        String](#static-func-sdkbuild---string)
+      - [static func sdkVersion() -\>
+        String](#static-func-sdkversion---string)
+  - [Callbacks (MotionDnaSDKDelegate
+    implementation)](#callbacks-motiondnasdkdelegate-implementation)
+      - [func receive(motionDna:
+        MotionDna)](#func-receivemotiondna-motiondna)
+      - [ func report( status: MotionDnaSDK.Status, message:
+        String)](#func-report-status-motiondnasdk.status-message-string)
+  - [Estimation Properties](#estimation-properties)
+  - [Simultaneous Localization and Mapping
+    (SLAM)](#simultaneous-localization-and-mapping-slam)
+      - [recordObservation(withIdentifier: Int, uncertainty:
+        Double)](#recordobservationwithidentifier-int-uncertainty-double)
+
 
 ## Control
 

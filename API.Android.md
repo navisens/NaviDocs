@@ -1,60 +1,59 @@
-  - [Android MotionDnaSDK API
-    Documentation](#android-motiondnasdk-api-documentation)
-      - [Construction](#construction)
-          - [MotionDnaSDK(Context context, MotionDnaSDKListener
-            motionDnaSDKListener)](#motiondnasdkcontext-context-motiondnasdklistener-motiondnasdklistener)
-      - [Control](#control)
-          - [public void start(String
-            developerKey)](#public-void-startstring-developerkey)
-          - [public void start(String developerKey, HashMap\<String,
-            Object\>
-            configurations)](#public-void-startstring-developerkey-hashmapstring-object-configurations)
-          - [public void stop()](#public-void-stop)
-          - [public void reset()](#public-void-reset)
-          - [public void pause()](#public-void-pause)
-          - [public void resume()](#public-void-resume)
-          - [public void
-            startForegroundService()](#public-void-startforegroundservice)
-      - [Configuration](#configuration)
-      - [Change Global Estimation](#change-global-estimation)
-          - [public void setGlobalPosition(double latitude, double
-            longitude)](#public-void-setglobalpositiondouble-latitude-double-longitude)
-          - [public void setGlobalPositionAndHeading(double latitude,
-            double longitude, double heading)
-            ](#public-void-setglobalpositionandheadingdouble-latitude-double-longitude-double-heading)
-          - [public void setGlobalHeading(double
-            heading)](#public-void-setglobalheadingdouble-heading)
-      - [Change Cartesian Estimation](#change-cartesian-estimation)
-          - [public void setCartesianHeading(double
-            heading)](#public-void-setcartesianheadingdouble-heading)
-          - [public void setCartesianPosition( double x, double
-            y)](#public-void-setcartesianposition-double-x-double-y)
-      - [External Sensors](#external-sensors)
-          - [public void inputMotion(double timestamp, double roll,
-            double pitch, double yaw, double accX, double accY, double
-            accZ)](#public-void-inputmotiondouble-timestamp-double-roll-double-pitch-double-yaw-double-accx-double-accy-double-accz)
-          - [public void inputMotion(double timestamp, double roll,
-            double pitch, double yaw, double accX, double accY, double
-            accZ, double heading, double
-            headingAccuracy)](#public-void-inputmotiondouble-timestamp-double-roll-double-pitch-double-yaw-double-accx-double-accy-double-accz-double-heading-double-headingaccuracy)
-      - [SDK Info](#sdk-info)
-          - [public static String
-            SDKBuild()](#public-static-string-sdkbuild)
-          - [public static String
-            SDKVersion()](#public-static-string-sdkversion)
-      - [Callbacks (MotionDnaSDKListener
-        implementation)](#callbacks-motiondnasdklistener-implementation)
-          - [public void receiveMotionDna(MotionDna
-            motionDna)](#public-void-receivemotiondnamotiondna-motiondna)
-          - [public void reportStatus(MotionDnaSDK.Status status, String
-            message)](#public-void-reportstatusmotiondnasdk.status-status-string-message)
-      - [Estimation Properties](#estimation-properties)
-      - [Simultaneous Localization and Mapping
-        (SLAM)](#simultaneous-localization-and-mapping-slam)
-          - [public void recordObservation(int identifier, double
-            uncertainty)](#public-void-recordobservationint-identifier-double-uncertainty)
-
 # Android MotionDnaSDK API Documentation
+
+  - [Construction](#construction)
+      - [MotionDnaSDK(Context context, MotionDnaSDKListener
+        motionDnaSDKListener)](#motiondnasdkcontext-context-motiondnasdklistener-motiondnasdklistener)
+  - [Control](#control)
+      - [public void start(String
+        developerKey)](#public-void-startstring-developerkey)
+      - [public void start(String developerKey, HashMap\<String,
+        Object\>
+        configurations)](#public-void-startstring-developerkey-hashmapstring-object-configurations)
+      - [public void stop()](#public-void-stop)
+      - [public void reset()](#public-void-reset)
+      - [public void pause()](#public-void-pause)
+      - [public void resume()](#public-void-resume)
+      - [public void
+        startForegroundService()](#public-void-startforegroundservice)
+  - [Configuration](#configuration)
+  - [Change Global Estimation](#change-global-estimation)
+      - [public void setGlobalPosition(double latitude, double
+        longitude)](#public-void-setglobalpositiondouble-latitude-double-longitude)
+      - [public void setGlobalPositionAndHeading(double latitude,
+        double longitude, double heading)
+        ](#public-void-setglobalpositionandheadingdouble-latitude-double-longitude-double-heading)
+      - [public void setGlobalHeading(double
+        heading)](#public-void-setglobalheadingdouble-heading)
+  - [Change Cartesian Estimation](#change-cartesian-estimation)
+      - [public void setCartesianHeading(double
+        heading)](#public-void-setcartesianheadingdouble-heading)
+      - [public void setCartesianPosition( double x, double
+        y)](#public-void-setcartesianposition-double-x-double-y)
+  - [External Sensors](#external-sensors)
+      - [public void inputMotion(double timestamp, double roll,
+        double pitch, double yaw, double accX, double accY, double
+        accZ)](#public-void-inputmotiondouble-timestamp-double-roll-double-pitch-double-yaw-double-accx-double-accy-double-accz)
+      - [public void inputMotion(double timestamp, double roll,
+        double pitch, double yaw, double accX, double accY, double
+        accZ, double heading, double
+        headingAccuracy)](#public-void-inputmotiondouble-timestamp-double-roll-double-pitch-double-yaw-double-accx-double-accy-double-accz-double-heading-double-headingaccuracy)
+  - [SDK Info](#sdk-info)
+      - [public static String
+        SDKBuild()](#public-static-string-sdkbuild)
+      - [public static String
+        SDKVersion()](#public-static-string-sdkversion)
+  - [Callbacks (MotionDnaSDKListener
+    implementation)](#callbacks-motiondnasdklistener-implementation)
+      - [public void receiveMotionDna(MotionDna
+        motionDna)](#public-void-receivemotiondnamotiondna-motiondna)
+      - [public void reportStatus(MotionDnaSDK.Status status, String
+        message)](#public-void-reportstatusmotiondnasdk.status-status-string-message)
+  - [Estimation Properties](#estimation-properties)
+  - [Simultaneous Localization and Mapping
+    (SLAM)](#simultaneous-localization-and-mapping-slam)
+      - [public void recordObservation(int identifier, double
+        uncertainty)](#public-void-recordobservationint-identifier-double-uncertainty)
+
 
 ## Construction
 
@@ -124,7 +123,7 @@ notification in the tray while the app runs.
 
 Manually assigns the user’s position in the global frame.
 
-### public void setGlobalPositionAndHeading(double latitude, double longitude, double heading) 
+### public void setGlobalPositionAndHeading(double latitude, double longitude, double heading)
 
 Manually assigns the user’s position and heading in the global frame.
 
