@@ -28,4 +28,9 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
+*.docx
+*.odt
+.~lock*
+*-old.md
 # End of https://www.gitignore.io/api/macos
+
