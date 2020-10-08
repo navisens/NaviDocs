@@ -234,9 +234,11 @@ These are the values representing the estimation provided
 |                       | altitude                    | double                               |
 |                       | accuracy                    | enum GlobalLocationAccuracy          |
 |                       |                             |                                      |
-| **Classifier**        | currentPredictionLabel      | double                               |
-|                       | currentPredictionConfidence | double                               |
-|                       | predictionStats             | HashMap \[String : PredictionStats\] |
+| **Classifier**        | prediction                  | Prediction                           |
+|                       | statistics                  | HashMap \[String : PredictionStats\] |
+|                       |                             |                                      |
+| **Prediction**        | label                       | String                               |
+|                       | confidence                  | double                               |
 |                       |                             |                                      |
 | **PredictionStats**   | duration                    | double                               |
 |                       | distance                    | double                               |
