@@ -225,13 +225,16 @@ These are the values representing the estimation provided
 |                       | altitude                    | double                                  |
 |                       | accuracy                    | enum GlobalLocationAccuracy             |
 |                       |                             |                                         |
-| **Classifier**        | currentPredictionLabel      | double                                  |
-|                       | currentPredictionConfidence | double                                  |
-|                       | predictionStats             | Dictionary \[String : PredictionStats\] |
+| **Classifier**        | prediction                  | Prediction                              |
+|                       | statistics                  | Dictionary \[String : PredictionStats\] |
+|                       |                             |                                         |
+| **Prediction**        | label                       | String                                  |
+|                       | confidence                  | double                                  |
 |                       |                             |                                         |
 | **PredictionStats**   | duration                    | double                                  |
 |                       | distance                    | double                                  |
 |                       | percentage                  | double                                  |
+
 
 ## Simultaneous Localization and Mapping (SLAM)
 
