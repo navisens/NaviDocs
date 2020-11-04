@@ -19,7 +19,12 @@ end
 
 ## Permissions ##
 -----------------
-MotionDnaSDK will request the appropriate permissions for location and motion sensor updates once initialized. Additionally, if you need MotionDnaSDK to continue in the background, continue to the [Background Support](#background-support) section.
+To run the SDK you will need to add the following permission keys and descriptions to your apps plist file.
+NSLocationAlwaysUsageDescription
+NSLocationWhenInUseUsageDescription
+NSMotionUsageDescriptiom
+
+MotionDnaSDK will then request the appropriate permissions for location and motion sensor updates once initialized. Additionally, if you need MotionDnaSDK to continue in the background, continue to the [Background Support](#background-support) section.
 
 ## Startup ##
 -------------
