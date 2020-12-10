@@ -223,7 +223,7 @@ These are the values representing the estimation provided
 | **GlobalLocation**    | latitude                    | double                                  |
 |                       | longitude                   | double                                  |
 |                       | altitude                    | double                                  |
-|                       | accuracy                    | enum GlobalLocationAccuracy             |
+|                       | accuracy                    | enum GlobalLocationAccuracy (LOW,HIGH)  |
 |                       |                             |                                         |
 | **Classifier**        | currentPredictionLabel      | double                                  |
 |                       | currentPredictionConfidence | double                                  |
