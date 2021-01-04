@@ -3,6 +3,9 @@
   - [Construction](#construction)
       - [MotionDnaSDK(Context context, MotionDnaSDKListener
         motionDnaSDKListener)](#motiondnasdkcontext-context-motiondnasdklistener-motiondnasdklistener)
+  - [Permissions](#permissions)
+      - [String\[\]
+        getRequiredPermissions()](#string-getrequiredpermissions)
   - [Control](#control)
       - [public void start(String
         developerKey)](#public-void-startstring-developerkey)
@@ -53,6 +56,11 @@
     (SLAM)](#simultaneous-localization-and-mapping-slam)
       - [public void recordObservation(int identifier, double
         uncertainty)](#public-void-recordobservationint-identifier-double-uncertainty)
+  - [Logging](#logging)
+      - [public static String
+        activeLogFilePath()](#public-static-string-activelogfilepath)
+      - [public static String
+        activeLogFilename()](#public-static-string-activelogfilename)
 
 
 ## Construction
@@ -62,6 +70,14 @@
 Creates an instance of the MotionDnaSDK. This method requires an
 application context and a object that has conformed to the
 MotionDnaSDKListener interface (see callback section below for details)
+
+## Permissions
+
+### String\[\] getRequiredPermissions()
+
+Returns a String array of the permissions needed to run MotionDnaSDK
+estimation. Use in conjunction with requestPermissions() on the
+applications activity.
 
 ## Control
 
@@ -201,46 +217,46 @@ should be taken.
 
 These are the values representing the estimation provided
 
-|                       |                             |                                      |
-| --------------------- | --------------------------- | ------------------------------------ |
-| **Class**             | **Variable/Getter**         | **Type**                             |
-| **MotionDna**         | getAttitude()               | Attitude                             |
-|                       | getLocation()               | Location                             |
-|                       | getClassifiers()            | HashMap \[String:Classifier\]        |
-|                       | getTimestamp()              | double                               |
-|                       |                             |                                      |
-| **Attitude**          | euler                       | Euler                                |
-|                       | quaternion                  | Quaternion                           |
-|                       |                             |                                      |
-| **Euler**             | roll                        | double                               |
-|                       | pitch                       | double                               |
-|                       | yaw                         | double                               |
-|                       |                             |                                      |
-| **Quaternion**        | x                           | double                               |
-|                       | y                           | double                               |
-|                       | z                           | double                               |
-|                       | w                           | double                               |
-|                       |                             |                                      |
-| **Location**          | cartesian                   | CartesianLocation                    |
-|                       | global                      | GlobalLocation                       |
-|                       |                             |                                      |
-| **CartesianLocation** | x                           | double                               |
-|                       | y                           | double                               |
-|                       | z                           | double                               |
-|                       | heading                     | double                               |
-|                       |                             |                                      |
-| **GlobalLocation**    | latitude                    | double                               |
-|                       | longitude                   | double                               |
-|                       | altitude                    | double                               |
-|                       | accuracy                    | enum GlobalLocationAccuracy (LOW,HIGH)|
-|                       |                             |                                      |
-| **Classifier**        | prediction.label            | double                               |
-|                       | prediction.confidence       | double                               |
-|                       | statistics                  | HashMap \[String : PredictionStats\] |
-|                       |                             |                                      |
-| **PredictionStats**   | duration                    | double                               |
-|                       | distance                    | double                               |
-|                       | percentage                  | double                               |
+|                       |                       |                                         |
+| --------------------- | --------------------- | --------------------------------------- |
+| **Class**             | **Variable/Getter**   | **Type**                                |
+| **MotionDna**         | getAttitude()         | Attitude                                |
+|                       | getLocation()         | Location                                |
+|                       | getClassifiers()      | HashMap \[String:Classifier\]           |
+|                       | getTimestamp()        | double                                  |
+|                       |                       |                                         |
+| **Attitude**          | euler                 | Euler                                   |
+|                       | quaternion            | Quaternion                              |
+|                       |                       |                                         |
+| **Euler**             | roll                  | double                                  |
+|                       | pitch                 | double                                  |
+|                       | yaw                   | double                                  |
+|                       |                       |                                         |
+| **Quaternion**        | x                     | double                                  |
+|                       | y                     | double                                  |
+|                       | z                     | double                                  |
+|                       | w                     | double                                  |
+|                       |                       |                                         |
+| **Location**          | cartesian             | CartesianLocation                       |
+|                       | global                | GlobalLocation                          |
+|                       |                       |                                         |
+| **CartesianLocation** | x                     | double                                  |
+|                       | y                     | double                                  |
+|                       | z                     | double                                  |
+|                       | heading               | double                                  |
+|                       |                       |                                         |
+| **GlobalLocation**    | latitude              | double                                  |
+|                       | longitude             | double                                  |
+|                       | altitude              | double                                  |
+|                       | accuracy              | enum GlobalLocationAccuracy (LOW, HIGH) |
+|                       |                       |                                         |
+| **Classifier**        | prediction.label      | String                                  |
+|                       | prediction.confidence | double                                  |
+|                       | predictionStats       | HashMap \[String : PredictionStats\]    |
+|                       |                       |                                         |
+| **PredictionStats**   | duration              | double                                  |
+|                       | distance              | double                                  |
+|                       | percentage            | double                                  |
 
 ## Simultaneous Localization and Mapping (SLAM)
 
@@ -251,3 +267,15 @@ setting. The ID must be accompanied by an uncertainty value in meters
 indicating the maximum possible distance the user could currently be
 from the ID'd landmark. This will provide the SDK with additional
 information that can enable improved corrections to a users position.
+
+## Logging
+
+### public static String activeLogFilePath()
+
+If logging is enabled this will return the full path of the nav file
+generated during the SDK operation.
+
+### public static String activeLogFilename()
+
+If logging is enabled this will return the simple filename for the nav
+file generated during the SDK operation.

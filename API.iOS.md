@@ -49,8 +49,13 @@
   - [Estimation Properties](#estimation-properties)
   - [Simultaneous Localization and Mapping
     (SLAM)](#simultaneous-localization-and-mapping-slam)
-      - [recordObservation(withIdentifier: Int, uncertainty:
-        Double)](#recordobservationwithidentifier-int-uncertainty-double)
+      - [func recordObservation(withIdentifier: Int, uncertainty:
+        Double)](#func-recordobservationwithidentifier-int-uncertainty-double)
+  - [Logging](#logging)
+      - [func activeLogFilePath() -\>
+        String](#func-activelogfilepath---string)
+      - [func activeLogFilename() -\>
+        String](#func-activelogfilename---string)
 
 
 ## Control
@@ -192,53 +197,65 @@ should be taken.
 
 These are the values representing the estimation provided
 
-|                       |                             |                                         |
-| --------------------- | --------------------------- | --------------------------------------- |
-| **Class**             | **Variable/Getter**         | **Type**                                |
-| **MotionDna**         | attitude                    | Attitude                                |
-|                       | location                    | Location                                |
-|                       | classifiers                 | Dictionary \[String:Classifier\]        |
-|                       | timestamp                   | double                                  |
-|                       |                             |                                         |
-| **Attitude**          | euler                       | Euler                                   |
-|                       | quaternion                  | Quaternion                              |
-|                       |                             |                                         |
-| **Euler**             | roll                        | double                                  |
-|                       | pitch                       | double                                  |
-|                       | yaw                         | double                                  |
-|                       |                             |                                         |
-| **Quaternion**        | x                           | double                                  |
-|                       | y                           | double                                  |
-|                       | z                           | double                                  |
-|                       | w                           | double                                  |
-|                       |                             |                                         |
-| **Location**          | cartesian                   | CartesianLocation                       |
-|                       | global                      | GlobalLocation                          |
-|                       |                             |                                         |
-| **CartesianLocation** | x                           | double                                  |
-|                       | y                           | double                                  |
-|                       | z                           | double                                  |
-|                       | heading                     | double                                  |
-|                       |                             |                                         |
-| **GlobalLocation**    | latitude                    | double                                  |
-|                       | longitude                   | double                                  |
-|                       | altitude                    | double                                  |
-|                       | accuracy                    | enum GlobalLocationAccuracy (LOW,HIGH)  |
-|                       |                             |                                         |
-| **Classifier**        | prediction.label            | double                                  |
-|                       | prediction.confidence       | double                                  |
-|                       | statistics                  | Dictionary \[String : PredictionStats\] |
-|                       |                             |                                         |
-| **PredictionStats**   | duration                    | double                                  |
-|                       | distance                    | double                                  |
-|                       | percentage                  | double                                  |
+|                       |                       |                                         |
+| --------------------- | --------------------- | --------------------------------------- |
+| **Class**             | **Variable/Getter**   | **Type**                                |
+| **MotionDna**         | attitude              | Attitude                                |
+|                       | location              | Location                                |
+|                       | classifiers           | Dictionary \[String:Classifier\]        |
+|                       | timestamp             | double                                  |
+|                       |                       |                                         |
+| **Attitude**          | euler                 | Euler                                   |
+|                       | quaternion            | Quaternion                              |
+|                       |                       |                                         |
+| **Euler**             | roll                  | double                                  |
+|                       | pitch                 | double                                  |
+|                       | yaw                   | double                                  |
+|                       |                       |                                         |
+| **Quaternion**        | x                     | double                                  |
+|                       | y                     | double                                  |
+|                       | z                     | double                                  |
+|                       | w                     | double                                  |
+|                       |                       |                                         |
+| **Location**          | cartesian             | CartesianLocation                       |
+|                       | global                | GlobalLocation                          |
+|                       |                       |                                         |
+| **CartesianLocation** | x                     | double                                  |
+|                       | y                     | double                                  |
+|                       | z                     | double                                  |
+|                       | heading               | double                                  |
+|                       |                       |                                         |
+| **GlobalLocation**    | latitude              | double                                  |
+|                       | longitude             | double                                  |
+|                       | altitude              | double                                  |
+|                       | accuracy              | enum GlobalLocationAccuracy (LOW, HIGH) |
+|                       |                       |                                         |
+| **Classifier**        | prediction.label      | String                                  |
+|                       | prediction.confidence | double                                  |
+|                       | statistics            | Dictionary \[String : PredictionStats\] |
+|                       |                       |                                         |
+| **PredictionStats**   | duration              | double                                  |
+|                       | distance              | double                                  |
+|                       | percentage            | double                                  |
 
 ## Simultaneous Localization and Mapping (SLAM)
 
-### recordObservation(withIdentifier: Int, uncertainty: Double)
+### func recordObservation(withIdentifier: Int, uncertainty: Double)
 
 Input an identifier when visiting and revisiting a landmark in an indoor
 setting. The ID must be accompanied by an uncertainty value in meters
 indicating the maximum possible distance the user could currently be
 from the ID'd landmark. This will provide the SDK with additional
 information that can enable improved corrections to a users position.
+
+## Logging
+
+### func activeLogFilePath() -\> String
+
+If logging is enabled this will return the full path of the nav file
+generated during the SDK operation.
+
+### func activeLogFilename() -\> String
+
+If logging is enabled this will return the simple filename for the nav
+file generated during the SDK operation.
