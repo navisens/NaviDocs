@@ -55,8 +55,17 @@ If you wish to start MotionDnaSDK without specifying configuration options you c
 ------------------------
 Using the SDK call above, you application will usually continue to estimate in the background for a period of time. However, the OS reserves the right to shut it down if memory or CPU usage gets too high, and there is no guarantee that sensor input from the gyroscope and accelerometer will be continuous, resulting in potential errors in the estimation.
 
-To mitigate this we have the `startForegroundService()` method. This, coupled with the addition of
+To mitigate this we execute the `startForegroundService()` method just prior to starting the SDK with `start()`. This, coupled with the addition of
 ```xml
 <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+```
+and
+```xml
+<application>
+...
+  <service android:name="com.navisens.motiondnaapi.MotionDnaForegroundService"
+      android:foregroundServiceType="location"
+      />
+</application>
 ```
  to the application `AndroidManifest.xml` creates a permanent message in the notification tray while the app is running and indicates to the OS that the app should still maintain priority on resources and sensor data that is comparable to any app that is running in the forground. If you are already using a forground service this method should not be necessary.
