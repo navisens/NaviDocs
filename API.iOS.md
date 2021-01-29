@@ -197,7 +197,7 @@ should be taken.
 
 These are the values representing the estimation provided
 
-|                       |                       |                                         |
+|                       |                       |                                         |            |
 | --------------------- | --------------------- | --------------------------------------- |----------- |
 | **Class**             | **Variable/Getter**   | **Type**                                |**Units**   |
 | **MotionDna**         | attitude              | Attitude                                |            |
