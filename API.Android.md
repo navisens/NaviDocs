@@ -217,46 +217,46 @@ should be taken.
 
 These are the values representing the estimation provided
 
-|                       |                       |                                         |
-| --------------------- | --------------------- | --------------------------------------- |
-| **Class**             | **Variable/Getter**   | **Type**                                |
-| **MotionDna**         | getAttitude()         | Attitude                                |
-|                       | getLocation()         | Location                                |
-|                       | getClassifiers()      | HashMap \[String:Classifier\]           |
-|                       | getTimestamp()        | double                                  |
-|                       |                       |                                         |
-| **Attitude**          | euler                 | Euler                                   |
-|                       | quaternion            | Quaternion                              |
-|                       |                       |                                         |
-| **Euler**             | roll                  | double                                  |
-|                       | pitch                 | double                                  |
-|                       | yaw                   | double                                  |
-|                       |                       |                                         |
-| **Quaternion**        | x                     | double                                  |
-|                       | y                     | double                                  |
-|                       | z                     | double                                  |
-|                       | w                     | double                                  |
-|                       |                       |                                         |
-| **Location**          | cartesian             | CartesianLocation                       |
-|                       | global                | GlobalLocation                          |
-|                       |                       |                                         |
-| **CartesianLocation** | x                     | double                                  |
-|                       | y                     | double                                  |
-|                       | z                     | double                                  |
-|                       | heading               | double                                  |
-|                       |                       |                                         |
-| **GlobalLocation**    | latitude              | double                                  |
-|                       | longitude             | double                                  |
-|                       | altitude              | double                                  |
-|                       | accuracy              | enum GlobalLocationAccuracy (LOW, HIGH) |
-|                       |                       |                                         |
-| **Classifier**        | prediction.label      | String                                  |
-|                       | prediction.confidence | double                                  |
-|                       | predictionStats       | HashMap \[String : PredictionStats\]    |
-|                       |                       |                                         |
-| **PredictionStats**   | duration              | double                                  |
-|                       | distance              | double                                  |
-|                       | percentage            | double                                  |
+|                       |                       |                                         |            |
+| --------------------- | --------------------- | --------------------------------------- |----------- |
+| **Class**             | **Variable/Getter**   | **Type**                                |**Units**   |
+| **MotionDna**         | getAttitude()         | Attitude                                |            |
+|                       | getLocation()         | Location                                |            |
+|                       | getClassifiers()      | HashMap \[String:Classifier\]           |            |
+|                       | getTimestamp()        | double                                  |            |
+|                       |                       |                                         |            |
+| **Attitude**          | euler                 | Euler                                   |            |
+|                       | quaternion            | Quaternion                              |            |
+|                       |                       |                                         |            |
+| **Euler**             | roll                  | double                                  |            |
+|                       | pitch                 | double                                  |            |
+|                       | yaw                   | double                                  |            |
+|                       |                       |                                         |            |
+| **Quaternion**        | x                     | double                                  |            |
+|                       | y                     | double                                  |            |
+|                       | z                     | double                                  |            |
+|                       | w                     | double                                  |            |
+|                       |                       |                                         |            |
+| **Location**          | cartesian             | CartesianLocation                       |            |
+|                       | global                | GlobalLocation                          |            |
+|                       |                       |                                         |            |
+| **CartesianLocation** | x                     | double                                  | meters     |
+|                       | y                     | double                                  | meters     |
+|                       | z                     | double                                  | meters     |
+|                       | heading               | double                                  | degrees    |
+|                       |                       |                                         |            |
+| **GlobalLocation**    | latitude              | double                                  | WGS84      |
+|                       | longitude             | double                                  | WGS84      |
+|                       | altitude              | double                                  | meters     |
+|                       | accuracy              | enum GlobalLocationAccuracy (LOW, HIGH) |            |
+|                       |                       |                                         |            |
+| **Classifier**        | prediction.label      | String                                  |            |
+|                       | prediction.confidence | double                                  |            |
+|                       | predictionStats       | HashMap \[String : PredictionStats\]    |            |
+|                       |                       |                                         |            |
+| **PredictionStats**   | duration              | double                                  | seconds    |
+|                       | distance              | double                                  | meters     |
+|                       | percentage            | double                                  |            |
 
 ## Simultaneous Localization and Mapping (SLAM)
 
