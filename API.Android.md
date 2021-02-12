@@ -196,7 +196,7 @@ number (e.g. NAVISENS-R20.08.17.15.56-MASTER).
 ### public static String SDKVersion()
 
 This static method will provide the currention version number of the SDK
-(e.g. v2.0.0).
+(e.g. v2.0.3).
 
 ## Callbacks (MotionDnaSDKListener implementation)
 
