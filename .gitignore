@@ -28,7 +28,7 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
-*.docx
+# *.docx
 *.odt
 .~lock*
 *-old.md
