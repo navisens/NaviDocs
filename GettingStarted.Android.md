@@ -6,7 +6,7 @@ To include MotionDnaSDK in your project, add the following dependency to your ap
 
 ```gradle
 dependencies {
-    implementation group: "com.navisens", name: "motiondnaapi", version: "2.0.3", changing: true
+    implementation group: "com.navisens", name: "motiondnaapi", version: "3.0.0", changing: true
     // ...
 }
 ```

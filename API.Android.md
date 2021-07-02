@@ -1,65 +1,64 @@
 # Android MotionDnaSDK API Documentation
-
-  - [Construction](#construction)
-      - [MotionDnaSDK(Context context, MotionDnaSDKListener
+-   [Construction](#construction)
+    -   [MotionDnaSDK(Context context, MotionDnaSDKListener
         motionDnaSDKListener)](#motiondnasdkcontext-context-motiondnasdklistener-motiondnasdklistener)
-  - [Permissions](#permissions)
-      - [String\[\]
+-   [Permissions](#permissions)
+    -   [String\[\]
         getRequiredPermissions()](#string-getrequiredpermissions)
-  - [Control](#control)
-      - [public void start(String
+-   [Control](#control)
+    -   [public void start(String
         developerKey)](#public-void-startstring-developerkey)
-      - [public void start(String developerKey, HashMap\<String,
-        Object\>
+    -   [public void start(String developerKey, HashMap&lt;String,
+        Object&gt;
         configurations)](#public-void-startstring-developerkey-hashmapstring-object-configurations)
-      - [public void stop()](#public-void-stop)
-      - [public void reset()](#public-void-reset)
-      - [public void pause()](#public-void-pause)
-      - [public void resume()](#public-void-resume)
-      - [public void
+    -   [public void stop()](#public-void-stop)
+    -   [public void reset()](#public-void-reset)
+    -   [public void pause()](#public-void-pause)
+    -   [public void resume()](#public-void-resume)
+    -   [public void
         startForegroundService()](#public-void-startforegroundservice)
-  - [Configuration](#configuration)
-  - [Change Global Estimation](#change-global-estimation)
-      - [public void setGlobalPosition(double latitude, double
+-   [Configuration](#configuration)
+-   [Change Global Estimation](#change-global-estimation)
+    -   [public void setGlobalPosition(double latitude, double
         longitude)](#public-void-setglobalpositiondouble-latitude-double-longitude)
-      - [public void setGlobalPositionAndHeading(double latitude,
+    -   [public void setGlobalPositionAndHeading(double latitude,
         double longitude, double heading)
         ](#public-void-setglobalpositionandheadingdouble-latitude-double-longitude-double-heading)
-      - [public void setGlobalHeading(double
+    -   [public void setGlobalHeading(double
         heading)](#public-void-setglobalheadingdouble-heading)
-  - [Change Cartesian Estimation](#change-cartesian-estimation)
-      - [public void setCartesianHeading(double
+-   [Change Cartesian Estimation](#change-cartesian-estimation)
+    -   [public void setCartesianHeading(double
         heading)](#public-void-setcartesianheadingdouble-heading)
-      - [public void setCartesianPosition( double x, double
-        y)](#public-void-setcartesianposition-double-x-double-y)
-  - [External Sensors](#external-sensors)
-      - [public void inputMotion(double timestamp, double roll,
+    -   [public void setCartesianPosition( double x,
+        double y)](#public-void-setcartesianposition-double-x-double-y)
+-   [External Sensors](#external-sensors)
+    -   [public void inputMotion(double timestamp, double roll,
         double pitch, double yaw, double accX, double accY, double
         accZ)](#public-void-inputmotiondouble-timestamp-double-roll-double-pitch-double-yaw-double-accx-double-accy-double-accz)
-      - [public void inputMotion(double timestamp, double roll,
+    -   [public void inputMotion(double timestamp, double roll,
         double pitch, double yaw, double accX, double accY, double
         accZ, double heading, double
         headingAccuracy)](#public-void-inputmotiondouble-timestamp-double-roll-double-pitch-double-yaw-double-accx-double-accy-double-accz-double-heading-double-headingaccuracy)
-  - [SDK Info](#sdk-info)
-      - [public static String
+-   [SDK Info](#sdk-info)
+    -   [public static String
         SDKBuild()](#public-static-string-sdkbuild)
-      - [public static String
+    -   [public static String
         SDKVersion()](#public-static-string-sdkversion)
-  - [Callbacks (MotionDnaSDKListener
+-   [Callbacks (MotionDnaSDKListener
     implementation)](#callbacks-motiondnasdklistener-implementation)
-      - [public void receiveMotionDna(MotionDna
+    -   [public void receiveMotionDna(MotionDna
         motionDna)](#public-void-receivemotiondnamotiondna-motiondna)
-      - [public void reportStatus(MotionDnaSDK.Status status, String
+    -   [public void reportStatus(MotionDnaSDK.Status status, String
         message)](#public-void-reportstatusmotiondnasdk.status-status-string-message)
-  - [Estimation Properties](#estimation-properties)
-  - [Simultaneous Localization and Mapping
+-   [Estimation Properties](#estimation-properties)
+-   [Simultaneous Localization and Mapping
     (SLAM)](#simultaneous-localization-and-mapping-slam)
-      - [public void recordObservation(int identifier, double
+    -   [public void recordObservation(int identifier, double
         uncertainty)](#public-void-recordobservationint-identifier-double-uncertainty)
-  - [Logging](#logging)
-      - [public static String
+-   [Logging](#logging)
+    -   [public static String
         activeLogFilePath()](#public-static-string-activelogfilepath)
-      - [public static String
+    -   [public static String
         activeLogFilename()](#public-static-string-activelogfilename)
 
 
@@ -88,7 +87,7 @@ is provided in this call, the SDK uses the defaults specified in the
 configuration table below. A successful or failed authentication will be
 reported through the reportStatus() callback.
 
-### public void start(String developerKey, HashMap\<String, Object\> configurations)
+### public void start(String developerKey, HashMap&lt;String, Object&gt; configurations)
 
 Starts up the SDK with valid developer key as input. A dictionary with
 options from the Configuration table below determine how the SDK is
@@ -124,7 +123,7 @@ notification in the tray while the app runs.
 ## Configuration
 
 |                       |                                            |             |                                                                                                    |
-| --------------------- | ------------------------------------------ | ----------- | -------------------------------------------------------------------------------------------------- |
+|-----------------------|--------------------------------------------|-------------|----------------------------------------------------------------------------------------------------|
 | **Keyword**           | **Options**                                | **Default** | **Description**                                                                                    |
 | model                 | String (“simple”, “standard”, “headmount”) | “standard”  | Choose the type of model to use for motion estimation                                              |
 | gps                   | boolean                                    | true        | Use GPS to set an initial position and perform corrections when outdoors                           |
@@ -196,7 +195,7 @@ number (e.g. NAVISENS-R20.08.17.15.56-MASTER).
 ### public static String SDKVersion()
 
 This static method will provide the currention version number of the SDK
-(e.g. v2.0.3).
+(e.g. v2.0.0).
 
 ## Callbacks (MotionDnaSDKListener implementation)
 
@@ -217,46 +216,47 @@ should be taken.
 
 These are the values representing the estimation provided
 
-|                       |                       |                                         |            |
-| --------------------- | --------------------- | --------------------------------------- |----------- |
-| **Class**             | **Variable/Getter**   | **Type**                                |**Units**   |
-| **MotionDna**         | getAttitude()         | Attitude                                |            |
-|                       | getLocation()         | Location                                |            |
-|                       | getClassifiers()      | HashMap \[String:Classifier\]           |            |
-|                       | getTimestamp()        | double                                  |            |
-|                       |                       |                                         |            |
-| **Attitude**          | euler                 | Euler                                   |            |
-|                       | quaternion            | Quaternion                              |            |
-|                       |                       |                                         |            |
-| **Euler**             | roll                  | double                                  |            |
-|                       | pitch                 | double                                  |            |
-|                       | yaw                   | double                                  |            |
-|                       |                       |                                         |            |
-| **Quaternion**        | x                     | double                                  |            |
-|                       | y                     | double                                  |            |
-|                       | z                     | double                                  |            |
-|                       | w                     | double                                  |            |
-|                       |                       |                                         |            |
-| **Location**          | cartesian             | CartesianLocation                       |            |
-|                       | global                | GlobalLocation                          |            |
-|                       |                       |                                         |            |
-| **CartesianLocation** | x                     | double                                  | meters     |
-|                       | y                     | double                                  | meters     |
-|                       | z                     | double                                  | meters     |
-|                       | heading               | double                                  | degrees    |
-|                       |                       |                                         |            |
-| **GlobalLocation**    | latitude              | double                                  | WGS84      |
-|                       | longitude             | double                                  | WGS84      |
-|                       | altitude              | double                                  | meters     |
-|                       | accuracy              | enum GlobalLocationAccuracy (LOW, HIGH) |            |
-|                       |                       |                                         |            |
-| **Classifier**        | prediction.label      | String                                  |            |
-|                       | prediction.confidence | double                                  |            |
-|                       | predictionStats       | HashMap \[String : PredictionStats\]    |            |
-|                       |                       |                                         |            |
-| **PredictionStats**   | duration              | double                                  | seconds    |
-|                       | distance              | double                                  | meters     |
-|                       | percentage            | double                                  |            |
+|                       |                       |                                         |           |
+|-----------------------|-----------------------|-----------------------------------------|-----------|
+| **Class**             | **Variable/Getter**   | **Type**                                | **Units** |
+| **MotionDna**         | getAttitude()         | Attitude                                |           |
+|                       | getLocation()         | Location                                |           |
+|                       | getClassifiers()      | HashMap \[String:Classifier\]           |           |
+|                       | getTimestamp()        | double                                  |           |
+|                       | getPath()             | ArrayList&lt;MotionDna&gt;              |           |
+|                       |                       |                                         |           |
+| **Attitude**          | euler                 | Euler                                   |           |
+|                       | quaternion            | Quaternion                              |           |
+|                       |                       |                                         |           |
+| **Euler**             | roll                  | double                                  |           |
+|                       | pitch                 | double                                  |           |
+|                       | yaw                   | double                                  |           |
+|                       |                       |                                         |           |
+| **Quaternion**        | x                     | double                                  |           |
+|                       | y                     | double                                  |           |
+|                       | z                     | double                                  |           |
+|                       | w                     | double                                  |           |
+|                       |                       |                                         |           |
+| **Location**          | cartesian             | CartesianLocation                       |           |
+|                       | global                | GlobalLocation                          |           |
+|                       |                       |                                         |           |
+| **CartesianLocation** | x                     | double                                  | meters    |
+|                       | y                     | double                                  | meters    |
+|                       | z                     | double                                  | meters    |
+|                       | heading               | double                                  | degrees   |
+|                       |                       |                                         |           |
+| **GlobalLocation**    | latitude              | double                                  | WGS84     |
+|                       | longitude             | double                                  | WGS84     |
+|                       | altitude              | double                                  | meters    |
+|                       | accuracy              | enum GlobalLocationAccuracy (LOW, HIGH) |           |
+|                       |                       |                                         |           |
+| **Classifier**        | prediction.label      | String                                  |           |
+|                       | prediction.confidence | double                                  |           |
+|                       | predictionStats       | HashMap \[String : PredictionStats\]    |           |
+|                       |                       |                                         |           |
+| **PredictionStats**   | duration              | double                                  | seconds   |
+|                       | distance              | double                                  | meters    |
+|                       | percentage            | double                                  |           |
 
 ## Simultaneous Localization and Mapping (SLAM)
 

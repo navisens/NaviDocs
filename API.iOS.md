@@ -1,60 +1,59 @@
 # iOS MotionDnaSDK API Documentation
-
-  - [Control](#control)
-      - [func start(withDeveloperKey:
+-   [Control](#control)
+    -   [func start(withDeveloperKey:
         String)](#func-startwithdeveloperkey-string)
-      - [func start(withDeveloperKey: String, andConfigurations:
+    -   [func start(withDeveloperKey: String, andConfigurations:
         \[String :
         Any\])](#func-startwithdeveloperkey-string-andconfigurations-string-any)
-      - [func stop()](#func-stop)
-      - [func reset()](#func-reset)
-      - [func pause()](#func-pause)
-      - [func resume()](#func-resume)
-      - [func setBackgroundModeEnabled(\_ state:
+    -   [func stop()](#func-stop)
+    -   [func reset()](#func-reset)
+    -   [func pause()](#func-pause)
+    -   [func resume()](#func-resume)
+    -   [func setBackgroundModeEnabled(\_ state:
         Bool)](#func-setbackgroundmodeenabled_-state-bool)
-  - [Configuration](#configuration)
-  - [Change Global Estimation](#change-global-estimation)
-      - [func setGlobalPosition(latitude: Double, longitude:
+-   [Configuration](#configuration)
+-   [Change Global Estimation](#change-global-estimation)
+    -   [func setGlobalPosition(latitude: Double, longitude:
         Double)](#func-setglobalpositionlatitude-double-longitude-double)
-      - [func setGlobalPosition(latitude: Double, longitude: Double,
+    -   [func setGlobalPosition(latitude: Double, longitude: Double,
         heading:
         Double)](#func-setglobalpositionlatitude-double-longitude-double-heading-double)
-      - [func setGlobalHeading(heading:
+    -   [func setGlobalHeading(heading:
         Double)](#func-setglobalheadingheading-double)
-  - [Change Cartesian Estimation](#change-cartesian-estimation)
-      - [func setCartesianHeading(heading:
+-   [Change Cartesian Estimation](#change-cartesian-estimation)
+    -   [func setCartesianHeading(heading:
         Double)](#func-setcartesianheadingheading-double)
-      - [func setCartesianPosition(x: Double, y:
+    -   [func setCartesianPosition(x: Double, y:
         Double)](#func-setcartesianpositionx-double-y-double)
-  - [External Sensors](#external-sensors)
-      - [func inputMotion(withTimestamp: Double, roll: Double,
+-   [External Sensors](#external-sensors)
+    -   [func inputMotion(withTimestamp: Double, roll: Double,
         pitch: Double, yaw: Double, accX: Double, accY: Double,
         accZ:
         Double)](#func-inputmotionwithtimestamp-double-roll-double-pitch-double-yaw-double-accx-double-accy-double-accz-double)
-      - [func inputMotion(withTimestamp: Double, roll: Double,
+    -   [func inputMotion(withTimestamp: Double, roll: Double,
         pitch: Double, yaw: Double, accX: Double, accY: Double,
         accZ: Double, heading: Double, headingAccuracy:
         Double)](#func-inputmotionwithtimestamp-double-roll-double-pitch-double-yaw-double-accx-double-accy-double-accz-double-heading-double-headingaccuracy-double)
-  - [SDK Info](#sdk-info)
-      - [static func sdkBuild() -\>
+-   [SDK Info](#sdk-info)
+    -   [static func sdkBuild() -&gt;
         String](#static-func-sdkbuild---string)
-      - [static func sdkVersion() -\>
+    -   [static func sdkVersion() -&gt;
         String](#static-func-sdkversion---string)
-  - [Callbacks (MotionDnaSDKDelegate
+-   [Callbacks (MotionDnaSDKDelegate
     implementation)](#callbacks-motiondnasdkdelegate-implementation)
-      - [func receive(motionDna:
+    -   [func receive(motionDna:
         MotionDna)](#func-receivemotiondna-motiondna)
-      - [ func report( status: MotionDnaSDK.Status, message:
+    -   [ func report( status: MotionDnaSDK.Status, message:
         String)](#func-report-status-motiondnasdk.status-message-string)
-  - [Estimation Properties](#estimation-properties)
-  - [Simultaneous Localization and Mapping
+-   [Estimation Properties](#estimation-properties)
+-   [Simultaneous Localization and Mapping
     (SLAM)](#simultaneous-localization-and-mapping-slam)
-      - [func recordObservation(withIdentifier: Int, uncertainty:
+    -   [func recordObservation(withIdentifier: Int, uncertainty:
         Double)](#func-recordobservationwithidentifier-int-uncertainty-double)
-  - [Logging](#logging)
-      - [func activeLogFilePath() -\>
+-   [Logging](#logging)
+    -   [func activeLogFilePath() -&gt;
         String](#func-activelogfilepath---string)
-      - [func activeLogFilename() -\>
+    -   [func activeLogFilename() -&gt;
         String](#func-activelogfilename---string)
 
 
@@ -104,7 +103,7 @@ the CLLocationManager on. If you wish to use this, you must enable the
 ## Configuration
 
 |                       |                                            |             |                                                                                                    |
-| --------------------- | ------------------------------------------ | ----------- | -------------------------------------------------------------------------------------------------- |
+|-----------------------|--------------------------------------------|-------------|----------------------------------------------------------------------------------------------------|
 | **Keyword**           | **Options**                                | **Default** | **Description**                                                                                    |
 | model                 | String (“simple”, “standard”, “headmount”) | “standard”  | Choose the type of model to use for motion estimation                                              |
 | gps                   | Bool                                       | true        | Use GPS to set an initial position and perform corrections when outdoors                           |
@@ -168,15 +167,15 @@ in a 0-2π frame increasing in a clockwise direction.
 
 ## SDK Info
 
-### static func sdkBuild() -\> String
+### static func sdkBuild() -&gt; String
 
 This static method will return a string representing the current build
 number (e.g. NAVISENS-R20.08.17.15.56-MASTER).
 
-### static func sdkVersion() -\> String
+### static func sdkVersion() -&gt; String
 
 This static method will provide the currention version number of the SDK
-(e.g. v2.0.3).
+(e.g. v2.0.0).
 
 ## Callbacks (MotionDnaSDKDelegate implementation)
 
@@ -197,46 +196,47 @@ should be taken.
 
 These are the values representing the estimation provided
 
-|                       |                       |                                         |            |
-| --------------------- | --------------------- | --------------------------------------- |----------- |
-| **Class**             | **Variable/Getter**   | **Type**                                |**Units**   |
-| **MotionDna**         | attitude              | Attitude                                |            |
-|                       | location              | Location                                |            |
-|                       | classifiers           | Dictionary \[String:Classifier\]        |            |
-|                       | timestamp             | double                                  |            |
-|                       |                       |                                         |            |
-| **Attitude**          | euler                 | Euler                                   |            |
-|                       | quaternion            | Quaternion                              |            |
-|                       |                       |                                         |            |
-| **Euler**             | roll                  | double                                  |            |
-|                       | pitch                 | double                                  |            |
-|                       | yaw                   | double                                  |            |
-|                       |                       |                                         |            |
-| **Quaternion**        | x                     | double                                  |            |
-|                       | y                     | double                                  |            |
-|                       | z                     | double                                  |            |
-|                       | w                     | double                                  |            |
-|                       |                       |                                         |            |
-| **Location**          | cartesian             | CartesianLocation                       |            |
-|                       | global                | GlobalLocation                          |            |
-|                       |                       |                                         |            |
-| **CartesianLocation** | x                     | double                                  | meters     |
-|                       | y                     | double                                  | meters     |
-|                       | z                     | double                                  | meters     |
-|                       | heading               | double                                  | degrees    |
-|                       |                       |                                         |            |
-| **GlobalLocation**    | latitude              | double                                  | WGS84      |
-|                       | longitude             | double                                  | WGS84      |
-|                       | altitude              | double                                  | meters     |
-|                       | accuracy              | enum GlobalLocationAccuracy (LOW, HIGH) |            |
-|                       |                       |                                         |            |
-| **Classifier**        | prediction.label      | String                                  |            |
-|                       | prediction.confidence | double                                  |            |
-|                       | statistics            | Dictionary \[String : PredictionStats\] |            |
-|                       |                       |                                         |            |
-| **PredictionStats**   | duration              | double                                  | seconds    |
-|                       | distance              | double                                  | meters     |
-|                       | percentage            | double                                  |            |
+|                       |                       |                                         |           |
+|-----------------------|-----------------------|-----------------------------------------|-----------|
+| **Class**             | **Variable/Getter**   | **Type**                                | **Units** |
+| **MotionDna**         | attitude              | Attitude                                |           |
+|                       | location              | Location                                |           |
+|                       | classifiers           | Dictionary \[String:Classifier\]        |           |
+|                       | timestamp             | double                                  |           |
+|                       | path                  | Array \[MotionDna\]                     |           |
+|                       |                       |                                         |           |
+| **Attitude**          | euler                 | Euler                                   |           |
+|                       | quaternion            | Quaternion                              |           |
+|                       |                       |                                         |           |
+| **Euler**             | roll                  | double                                  |           |
+|                       | pitch                 | double                                  |           |
+|                       | yaw                   | double                                  |           |
+|                       |                       |                                         |           |
+| **Quaternion**        | x                     | double                                  |           |
+|                       | y                     | double                                  |           |
+|                       | z                     | double                                  |           |
+|                       | w                     | double                                  |           |
+|                       |                       |                                         |           |
+| **Location**          | cartesian             | CartesianLocation                       |           |
+|                       | global                | GlobalLocation                          |           |
+|                       |                       |                                         |           |
+| **CartesianLocation** | x                     | double                                  | meters    |
+|                       | y                     | double                                  | meters    |
+|                       | z                     | double                                  | meters    |
+|                       | heading               | double                                  | degrees   |
+|                       |                       |                                         |           |
+| **GlobalLocation**    | latitude              | double                                  | WGS84     |
+|                       | longitude             | double                                  | WGS84     |
+|                       | altitude              | double                                  | meters    |
+|                       | accuracy              | enum GlobalLocationAccuracy (LOW, HIGH) |           |
+|                       |                       |                                         |           |
+| **Classifier**        | prediction.label      | String                                  |           |
+|                       | prediction.confidence | double                                  |           |
+|                       | statistics            | Dictionary \[String : PredictionStats\] |           |
+|                       |                       |                                         |           |
+| **PredictionStats**   | duration              | double                                  | seconds   |
+|                       | distance              | double                                  | meters    |
+|                       | percentage            | double                                  |           |
 
 ## Simultaneous Localization and Mapping (SLAM)
 
@@ -250,12 +250,12 @@ information that can enable improved corrections to a users position.
 
 ## Logging
 
-### func activeLogFilePath() -\> String
+### func activeLogFilePath() -&gt; String
 
 If logging is enabled this will return the full path of the nav file
 generated during the SDK operation.
 
-### func activeLogFilename() -\> String
+### func activeLogFilename() -&gt; String
 
 If logging is enabled this will return the simple filename for the nav
 file generated during the SDK operation.
